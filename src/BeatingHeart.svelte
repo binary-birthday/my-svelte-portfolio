@@ -37,7 +37,6 @@
 }
 
 #anatomicalHeart {
-  margin-right: 10px;
   opacity: .4
 }
 </style>

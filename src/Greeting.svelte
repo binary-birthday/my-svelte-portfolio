@@ -97,14 +97,14 @@
     padding-top: 5rem;
     z-index: 2;
     display: flex;
+    align-items: center;
   }
-  
-  .left {
-    width:  20%;
-  }
+
   .right {
     width: 80%;
+    height: 60%;
     z-index: 2;
+    padding: 3rem;
   }
 	
 	p {
@@ -120,7 +120,6 @@
 	
 
 <div class="landing-container">
-  <div class="left"></div>
   <div class="right">
     {#if visible}	
     <p class:dn={dn1} in:typewriter1 class="greting1">HELLO!</p>

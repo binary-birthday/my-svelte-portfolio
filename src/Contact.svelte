@@ -8,22 +8,40 @@
     z-index: -1;
   }
 
+  .main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .left {
+    height: 100%;
+    width: 50%;
+  }
+
   .form-container {
-    width: 60%;
-    height: 80%;
+    width: 45%;
+    height: 90%;
     color: white;
     z-index: 10;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     margin-top: 2rem;
+    padding: 1rem 1rem 1rem 0;
+  }
+
+  h1 {
+    align-self: flex-start;
+    padding: 1rem 1rem 1rem 0;
   }
 
   .dn {
     display: none;
   }
 
-  .feedback-input {
+  .form-input {
     color:white;
     font-family: 'Oswald', sans-serif;
     font-weight:500;
@@ -40,7 +58,7 @@
     outline:0;
   }
 
-  .feedback-input:focus { 
+  .form-input:focus { 
     border:2px solid rgba(224, 30, 66, 0.454); 
   }
 
@@ -76,15 +94,18 @@
 	<path d="M1920 1066.7V1079.99L421.496 1079.99L309.761 631.773L1920 1066.7Z" fill="#1D1D1D"/>
 	<path d="M317.44 633.103L709.12 1080H-0.000427246V718.295L317.44 633.103Z" fill="#313131"/>
 </svg>
-
-<div class="form-container">
-  <form action="https://formspree.io/wsmartin23@gmail.com" method="POST">      
-    <p class="dn">
-      <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
-    </p>
-    <input name="name" type="text" class="feedback-input" placeholder="Name" />   
-    <input name="email" type="text" class="feedback-input" placeholder="Email" />
-    <textarea name="text" class="feedback-input" placeholder="Your Message here..."></textarea>
-    <input type="submit" value="SUBMIT"/>
-  </form> 
+<div class="main">
+  <div class="left"></div>
+  <div class="form-container">
+    <h1>Get In Touch</h1>
+    <form action="https://formspree.io/wsmartin23@gmail.com" method="POST">      
+      <p class="dn">
+        <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+      </p>
+      <input name="name" type="text" class="form-input" placeholder="Name" />   
+      <input name="email" type="text" class="form-input" placeholder="Email" />
+      <textarea name="text" class="form-input" placeholder="Your Message here..."></textarea>
+      <input type="submit" value="SUBMIT"/>
+    </form> 
+  </div>
 </div>
