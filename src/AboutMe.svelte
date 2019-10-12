@@ -3,7 +3,8 @@
 
 <style>
   .about-container {
-    width: 100vw;
+    width: 120vw;
+    background-color: black;  
     display: flex;
     flex-wrap: wrap;
   }
@@ -11,7 +12,12 @@
   .card {
     margin: 3rem;
     max-width: 30rem;
-    border-left: 4px solid rgb(90, 12, 26);
+    border: 4px solid rgb(90, 12, 26);
+    box-shadow: 10px -10px 5px  rgba(0,0,0,0.6);
+    -moz-box-shadow: 10px -10px 5px  rgba(0,0,0,0.6);
+    -webkit-box-shadow: 10px -10px 5px  rgba(0,0,0,0.6);
+    -o-box-shadow: 10px -10px 5px  rgba(0,0,0,0.6);
+    border-radius:25px;
     padding: 2rem;
     background-color: rgba(0, 0, 0, .9);
     color: white;

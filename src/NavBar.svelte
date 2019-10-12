@@ -29,9 +29,9 @@
 	}
 
 	.myName {
-		height: 2rem;
-    width:	25%;
-    padding-left: 2rem;
+    height: 2rem;
+    widows: 3rem;
+    padding-left: 3rem;
 	}
 </style>
 
