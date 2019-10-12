@@ -1,0 +1,90 @@
+<script></script>
+
+<style>
+  .background {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: -1;
+  }
+
+  .form-container {
+    width: 60%;
+    height: 80%;
+    color: white;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 2rem;
+  }
+
+  .dn {
+    display: none;
+  }
+
+  .feedback-input {
+    color:white;
+    font-family: 'Oswald', sans-serif;
+    font-weight:500;
+    font-size: 18px;
+    border-radius: 5px;
+    line-height: 22px;
+    background-color: transparent;
+    border:2px solid rgb(90, 12, 26);
+    transition: all 0.3s;
+    padding: 13px;
+    margin-bottom: 15px;
+    width:100%;
+    box-sizing: border-box;
+    outline:0;
+  }
+
+  .feedback-input:focus { 
+    border:2px solid rgba(224, 30, 66, 0.454); 
+  }
+
+  textarea {
+    height: 150px;
+    line-height: 150%;
+    resize:vertical;
+  }
+
+  [type="submit"] {
+    font-family: 'Oswald', sans-serif;
+    width: 100%;
+    background:rgba(224, 30, 66, 0.454);
+    border-radius:5px;
+    border:0;
+    cursor:pointer;
+    color:white;
+    font-size:24px;
+    padding-top:10px;
+    padding-bottom:10px;
+    transition: all 0.3s;
+    margin-top:-4px;
+    font-weight:700;
+  }
+
+  [type="submit"]:hover { 
+    transform: scale(1.05)
+  }
+</style>
+
+<svg class="background" viewBox="0 0 1920 1080" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<path d="M1920 1078L1920 0.00305176L0.0020752 0.00622559L0.0020752 402.091V721.995L314.88 643.078L1920 1078Z" fill="black"/>
+	<path d="M1920 1066.7V1079.99L421.496 1079.99L309.761 631.773L1920 1066.7Z" fill="#1D1D1D"/>
+	<path d="M317.44 633.103L709.12 1080H-0.000427246V718.295L317.44 633.103Z" fill="#313131"/>
+</svg>
+
+<div class="form-container">
+  <form action="https://formspree.io/wsmartin23@gmail.com" method="POST">      
+    <p class="dn">
+      <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+    </p>
+    <input name="name" type="text" class="feedback-input" placeholder="Name" />   
+    <input name="email" type="text" class="feedback-input" placeholder="Email" />
+    <textarea name="text" class="feedback-input" placeholder="Your Message here..."></textarea>
+    <input type="submit" value="SUBMIT"/>
+  </form> 
+</div>
