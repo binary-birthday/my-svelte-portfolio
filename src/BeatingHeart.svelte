@@ -29,8 +29,8 @@
 }
 
 .pericardium {
-  width: 40vw;
-  height: 100vh;
+  width: 100vw;
+  height: 120vh;
   display: flex;
   justify-content: center;
   align-items: end;
