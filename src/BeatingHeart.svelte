@@ -20,7 +20,7 @@
 <style>
 .background {
   height: 100vh;
-  width: 100vw;
+  width: 50vw;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -30,10 +30,10 @@
 
 .pericardium {
   width: 100vw;
-  height: 110vh;
+  height: 120vh;
   display: flex;
   justify-content: center;
-  align-items: end;
+  align-items: center;
 }
 
 #anatomicalHeart {
