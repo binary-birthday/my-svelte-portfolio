@@ -98,13 +98,16 @@
     z-index: 2;
     display: flex;
     align-items: center;
+    justify-content: flex-end;
   }
 
   .right {
-    width: 80%;
+    width: 100%;
     height: 60%;
     z-index: 2;
     padding: 3rem;
+    display: flex;
+
   }
 	
 	p {
@@ -125,7 +128,7 @@
     <p class:dn={dn1} in:typewriter1 class="greting1">HELLO!</p>
 	  <p class:dn={dn2} in:typewriter2 class="greting2">MY NAME IS WADE</p>
 	  <p class:dn={dn3} in:typewriter3 class="greting3">I BUILD WEB APPS</p>
-     {/if}
+    {/if}
   </div>
-	<BeatingHeart />
+  <BeatingHeart />
 </div>
