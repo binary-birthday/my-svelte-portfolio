@@ -106,8 +106,6 @@
     height: 60%;
     z-index: 2;
     padding: 3rem;
-    display: flex;
-
   }
 	
 	p {
