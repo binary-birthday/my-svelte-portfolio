@@ -33,7 +33,7 @@
   height: 120vh;
   display: flex;
   justify-content: center;
-  align-items: end;
+  align-items: center;
 }
 
 #anatomicalHeart {
