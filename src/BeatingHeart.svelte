@@ -30,10 +30,10 @@
 
 .pericardium {
   width: 100vw;
-  height: 120vh;
+  height: 110vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 #anatomicalHeart {
