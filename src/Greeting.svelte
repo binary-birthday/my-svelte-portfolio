@@ -92,18 +92,17 @@
 
   .landing-container {
     background-color: black;
-    height: 130%;
+    height: 110%;
     width: 100%;
     padding-top: 5rem;
     z-index: 2;
     display: flex;
-    align-items: center;
     justify-content: flex-end;
   }
 
   .right {
     width: 100%;
-    height: 60%;
+    height: 70%;
     z-index: 2;
     padding: 3rem;
   }

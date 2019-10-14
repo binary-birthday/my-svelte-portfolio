@@ -21,19 +21,15 @@
 .background {
   height: 100vh;
   width: 50vw;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
   position: absolute;
   z-index: 1;
 }
 
 .pericardium {
-  width: 100vw;
-  height: 110vh;
+  width: 100%;
+  height: 105%;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
 }
 
 #anatomicalHeart {

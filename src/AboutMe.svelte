@@ -4,8 +4,23 @@
 <style>
   .about-container {
     width: 100vw;
+    height: 200vh;
     display: flex;
-    flex-wrap: wrap;
+  }
+
+  .about {
+    padding-top: 2rem;
+    height: 20%;
+    width: 50%;
+    position: absolute;
+    transform: rotate(270deg);
+  }
+
+  .card-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
   }
 
   .card {
@@ -49,11 +64,17 @@
     color: white;
   }
 
+  .skills {
+    width: 90%;
+  }
+
 
 </style>
 
 <div class="about-container">
-  <div class="card">
+  <img class="about" src="images/ABOUT.svg" alt="about">
+  <div class="card-container">
+    <div class="card">
     <div>
       <img class="profile" src="images/profile.jpg" alt="profile image" />
       <p> 
@@ -67,5 +88,11 @@
       <a href="https://twitter.com/wine_and_Wade"><i class="fab fa-twitter-square"></i></a>
     </div>
   </div>
-  <div class="card"></div>
+   <div class="skills">
+    <div>
+      <p>HTML</p>
+      <p>CSS</p>
+    </div>
+  </div>
+  </div>
 </div>
