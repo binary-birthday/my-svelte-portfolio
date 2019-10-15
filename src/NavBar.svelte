@@ -12,7 +12,7 @@
 
 <style>
   .navbar {
-    height: 4rem;
+    height: 4.5rem;
     width: 100vw;
 		background-color: black;
 		top: 0;
