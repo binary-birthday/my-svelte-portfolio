@@ -48,7 +48,7 @@
     float: left;
     object-fit: cover;
     object-position: center;
-    margin-right: 2rem;
+    margin-right: 1.2rem;
     margin-bottom: 1rem;
     opacity: .7;
   }
