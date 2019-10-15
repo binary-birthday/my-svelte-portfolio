@@ -37,8 +37,7 @@
   .card {
     margin-top: 5rem;
     margin-bottom: 5rem;
-    border-left: 4px solid rgb(90, 12, 26);
-    padding: 2rem;
+    padding-right: 2rem;
     line-height: 2.5rem;
   }
 
