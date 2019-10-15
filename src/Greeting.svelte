@@ -92,7 +92,7 @@
 
   .landing-container {
     background-color: black;
-    min-height: 130%;
+    min-height: 110%;
     width: 100%;
     padding-top: 5rem;
     z-index: 2;
