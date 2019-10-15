@@ -23,14 +23,8 @@
     z-index: 100;
 	}
   
-  .logo {
-    width: 3rem;
-    padding-right: 2rem;
-	}
-
 	.myName {
-    height: 2rem;
-    widows: 3rem;
+    height: 3.75rem;
     padding-left: 3rem;
 	}
 </style>
@@ -51,6 +45,4 @@
     <path class="n" in:draw="{{duration: 800, delay: 8100, easing: quintOut}}"  d="M1015 159.02L945 2.17383V159.02H1015ZM1015 159.02V2.17383" stroke="#E01E41" stroke-width="4"/>
   </svg>
   {/if}
-	
-	<img class="logo" src="./images/wsm.svg" alt="logo">	
 </div>

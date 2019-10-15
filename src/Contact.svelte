@@ -21,7 +21,7 @@
   }
 
   .form-container {
-    width: 45%;
+    max-width: 60%;
     height: 90%;
     color: white;
     z-index: 10;
