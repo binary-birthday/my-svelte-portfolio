@@ -110,7 +110,7 @@
 	p {
 		color: white;
 		font-weight: 800;
-    font-size: calc(12vmin + 8*(100vw - 400px)/ 400);
+    font-size: calc(13vmin + 8*(100vw - 400px)/ 400);
   }
   
   .dn {
