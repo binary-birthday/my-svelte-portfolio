@@ -18,14 +18,12 @@
 		top: 0;
 		position: fixed;
 		display: flex;
-		justify-content: space-between;
 		align-items: center;
     z-index: 100;
 	}
   
 	.myName {
     height: 3.75rem;
-    margin-top: .5rem;
     padding-left: 3rem;
 	}
 </style>
