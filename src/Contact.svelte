@@ -97,11 +97,10 @@
     .form-container {
       max-width: 95%;
       padding-right: 3rem;
-      
+
     }
     .background {
-      min-height: 120%;
-      max-height: 140%;
+      height: 140px;
     }
 }
 </style>
