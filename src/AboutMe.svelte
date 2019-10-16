@@ -68,10 +68,8 @@
     width: 80%;
     height: 4rem;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding-left: 2rem;
-    padding-top: 1rem;
+    justify-content: space-evenly;
+    align-items: center;
   }
 
   i {
