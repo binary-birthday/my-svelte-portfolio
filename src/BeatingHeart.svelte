@@ -45,7 +45,7 @@
     width: 100vw;
     position: absolute;
     left: 0;
-    padding-top: 4rem;
+    padding-top: 2rem;
   }
 }
 </style>
