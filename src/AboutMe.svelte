@@ -10,7 +10,7 @@
   export let y;
 
   onMount(() => {
-    element = document.getElementById("background");
+    element = document.getElementById("container");
     getRect = element.getBoundingClientRect();
     position = getRect.top;
   })
@@ -110,7 +110,7 @@
 </style>
 
 
-<div class="container">
+<div id="container"  class="container">
   
   <div class="wrapper">
     <div class="about-container">
