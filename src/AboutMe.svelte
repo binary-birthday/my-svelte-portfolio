@@ -38,6 +38,7 @@
   }
 
   .card {
+    width: 75%;
     margin-top: 5rem;
     margin-bottom: 5rem;
     padding-right: 4rem;
@@ -89,6 +90,7 @@
     .card {
       padding-right: 0rem;
       line-height: 2rem;
+      width: 100%;
     }
     p {
       font-size: 1.25rem;
