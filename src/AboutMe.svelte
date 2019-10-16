@@ -98,8 +98,7 @@
       margin-bottom: .5rem;
     }
     p {
-      font-size: 1.25rem;
-      padding-right: 0rem;
+      padding-right: 1rem;
     }
 }
 
