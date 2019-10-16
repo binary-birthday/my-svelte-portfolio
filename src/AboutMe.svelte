@@ -1,10 +1,12 @@
 <script>
-  let scrollPos;
+  import { fly } from 'svelte/transition';
+	import { quintOut, sineIn } from 'svelte/easing';
+  export let y;
 </script>
 
 <style>
   .container {
-    max-width: 100vw;
+    width: 100vw;
     min-height: 120vh;
     display: flex;
     justify-content: center;
@@ -55,7 +57,7 @@
   }
 
   p {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font: 300;
     font-family: 'Cormorant', serif;
   }
@@ -73,25 +75,42 @@
     font-size: 1.5rem;
   }
 
-  
+  @media only screen and (max-width: 700px) {
+  .profile {
+    width: 75px;
+    height: 75px;
+    margin-right: .5rem;
+    margin-bottom: .75rem;
+  }
+  .card {
+    margin-right: .25rem;
+    line-height: 2rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+}
 
 </style>
 
 
 <div class="container">
+  
   <div class="wrapper">
-    <div class="about-container"><img class="about" src="images/ABOUT.svg" alt="about"></div>
-    <!-- {if x =} -->
+    <div class="about-container">
+      {#if y > 100}
+        <img in:fly="{{delay: 0, duration: 2000, y: -300, opacity: .01, easing: quintOut}}" class="about" src="images/ABOUT.svg" alt="about">
+      {/if}
+    </div>
     <div class="card-container">
-      <div class="card">
-        <p on:scroll="{e => scrollPos = { y: e.scrollY }}">scroll pos = {scrollPos}</p>
+      {#if y > 100}
+      <div transition:fly="{{delay: 100, duration: 3000, y: 200, opacity: .75, easing: quintOut}}" class="card">
         <div>
           <img class="profile" src="images/profile.jpg" alt="profile image" />
           <p> 
             Wade is a full stack web developer and 2019 Coder Academy boot camp alumnus. Wade completed the 6-month fast track Diploma program at Coder Academy in August 2019 including a four-week internship with Flex Dapps. Coder Academy's program is focussed on job-ready, in-demand web development skills including Javascript, React, NodeJS, Express, Ruby and Ruby on Rails. Among his achievements in this program are two full stack web development group projects. The first a marketplace application built using Ruby on Rails deployed with Heroku (Check out the Repo <a href="https://github.com/Wade-Martin/rails_marketplace_app" target="_blank">Here</a>). The second a project partnered with an external business stakeholder built using the MERN stack deployed with NOW.SH and Netlify (Check out the Front End Repo <a href="https://github.com/Wade-Martin/MERN-App-Front-End" target="_blank">Here</a>, and the Back End Repo <a href="https://github.com/Wade-Martin/MERN-App-Back-End" target="_blank">Here</a>). During his time with Flex Dapps Wade took on a project to rebuild the Web3 Australia Organisation website using Svelte and deployed on Netlify. (Check out the site <a href="https://web3-build.netlify.com/" target="_blank">here</a>)
           </p>
         </div>
-        
         <div class="icons">
           <a href="https://github.com/Wade-Martin" target="_blank"><i class="fab fa-github"></i></a>
           <a href="https://codepen.io/wade-martin" target="_blank"><i class="fab fa-codepen"></i></a>
@@ -99,6 +118,7 @@
           <a href="https://twitter.com/wine_and_Wade" target="_blank"><i class="fab fa-twitter-square"></i></a>
         </div>
       </div>
+      {/if}
     </div>
   </div>
 </div>

@@ -243,6 +243,19 @@ var app = (function () {
     }
     const outroing = new Set();
     let outros;
+    function group_outros() {
+        outros = {
+            r: 0,
+            c: [],
+            p: outros // parent group
+        };
+    }
+    function check_outros() {
+        if (!outros.r) {
+            run_all(outros.c);
+        }
+        outros = outros.p;
+    }
     function transition_in(block, local) {
         if (block && block.i) {
             outroing.delete(block);
@@ -325,6 +338,167 @@ var app = (function () {
                     cleanup();
                     running = false;
                 }
+            }
+        };
+    }
+    function create_out_transition(node, fn, params) {
+        let config = fn(node, params);
+        let running = true;
+        let animation_name;
+        const group = outros;
+        group.r += 1;
+        function go() {
+            const { delay = 0, duration = 300, easing = identity, tick = noop, css } = config || null_transition;
+            if (css)
+                animation_name = create_rule(node, 1, 0, duration, delay, easing, css);
+            const start_time = now() + delay;
+            const end_time = start_time + duration;
+            add_render_callback(() => dispatch(node, false, 'start'));
+            loop(now => {
+                if (running) {
+                    if (now >= end_time) {
+                        tick(0, 1);
+                        dispatch(node, false, 'end');
+                        if (!--group.r) {
+                            // this will result in `end()` being called,
+                            // so we don't need to clean up here
+                            run_all(group.c);
+                        }
+                        return false;
+                    }
+                    if (now >= start_time) {
+                        const t = easing((now - start_time) / duration);
+                        tick(1 - t, t);
+                    }
+                }
+                return running;
+            });
+        }
+        if (is_function(config)) {
+            wait().then(() => {
+                // @ts-ignore
+                config = config();
+                go();
+            });
+        }
+        else {
+            go();
+        }
+        return {
+            end(reset) {
+                if (reset && config.tick) {
+                    config.tick(1, 0);
+                }
+                if (running) {
+                    if (animation_name)
+                        delete_rule(node, animation_name);
+                    running = false;
+                }
+            }
+        };
+    }
+    function create_bidirectional_transition(node, fn, params, intro) {
+        let config = fn(node, params);
+        let t = intro ? 0 : 1;
+        let running_program = null;
+        let pending_program = null;
+        let animation_name = null;
+        function clear_animation() {
+            if (animation_name)
+                delete_rule(node, animation_name);
+        }
+        function init(program, duration) {
+            const d = program.b - t;
+            duration *= Math.abs(d);
+            return {
+                a: t,
+                b: program.b,
+                d,
+                duration,
+                start: program.start,
+                end: program.start + duration,
+                group: program.group
+            };
+        }
+        function go(b) {
+            const { delay = 0, duration = 300, easing = identity, tick = noop, css } = config || null_transition;
+            const program = {
+                start: now() + delay,
+                b
+            };
+            if (!b) {
+                // @ts-ignore todo: improve typings
+                program.group = outros;
+                outros.r += 1;
+            }
+            if (running_program) {
+                pending_program = program;
+            }
+            else {
+                // if this is an intro, and there's a delay, we need to do
+                // an initial tick and/or apply CSS animation immediately
+                if (css) {
+                    clear_animation();
+                    animation_name = create_rule(node, t, b, duration, delay, easing, css);
+                }
+                if (b)
+                    tick(0, 1);
+                running_program = init(program, duration);
+                add_render_callback(() => dispatch(node, b, 'start'));
+                loop(now => {
+                    if (pending_program && now > pending_program.start) {
+                        running_program = init(pending_program, duration);
+                        pending_program = null;
+                        dispatch(node, running_program.b, 'start');
+                        if (css) {
+                            clear_animation();
+                            animation_name = create_rule(node, t, running_program.b, running_program.duration, 0, easing, config.css);
+                        }
+                    }
+                    if (running_program) {
+                        if (now >= running_program.end) {
+                            tick(t = running_program.b, 1 - t);
+                            dispatch(node, running_program.b, 'end');
+                            if (!pending_program) {
+                                // we're done
+                                if (running_program.b) {
+                                    // intro — we can tidy up immediately
+                                    clear_animation();
+                                }
+                                else {
+                                    // outro — needs to be coordinated
+                                    if (!--running_program.group.r)
+                                        run_all(running_program.group.c);
+                                }
+                            }
+                            running_program = null;
+                        }
+                        else if (now >= running_program.start) {
+                            const p = now - running_program.start;
+                            t = running_program.a + running_program.d * easing(p / running_program.duration);
+                            tick(t, 1 - t);
+                        }
+                    }
+                    return !!(running_program || pending_program);
+                });
+            }
+        }
+        return {
+            run(b) {
+                if (is_function(config)) {
+                    wait().then(() => {
+                        // @ts-ignore
+                        config = config();
+                        go(b);
+                    });
+                }
+                else {
+                    go(b);
+                }
+            },
+            end() {
+                clear_animation();
+                running_program = pending_program = null;
             }
         };
     }
@@ -474,13 +648,6 @@ var app = (function () {
         else
             dispatch_dev("SvelteDOMSetAttribute", { node, attribute, value });
     }
-    function set_data_dev(text, data) {
-        data = '' + data;
-        if (text.data === data)
-            return;
-        dispatch_dev("SvelteDOMSetData", { node: text, data });
-        text.data = data;
-    }
     class SvelteComponentDev extends SvelteComponent {
         constructor(options) {
             if (!options || (!options.target && !options.$$inline)) {
@@ -499,10 +666,80 @@ var app = (function () {
     function cubicInOut(t) {
         return t < 0.5 ? 4.0 * t * t * t : 0.5 * Math.pow(2.0 * t - 2.0, 3.0) + 1.0;
     }
+    function cubicOut(t) {
+        const f = t - 1.0;
+        return f * f * f + 1.0;
+    }
+    function elasticOut(t) {
+        return (Math.sin((-13.0 * (t + 1.0) * Math.PI) / 2) * Math.pow(2.0, -10.0 * t) + 1.0);
+    }
     function quintOut(t) {
         return --t * t * t * t * t + 1;
     }
 
+    function fade(node, { delay = 0, duration = 400 }) {
+        const o = +getComputedStyle(node).opacity;
+        return {
+            delay,
+            duration,
+            css: t => `opacity: ${t * o}`
+        };
+    }
+    function fly(node, { delay = 0, duration = 400, easing = cubicOut, x = 0, y = 0, opacity = 0 }) {
+        const style = getComputedStyle(node);
+        const target_opacity = +style.opacity;
+        const transform = style.transform === 'none' ? '' : style.transform;
+        const od = target_opacity * (1 - opacity);
+        return {
+            delay,
+            duration,
+            easing,
+            css: (t, u) => `
+			transform: ${transform} translate(${(1 - t) * x}px, ${(1 - t) * y}px);
+			opacity: ${target_opacity - (od * u)}`
+        };
+    }
+    function slide(node, { delay = 0, duration = 400, easing = cubicOut }) {
+        const style = getComputedStyle(node);
+        const opacity = +style.opacity;
+        const height = parseFloat(style.height);
+        const padding_top = parseFloat(style.paddingTop);
+        const padding_bottom = parseFloat(style.paddingBottom);
+        const margin_top = parseFloat(style.marginTop);
+        const margin_bottom = parseFloat(style.marginBottom);
+        const border_top_width = parseFloat(style.borderTopWidth);
+        const border_bottom_width = parseFloat(style.borderBottomWidth);
+        return {
+            delay,
+            duration,
+            easing,
+            css: t => `overflow: hidden;` +
+                `opacity: ${Math.min(t * 20, 1) * opacity};` +
+                `height: ${t * height}px;` +
+                `padding-top: ${t * padding_top}px;` +
+                `padding-bottom: ${t * padding_bottom}px;` +
+                `margin-top: ${t * margin_top}px;` +
+                `margin-bottom: ${t * margin_bottom}px;` +
+                `border-top-width: ${t * border_top_width}px;` +
+                `border-bottom-width: ${t * border_bottom_width}px;`
+        };
+    }
+    function scale(node, { delay = 0, duration = 400, easing = cubicOut, start = 0, opacity = 0 }) {
+        const style = getComputedStyle(node);
+        const target_opacity = +style.opacity;
+        const transform = style.transform === 'none' ? '' : style.transform;
+        const sd = 1 - start;
+        const od = target_opacity * (1 - opacity);
+        return {
+            delay,
+            duration,
+            easing,
+            css: (_t, u) => `
+			transform: ${transform} scale(${1 - (sd * u)});
+			opacity: ${target_opacity - (od * u)}
+		`
+        };
+    }
     function draw(node, { delay = 0, speed, duration, easing = cubicInOut }) {
         const len = node.getTotalLength();
         if (duration === undefined) {
@@ -1272,110 +1509,209 @@ var app = (function () {
 
     const file$3 = "src/AboutMe.svelte";
 
-    function create_fragment$3(ctx) {
-    	var div6, div5, div0, img0, t0, div4, div3, p0, t1, t2, t3, div1, img1, t4, p1, t5, a0, t7, a1, t9, a2, t11, a3, t13, t14, div2, a4, i0, t15, a5, i1, t16, a6, i2, t17, a7, i3, dispose;
+    // (101:6) {#if y > 100}
+    function create_if_block_1(ctx) {
+    	var img, img_intro;
 
     	const block = {
     		c: function create() {
-    			div6 = element("div");
-    			div5 = element("div");
+    			img = element("img");
+    			attr_dev(img, "class", "about svelte-1amerny");
+    			attr_dev(img, "src", "images/ABOUT.svg");
+    			attr_dev(img, "alt", "about");
+    			add_location(img, file$3, 101, 8, 1670);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, img, anchor);
+    		},
+
+    		i: function intro(local) {
+    			if (!img_intro) {
+    				add_render_callback(() => {
+    					img_intro = create_in_transition(img, fly, {delay: 0, duration: 2000, y: -300, opacity: .01, easing: quintOut});
+    					img_intro.start();
+    				});
+    			}
+    		},
+
+    		o: noop,
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(img);
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block_1.name, type: "if", source: "(101:6) {#if y > 100}", ctx });
+    	return block;
+    }
+
+    // (106:6) {#if y > 100}
+    function create_if_block$2(ctx) {
+    	var div2, div0, img, t0, p, t1, a0, t3, a1, t5, a2, t7, a3, t9, t10, div1, a4, i0, t11, a5, i1, t12, a6, i2, t13, a7, i3, div2_transition, current;
+
+    	const block = {
+    		c: function create() {
+    			div2 = element("div");
     			div0 = element("div");
-    			img0 = element("img");
+    			img = element("img");
     			t0 = space();
-    			div4 = element("div");
-    			div3 = element("div");
-    			p0 = element("p");
-    			t1 = text("scroll pos = ");
-    			t2 = text(ctx.scrollPos);
-    			t3 = space();
-    			div1 = element("div");
-    			img1 = element("img");
-    			t4 = space();
-    			p1 = element("p");
-    			t5 = text("Wade is a full stack web developer and 2019 Coder Academy boot camp alumnus. Wade completed the 6-month fast track Diploma program at Coder Academy in August 2019 including a four-week internship with Flex Dapps. Coder Academy's program is focussed on job-ready, in-demand web development skills including Javascript, React, NodeJS, Express, Ruby and Ruby on Rails. Among his achievements in this program are two full stack web development group projects. The first a marketplace application built using Ruby on Rails deployed with Heroku (Check out the Repo ");
+    			p = element("p");
+    			t1 = text("Wade is a full stack web developer and 2019 Coder Academy boot camp alumnus. Wade completed the 6-month fast track Diploma program at Coder Academy in August 2019 including a four-week internship with Flex Dapps. Coder Academy's program is focussed on job-ready, in-demand web development skills including Javascript, React, NodeJS, Express, Ruby and Ruby on Rails. Among his achievements in this program are two full stack web development group projects. The first a marketplace application built using Ruby on Rails deployed with Heroku (Check out the Repo ");
     			a0 = element("a");
     			a0.textContent = "Here";
-    			t7 = text("). The second a project partnered with an external business stakeholder built using the MERN stack deployed with NOW.SH and Netlify (Check out the Front End Repo ");
+    			t3 = text("). The second a project partnered with an external business stakeholder built using the MERN stack deployed with NOW.SH and Netlify (Check out the Front End Repo ");
     			a1 = element("a");
     			a1.textContent = "Here";
-    			t9 = text(", and the Back End Repo ");
+    			t5 = text(", and the Back End Repo ");
     			a2 = element("a");
     			a2.textContent = "Here";
-    			t11 = text("). During his time with Flex Dapps Wade took on a project to rebuild the Web3 Australia Organisation website using Svelte and deployed on Netlify. (Check out the site ");
+    			t7 = text("). During his time with Flex Dapps Wade took on a project to rebuild the Web3 Australia Organisation website using Svelte and deployed on Netlify. (Check out the site ");
     			a3 = element("a");
     			a3.textContent = "here";
-    			t13 = text(")");
-    			t14 = space();
-    			div2 = element("div");
+    			t9 = text(")");
+    			t10 = space();
+    			div1 = element("div");
     			a4 = element("a");
     			i0 = element("i");
-    			t15 = space();
+    			t11 = space();
     			a5 = element("a");
     			i1 = element("i");
-    			t16 = space();
+    			t12 = space();
     			a6 = element("a");
     			i2 = element("i");
-    			t17 = space();
+    			t13 = space();
     			a7 = element("a");
     			i3 = element("i");
-    			attr_dev(img0, "class", "about svelte-103k516");
-    			attr_dev(img0, "src", "images/ABOUT.svg");
-    			attr_dev(img0, "alt", "about");
-    			add_location(img0, file$3, 82, 33, 1305);
-    			attr_dev(div0, "class", "about-container svelte-103k516");
-    			add_location(div0, file$3, 82, 4, 1276);
-    			attr_dev(p0, "class", "svelte-103k516");
-    			add_location(p0, file$3, 86, 8, 1454);
-    			attr_dev(img1, "class", "profile svelte-103k516");
-    			attr_dev(img1, "src", "images/profile.jpg");
-    			attr_dev(img1, "alt", "profile image");
-    			add_location(img1, file$3, 88, 10, 1558);
+    			attr_dev(img, "class", "profile svelte-1amerny");
+    			attr_dev(img, "src", "images/profile.jpg");
+    			attr_dev(img, "alt", "profile image");
+    			add_location(img, file$3, 108, 10, 2017);
     			attr_dev(a0, "href", "https://github.com/Wade-Martin/rails_marketplace_app");
     			attr_dev(a0, "target", "_blank");
-    			add_location(a0, file$3, 90, 571, 2213);
+    			add_location(a0, file$3, 110, 571, 2672);
     			attr_dev(a1, "href", "https://github.com/Wade-Martin/MERN-App-Front-End");
     			attr_dev(a1, "target", "_blank");
-    			add_location(a1, file$3, 90, 820, 2462);
+    			add_location(a1, file$3, 110, 820, 2921);
     			attr_dev(a2, "href", "https://github.com/Wade-Martin/MERN-App-Back-End");
     			attr_dev(a2, "target", "_blank");
-    			add_location(a2, file$3, 90, 928, 2570);
+    			add_location(a2, file$3, 110, 928, 3029);
     			attr_dev(a3, "href", "https://web3-build.netlify.com/");
     			attr_dev(a3, "target", "_blank");
-    			add_location(a3, file$3, 90, 1178, 2820);
-    			attr_dev(p1, "class", "svelte-103k516");
-    			add_location(p1, file$3, 89, 10, 1637);
-    			add_location(div1, file$3, 87, 8, 1542);
-    			attr_dev(i0, "class", "fab fa-github svelte-103k516");
-    			add_location(i0, file$3, 95, 67, 3022);
+    			add_location(a3, file$3, 110, 1178, 3279);
+    			attr_dev(p, "class", "svelte-1amerny");
+    			add_location(p, file$3, 109, 10, 2096);
+    			add_location(div0, file$3, 107, 8, 2001);
+    			attr_dev(i0, "class", "fab fa-github svelte-1amerny");
+    			add_location(i0, file$3, 114, 67, 3472);
     			attr_dev(a4, "href", "https://github.com/Wade-Martin");
     			attr_dev(a4, "target", "_blank");
-    			add_location(a4, file$3, 95, 10, 2965);
-    			attr_dev(i1, "class", "fab fa-codepen svelte-103k516");
-    			add_location(i1, file$3, 96, 67, 3123);
+    			add_location(a4, file$3, 114, 10, 3415);
+    			attr_dev(i1, "class", "fab fa-codepen svelte-1amerny");
+    			add_location(i1, file$3, 115, 67, 3573);
     			attr_dev(a5, "href", "https://codepen.io/wade-martin");
     			attr_dev(a5, "target", "_blank");
-    			add_location(a5, file$3, 96, 10, 3066);
-    			attr_dev(i2, "class", "fab fa-linkedin svelte-103k516");
-    			add_location(i2, file$3, 97, 79, 3237);
+    			add_location(a5, file$3, 115, 10, 3516);
+    			attr_dev(i2, "class", "fab fa-linkedin svelte-1amerny");
+    			add_location(i2, file$3, 116, 79, 3687);
     			attr_dev(a6, "href", "https://www.linkedin.com/in/wade-s-martin/");
     			attr_dev(a6, "target", "_blank");
-    			add_location(a6, file$3, 97, 10, 3168);
-    			attr_dev(i3, "class", "fab fa-twitter-square svelte-103k516");
-    			add_location(i3, file$3, 98, 70, 3343);
+    			add_location(a6, file$3, 116, 10, 3618);
+    			attr_dev(i3, "class", "fab fa-twitter-square svelte-1amerny");
+    			add_location(i3, file$3, 117, 70, 3793);
     			attr_dev(a7, "href", "https://twitter.com/wine_and_Wade");
     			attr_dev(a7, "target", "_blank");
-    			add_location(a7, file$3, 98, 10, 3283);
-    			attr_dev(div2, "class", "icons svelte-103k516");
-    			add_location(div2, file$3, 94, 8, 2935);
-    			attr_dev(div3, "class", "card svelte-103k516");
-    			add_location(div3, file$3, 85, 6, 1427);
-    			attr_dev(div4, "class", "card-container svelte-103k516");
-    			add_location(div4, file$3, 84, 4, 1392);
-    			attr_dev(div5, "class", "wrapper svelte-103k516");
-    			add_location(div5, file$3, 81, 2, 1250);
-    			attr_dev(div6, "class", "container svelte-103k516");
-    			add_location(div6, file$3, 80, 0, 1224);
-    			dispose = listen_dev(p0, "scroll", ctx.scroll_handler);
+    			add_location(a7, file$3, 117, 10, 3733);
+    			attr_dev(div1, "class", "icons svelte-1amerny");
+    			add_location(div1, file$3, 113, 8, 3385);
+    			attr_dev(div2, "class", "card svelte-1amerny");
+    			add_location(div2, file$3, 106, 6, 1886);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div2, anchor);
+    			append_dev(div2, div0);
+    			append_dev(div0, img);
+    			append_dev(div0, t0);
+    			append_dev(div0, p);
+    			append_dev(p, t1);
+    			append_dev(p, a0);
+    			append_dev(p, t3);
+    			append_dev(p, a1);
+    			append_dev(p, t5);
+    			append_dev(p, a2);
+    			append_dev(p, t7);
+    			append_dev(p, a3);
+    			append_dev(p, t9);
+    			append_dev(div2, t10);
+    			append_dev(div2, div1);
+    			append_dev(div1, a4);
+    			append_dev(a4, i0);
+    			append_dev(div1, t11);
+    			append_dev(div1, a5);
+    			append_dev(a5, i1);
+    			append_dev(div1, t12);
+    			append_dev(div1, a6);
+    			append_dev(a6, i2);
+    			append_dev(div1, t13);
+    			append_dev(div1, a7);
+    			append_dev(a7, i3);
+    			current = true;
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			add_render_callback(() => {
+    				if (!div2_transition) div2_transition = create_bidirectional_transition(div2, fly, {delay: 100, duration: 3000, y: 200, opacity: .75, easing: quintOut}, true);
+    				div2_transition.run(1);
+    			});
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			if (!div2_transition) div2_transition = create_bidirectional_transition(div2, fly, {delay: 100, duration: 3000, y: 200, opacity: .75, easing: quintOut}, false);
+    			div2_transition.run(0);
+
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(div2);
+    				if (div2_transition) div2_transition.end();
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block$2.name, type: "if", source: "(106:6) {#if y > 100}", ctx });
+    	return block;
+    }
+
+    function create_fragment$3(ctx) {
+    	var div3, div2, div0, t, div1, current;
+
+    	var if_block0 = (ctx.y > 100) && create_if_block_1(ctx);
+
+    	var if_block1 = (ctx.y > 100) && create_if_block$2(ctx);
+
+    	const block = {
+    		c: function create() {
+    			div3 = element("div");
+    			div2 = element("div");
+    			div0 = element("div");
+    			if (if_block0) if_block0.c();
+    			t = space();
+    			div1 = element("div");
+    			if (if_block1) if_block1.c();
+    			attr_dev(div0, "class", "about-container svelte-1amerny");
+    			add_location(div0, file$3, 99, 4, 1612);
+    			attr_dev(div1, "class", "card-container svelte-1amerny");
+    			add_location(div1, file$3, 104, 4, 1831);
+    			attr_dev(div2, "class", "wrapper svelte-1amerny");
+    			add_location(div2, file$3, 98, 2, 1586);
+    			attr_dev(div3, "class", "container svelte-1amerny");
+    			add_location(div3, file$3, 96, 0, 1557);
     		},
 
     		l: function claim(nodes) {
@@ -1383,60 +1719,64 @@ var app = (function () {
     		},
 
     		m: function mount(target, anchor) {
-    			insert_dev(target, div6, anchor);
-    			append_dev(div6, div5);
-    			append_dev(div5, div0);
-    			append_dev(div0, img0);
-    			append_dev(div5, t0);
-    			append_dev(div5, div4);
-    			append_dev(div4, div3);
-    			append_dev(div3, p0);
-    			append_dev(p0, t1);
-    			append_dev(p0, t2);
-    			append_dev(div3, t3);
-    			append_dev(div3, div1);
-    			append_dev(div1, img1);
-    			append_dev(div1, t4);
-    			append_dev(div1, p1);
-    			append_dev(p1, t5);
-    			append_dev(p1, a0);
-    			append_dev(p1, t7);
-    			append_dev(p1, a1);
-    			append_dev(p1, t9);
-    			append_dev(p1, a2);
-    			append_dev(p1, t11);
-    			append_dev(p1, a3);
-    			append_dev(p1, t13);
-    			append_dev(div3, t14);
+    			insert_dev(target, div3, anchor);
     			append_dev(div3, div2);
-    			append_dev(div2, a4);
-    			append_dev(a4, i0);
-    			append_dev(div2, t15);
-    			append_dev(div2, a5);
-    			append_dev(a5, i1);
-    			append_dev(div2, t16);
-    			append_dev(div2, a6);
-    			append_dev(a6, i2);
-    			append_dev(div2, t17);
-    			append_dev(div2, a7);
-    			append_dev(a7, i3);
+    			append_dev(div2, div0);
+    			if (if_block0) if_block0.m(div0, null);
+    			append_dev(div2, t);
+    			append_dev(div2, div1);
+    			if (if_block1) if_block1.m(div1, null);
+    			current = true;
     		},
 
     		p: function update(changed, ctx) {
-    			if (changed.scrollPos) {
-    				set_data_dev(t2, ctx.scrollPos);
+    			if (ctx.y > 100) {
+    				if (!if_block0) {
+    					if_block0 = create_if_block_1(ctx);
+    					if_block0.c();
+    					transition_in(if_block0, 1);
+    					if_block0.m(div0, null);
+    				} else transition_in(if_block0, 1);
+    			} else if (if_block0) {
+    				if_block0.d(1);
+    				if_block0 = null;
+    			}
+
+    			if (ctx.y > 100) {
+    				if (!if_block1) {
+    					if_block1 = create_if_block$2(ctx);
+    					if_block1.c();
+    					transition_in(if_block1, 1);
+    					if_block1.m(div1, null);
+    				} else transition_in(if_block1, 1);
+    			} else if (if_block1) {
+    				group_outros();
+    				transition_out(if_block1, 1, 1, () => {
+    					if_block1 = null;
+    				});
+    				check_outros();
     			}
     		},
 
-    		i: noop,
-    		o: noop,
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block0);
+    			transition_in(if_block1);
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(if_block1);
+    			current = false;
+    		},
 
     		d: function destroy(detaching) {
     			if (detaching) {
-    				detach_dev(div6);
+    				detach_dev(div3);
     			}
 
-    			dispose();
+    			if (if_block0) if_block0.d();
+    			if (if_block1) if_block1.d();
     		}
     	};
     	dispatch_dev("SvelteRegisterBlock", { block, id: create_fragment$3.name, type: "component", source: "", ctx });
@@ -1444,26 +1784,48 @@ var app = (function () {
     }
 
     function instance$3($$self, $$props, $$invalidate) {
-    	let scrollPos;
+    	
+      let { y } = $$props;
 
-    	const scroll_handler = (e) => $$invalidate('scrollPos', scrollPos = { y: e.scrollY });
+    	const writable_props = ['y'];
+    	Object.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console.warn(`<AboutMe> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$set = $$props => {
+    		if ('y' in $$props) $$invalidate('y', y = $$props.y);
+    	};
 
     	$$self.$capture_state = () => {
-    		return {};
+    		return { y };
     	};
 
     	$$self.$inject_state = $$props => {
-    		if ('scrollPos' in $$props) $$invalidate('scrollPos', scrollPos = $$props.scrollPos);
+    		if ('y' in $$props) $$invalidate('y', y = $$props.y);
     	};
 
-    	return { scrollPos, scroll_handler };
+    	return { y };
     }
 
     class AboutMe extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$3, create_fragment$3, safe_not_equal, []);
+    		init(this, options, instance$3, create_fragment$3, safe_not_equal, ["y"]);
     		dispatch_dev("SvelteRegisterComponent", { component: this, tagName: "AboutMe", options, id: create_fragment$3.name });
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+    		if (ctx.y === undefined && !('y' in props)) {
+    			console.warn("<AboutMe> was created without expected prop 'y'");
+    		}
+    	}
+
+    	get y() {
+    		throw new Error("<AboutMe>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set y(value) {
+    		throw new Error("<AboutMe>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
     }
 
@@ -1471,8 +1833,157 @@ var app = (function () {
 
     const file$4 = "src/Contact.svelte";
 
+    // (104:4) {#if y > 1000}
+    function create_if_block$3(ctx) {
+    	var h1, h1_intro, h1_outro, t1, form, p, label, t2, input0, t3, input1, input1_intro, input1_outro, t4, input2, input2_intro, input2_outro, t5, textarea, textarea_intro, textarea_outro, t6, input3, input3_intro, input3_outro, current;
+
+    	const block = {
+    		c: function create() {
+    			h1 = element("h1");
+    			h1.textContent = "Get In Touch";
+    			t1 = space();
+    			form = element("form");
+    			p = element("p");
+    			label = element("label");
+    			t2 = text("Don’t fill this out if you're human: ");
+    			input0 = element("input");
+    			t3 = space();
+    			input1 = element("input");
+    			t4 = space();
+    			input2 = element("input");
+    			t5 = space();
+    			textarea = element("textarea");
+    			t6 = space();
+    			input3 = element("input");
+    			attr_dev(h1, "class", "svelte-1efvyr");
+    			add_location(h1, file$4, 104, 4, 2195);
+    			attr_dev(input0, "name", "bot-field");
+    			add_location(input0, file$4, 107, 52, 2476);
+    			add_location(label, file$4, 107, 8, 2432);
+    			attr_dev(p, "class", "dn svelte-1efvyr");
+    			add_location(p, file$4, 106, 6, 2409);
+    			attr_dev(input1, "name", "name");
+    			attr_dev(input1, "type", "text");
+    			attr_dev(input1, "class", "form-input svelte-1efvyr");
+    			attr_dev(input1, "placeholder", "Name");
+    			add_location(input1, file$4, 109, 6, 2528);
+    			attr_dev(input2, "name", "email");
+    			attr_dev(input2, "type", "text");
+    			attr_dev(input2, "class", "form-input svelte-1efvyr");
+    			attr_dev(input2, "placeholder", "Email");
+    			add_location(input2, file$4, 110, 6, 2739);
+    			attr_dev(textarea, "name", "text");
+    			attr_dev(textarea, "class", "form-input svelte-1efvyr");
+    			attr_dev(textarea, "placeholder", "Your Message here...");
+    			add_location(textarea, file$4, 111, 6, 2949);
+    			attr_dev(input3, "type", "submit");
+    			input3.value = "SUBMIT";
+    			attr_dev(input3, "class", "svelte-1efvyr");
+    			add_location(input3, file$4, 112, 6, 3173);
+    			attr_dev(form, "action", "https://formspree.io/wsmartin23@gmail.com");
+    			attr_dev(form, "method", "POST");
+    			add_location(form, file$4, 105, 4, 2325);
+    		},
+
+    		m: function mount(target, anchor) {
+    			insert_dev(target, h1, anchor);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, form, anchor);
+    			append_dev(form, p);
+    			append_dev(p, label);
+    			append_dev(label, t2);
+    			append_dev(label, input0);
+    			append_dev(form, t3);
+    			append_dev(form, input1);
+    			append_dev(form, t4);
+    			append_dev(form, input2);
+    			append_dev(form, t5);
+    			append_dev(form, textarea);
+    			append_dev(form, t6);
+    			append_dev(form, input3);
+    			current = true;
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			add_render_callback(() => {
+    				if (h1_outro) h1_outro.end(1);
+    				if (!h1_intro) h1_intro = create_in_transition(h1, slide, {delay: 500, duration: 1000, easing: quintOut });
+    				h1_intro.start();
+    			});
+
+    			add_render_callback(() => {
+    				if (input1_outro) input1_outro.end(1);
+    				if (!input1_intro) input1_intro = create_in_transition(input1, scale, {duration: 1000, delay: 500, opacity: 0.25, start: .75, easing:elasticOut});
+    				input1_intro.start();
+    			});
+
+    			add_render_callback(() => {
+    				if (input2_outro) input2_outro.end(1);
+    				if (!input2_intro) input2_intro = create_in_transition(input2, scale, {duration: 1000, delay: 500, opacity: 0.25, start: .75, easing:elasticOut});
+    				input2_intro.start();
+    			});
+
+    			add_render_callback(() => {
+    				if (textarea_outro) textarea_outro.end(1);
+    				if (!textarea_intro) textarea_intro = create_in_transition(textarea, scale, {duration: 1000, delay: 500, opacity: 0.25, start: .75, easing:elasticOut});
+    				textarea_intro.start();
+    			});
+
+    			add_render_callback(() => {
+    				if (input3_outro) input3_outro.end(1);
+    				if (!input3_intro) input3_intro = create_in_transition(input3, scale, {duration: 1000, delay: 500, opacity: 0.25, start: .75, easing:elasticOut});
+    				input3_intro.start();
+    			});
+
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			if (h1_intro) h1_intro.invalidate();
+
+    			h1_outro = create_out_transition(h1, fade, {delay: 250, duration: 1000});
+
+    			if (input1_intro) input1_intro.invalidate();
+
+    			input1_outro = create_out_transition(input1, fade, {delay: 250, duration: 1000});
+
+    			if (input2_intro) input2_intro.invalidate();
+
+    			input2_outro = create_out_transition(input2, fade, {delay: 250, duration: 1000});
+
+    			if (textarea_intro) textarea_intro.invalidate();
+
+    			textarea_outro = create_out_transition(textarea, fade, {delay: 250, duration: 1000});
+
+    			if (input3_intro) input3_intro.invalidate();
+
+    			input3_outro = create_out_transition(input3, fade, {delay: 250, duration: 1000});
+
+    			current = false;
+    		},
+
+    		d: function destroy(detaching) {
+    			if (detaching) {
+    				detach_dev(h1);
+    				if (h1_outro) h1_outro.end();
+    				detach_dev(t1);
+    				detach_dev(form);
+    				if (input1_outro) input1_outro.end();
+    				if (input2_outro) input2_outro.end();
+    				if (textarea_outro) textarea_outro.end();
+    				if (input3_outro) input3_outro.end();
+    			}
+    		}
+    	};
+    	dispatch_dev("SvelteRegisterBlock", { block, id: create_if_block$3.name, type: "if", source: "(104:4) {#if y > 1000}", ctx });
+    	return block;
+    }
+
     function create_fragment$4(ctx) {
-    	var svg, path0, path1, path2, t0, div2, div0, t1, div1, h1, t3, form, p, label, t4, input0, t5, input1, t6, input2, t7, textarea, t8, input3;
+    	var svg, path0, path1, path2, t0, div2, div0, t1, div1, current;
+
+    	var if_block = (ctx.y > 1000) && create_if_block$3(ctx);
 
     	const block = {
     		c: function create() {
@@ -1485,71 +1996,28 @@ var app = (function () {
     			div0 = element("div");
     			t1 = space();
     			div1 = element("div");
-    			h1 = element("h1");
-    			h1.textContent = "Get In Touch";
-    			t3 = space();
-    			form = element("form");
-    			p = element("p");
-    			label = element("label");
-    			t4 = text("Don’t fill this out if you're human: ");
-    			input0 = element("input");
-    			t5 = space();
-    			input1 = element("input");
-    			t6 = space();
-    			input2 = element("input");
-    			t7 = space();
-    			textarea = element("textarea");
-    			t8 = space();
-    			input3 = element("input");
+    			if (if_block) if_block.c();
     			attr_dev(path0, "d", "M1920 1078L1920 0.00305176L0.0020752 0.00622559L0.0020752 402.091V721.995L314.88 643.078L1920 1078Z");
     			attr_dev(path0, "fill", "black");
-    			add_location(path0, file$4, 92, 1, 1646);
+    			add_location(path0, file$4, 96, 1, 1776);
     			attr_dev(path1, "d", "M1920 1066.7V1079.99L421.496 1079.99L309.761 631.773L1920 1066.7Z");
     			attr_dev(path1, "fill", "#1D1D1D");
-    			add_location(path1, file$4, 93, 1, 1772);
+    			add_location(path1, file$4, 97, 1, 1902);
     			attr_dev(path2, "d", "M317.44 633.103L709.12 1080H-0.000427246V718.295L317.44 633.103Z");
     			attr_dev(path2, "fill", "#313131");
-    			add_location(path2, file$4, 94, 1, 1866);
+    			add_location(path2, file$4, 98, 1, 1996);
     			attr_dev(svg, "class", "background svelte-1efvyr");
     			attr_dev(svg, "viewBox", "0 0 1920 1080");
     			attr_dev(svg, "preserveAspectRatio", "none");
     			attr_dev(svg, "fill", "none");
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
-    			add_location(svg, file$4, 91, 0, 1522);
+    			add_location(svg, file$4, 95, 0, 1652);
     			attr_dev(div0, "class", "left svelte-1efvyr");
-    			add_location(div0, file$4, 97, 2, 1986);
-    			attr_dev(h1, "class", "svelte-1efvyr");
-    			add_location(h1, file$4, 99, 4, 2046);
-    			attr_dev(input0, "name", "bot-field");
-    			add_location(input0, file$4, 102, 52, 2223);
-    			add_location(label, file$4, 102, 8, 2179);
-    			attr_dev(p, "class", "dn svelte-1efvyr");
-    			add_location(p, file$4, 101, 6, 2156);
-    			attr_dev(input1, "name", "name");
-    			attr_dev(input1, "type", "text");
-    			attr_dev(input1, "class", "form-input svelte-1efvyr");
-    			attr_dev(input1, "placeholder", "Name");
-    			add_location(input1, file$4, 104, 6, 2275);
-    			attr_dev(input2, "name", "email");
-    			attr_dev(input2, "type", "text");
-    			attr_dev(input2, "class", "form-input svelte-1efvyr");
-    			attr_dev(input2, "placeholder", "Email");
-    			add_location(input2, file$4, 105, 6, 2356);
-    			attr_dev(textarea, "name", "text");
-    			attr_dev(textarea, "class", "form-input svelte-1efvyr");
-    			attr_dev(textarea, "placeholder", "Your Message here...");
-    			add_location(textarea, file$4, 106, 6, 2436);
-    			attr_dev(input3, "type", "submit");
-    			input3.value = "SUBMIT";
-    			attr_dev(input3, "class", "svelte-1efvyr");
-    			add_location(input3, file$4, 107, 6, 2530);
-    			attr_dev(form, "action", "https://formspree.io/wsmartin23@gmail.com");
-    			attr_dev(form, "method", "POST");
-    			add_location(form, file$4, 100, 4, 2072);
+    			add_location(div0, file$4, 101, 2, 2116);
     			attr_dev(div1, "class", "form-container svelte-1efvyr");
-    			add_location(div1, file$4, 98, 2, 2013);
+    			add_location(div1, file$4, 102, 2, 2143);
     			attr_dev(div2, "class", "main svelte-1efvyr");
-    			add_location(div2, file$4, 96, 0, 1965);
+    			add_location(div2, file$4, 100, 0, 2095);
     		},
 
     		l: function claim(nodes) {
@@ -1566,26 +2034,37 @@ var app = (function () {
     			append_dev(div2, div0);
     			append_dev(div2, t1);
     			append_dev(div2, div1);
-    			append_dev(div1, h1);
-    			append_dev(div1, t3);
-    			append_dev(div1, form);
-    			append_dev(form, p);
-    			append_dev(p, label);
-    			append_dev(label, t4);
-    			append_dev(label, input0);
-    			append_dev(form, t5);
-    			append_dev(form, input1);
-    			append_dev(form, t6);
-    			append_dev(form, input2);
-    			append_dev(form, t7);
-    			append_dev(form, textarea);
-    			append_dev(form, t8);
-    			append_dev(form, input3);
+    			if (if_block) if_block.m(div1, null);
+    			current = true;
     		},
 
-    		p: noop,
-    		i: noop,
-    		o: noop,
+    		p: function update(changed, ctx) {
+    			if (ctx.y > 1000) {
+    				if (!if_block) {
+    					if_block = create_if_block$3(ctx);
+    					if_block.c();
+    					transition_in(if_block, 1);
+    					if_block.m(div1, null);
+    				} else transition_in(if_block, 1);
+    			} else if (if_block) {
+    				group_outros();
+    				transition_out(if_block, 1, 1, () => {
+    					if_block = null;
+    				});
+    				check_outros();
+    			}
+    		},
+
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block);
+    			current = true;
+    		},
+
+    		o: function outro(local) {
+    			transition_out(if_block);
+    			current = false;
+    		},
 
     		d: function destroy(detaching) {
     			if (detaching) {
@@ -1593,17 +2072,57 @@ var app = (function () {
     				detach_dev(t0);
     				detach_dev(div2);
     			}
+
+    			if (if_block) if_block.d();
     		}
     	};
     	dispatch_dev("SvelteRegisterBlock", { block, id: create_fragment$4.name, type: "component", source: "", ctx });
     	return block;
     }
 
+    function instance$4($$self, $$props, $$invalidate) {
+    	
+      let { y } = $$props;
+
+    	const writable_props = ['y'];
+    	Object.keys($$props).forEach(key => {
+    		if (!writable_props.includes(key) && !key.startsWith('$$')) console.warn(`<Contact> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$set = $$props => {
+    		if ('y' in $$props) $$invalidate('y', y = $$props.y);
+    	};
+
+    	$$self.$capture_state = () => {
+    		return { y };
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ('y' in $$props) $$invalidate('y', y = $$props.y);
+    	};
+
+    	return { y };
+    }
+
     class Contact extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, null, create_fragment$4, safe_not_equal, []);
+    		init(this, options, instance$4, create_fragment$4, safe_not_equal, ["y"]);
     		dispatch_dev("SvelteRegisterComponent", { component: this, tagName: "Contact", options, id: create_fragment$4.name });
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+    		if (ctx.y === undefined && !('y' in props)) {
+    			console.warn("<Contact> was created without expected prop 'y'");
+    		}
+    	}
+
+    	get y() {
+    		throw new Error("<Contact>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set y(value) {
+    		throw new Error("<Contact>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
     }
 
@@ -1612,15 +2131,23 @@ var app = (function () {
     const file$5 = "src/App.svelte";
 
     function create_fragment$5(ctx) {
-    	var div, t0, t1, t2, current;
+    	var scrolling = false, clear_scrolling = () => { scrolling = false; }, scrolling_timeout, div, t0, t1, t2, current, dispose;
+
+    	add_render_callback(ctx.onwindowscroll);
 
     	var navbar = new NavBar({ $$inline: true });
 
     	var greeting = new Greeting({ $$inline: true });
 
-    	var aboutme = new AboutMe({ $$inline: true });
+    	var aboutme = new AboutMe({
+    		props: { y: ctx.scrollPos },
+    		$$inline: true
+    	});
 
-    	var contact = new Contact({ $$inline: true });
+    	var contact = new Contact({
+    		props: { y: ctx.scrollPos },
+    		$$inline: true
+    	});
 
     	const block = {
     		c: function create() {
@@ -1633,7 +2160,13 @@ var app = (function () {
     			t2 = space();
     			contact.$$.fragment.c();
     			attr_dev(div, "class", "svelte-q7k7y8");
-    			add_location(div, file$5, 21, 0, 299);
+    			add_location(div, file$5, 23, 0, 357);
+    			dispose = listen_dev(window, "scroll", () => {
+    				scrolling = true;
+    				clearTimeout(scrolling_timeout);
+    				scrolling_timeout = setTimeout(clear_scrolling, 100);
+    				ctx.onwindowscroll();
+    			});
     		},
 
     		l: function claim(nodes) {
@@ -1652,7 +2185,22 @@ var app = (function () {
     			current = true;
     		},
 
-    		p: noop,
+    		p: function update(changed, ctx) {
+    			if (changed.scrollPos && !scrolling) {
+    				scrolling = true;
+    				clearTimeout(scrolling_timeout);
+    				scrollTo(window.pageXOffset, ctx.scrollPos);
+    				scrolling_timeout = setTimeout(clear_scrolling, 100);
+    			}
+
+    			var aboutme_changes = {};
+    			if (changed.scrollPos) aboutme_changes.y = ctx.scrollPos;
+    			aboutme.$set(aboutme_changes);
+
+    			var contact_changes = {};
+    			if (changed.scrollPos) contact_changes.y = ctx.scrollPos;
+    			contact.$set(contact_changes);
+    		},
 
     		i: function intro(local) {
     			if (current) return;
@@ -1687,16 +2235,38 @@ var app = (function () {
     			destroy_component(aboutme);
 
     			destroy_component(contact);
+
+    			dispose();
     		}
     	};
     	dispatch_dev("SvelteRegisterBlock", { block, id: create_fragment$5.name, type: "component", source: "", ctx });
     	return block;
     }
 
+    function instance$5($$self, $$props, $$invalidate) {
+    	
+
+    	let scrollPos;
+
+    	function onwindowscroll() {
+    		scrollPos = window.pageYOffset; $$invalidate('scrollPos', scrollPos);
+    	}
+
+    	$$self.$capture_state = () => {
+    		return {};
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ('scrollPos' in $$props) $$invalidate('scrollPos', scrollPos = $$props.scrollPos);
+    	};
+
+    	return { scrollPos, onwindowscroll };
+    }
+
     class App extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, null, create_fragment$5, safe_not_equal, []);
+    		init(this, options, instance$5, create_fragment$5, safe_not_equal, []);
     		dispatch_dev("SvelteRegisterComponent", { component: this, tagName: "App", options, id: create_fragment$5.name });
     	}
     }

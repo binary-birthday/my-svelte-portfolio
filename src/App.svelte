@@ -4,6 +4,8 @@
 	import Greeting from './Greeting.svelte';
 	import AboutMe from './AboutMe.svelte';
 	import Contact from './Contact.svelte';
+
+	let scrollPos;
 </script>
 
 <style>
@@ -18,12 +20,12 @@
 
 </style>
 
-
+<svelte:window bind:scrollY={scrollPos}/>
 <div>
 	<NavBar />
 	<Greeting />
-	<AboutMe />
-	<Contact />
+	<AboutMe y={scrollPos}/>
+	<Contact y={scrollPos}/>
 </div>
 
 
