@@ -10,9 +10,10 @@
   export let y;
 
   onMount(() => {
-    element = document.getElementById("#background");;
-    getRect = element.getBoundingClientRect();
-    position = getRect.top;
+    element = document.getElementById("background");
+    console.log(element)
+    // getRect = element.getBoundingClientRect();
+    // position = getRect.top;
   })
 </script>
 
