@@ -5252,7 +5252,7 @@ var app = (function () {
   }(SvelteComponentDev);
 
   var Error_1 = globals.Error;
-  var file$2 = "src/Greeting.svelte"; // (80:4) {#if visible}
+  var file$2 = "src/Greeting.svelte"; // (86:4) {#if visible}
 
   function create_if_block$1(ctx) {
     var p0, p0_intro, t1, p1, p1_intro, t3, p2, p2_intro;
@@ -5266,15 +5266,15 @@ var app = (function () {
         t3 = space();
         p2 = element("p");
         p2.textContent = "I BUILD WEB APPS";
-        attr_dev(p0, "class", "greting1 svelte-1nb1vds");
+        attr_dev(p0, "class", "greting1 svelte-io4l6y");
         toggle_class(p0, "dn", ctx.dn);
-        add_location(p0, file$2, 80, 4, 1360);
-        attr_dev(p1, "class", "greting2 svelte-1nb1vds");
+        add_location(p0, file$2, 86, 4, 1459);
+        attr_dev(p1, "class", "greting2 svelte-io4l6y");
         toggle_class(p1, "dn", ctx.dn);
-        add_location(p1, file$2, 81, 3, 1451);
-        attr_dev(p2, "class", "greting3 svelte-1nb1vds");
+        add_location(p1, file$2, 87, 3, 1550);
+        attr_dev(p2, "class", "greting3 svelte-io4l6y");
         toggle_class(p2, "dn", ctx.dn);
-        add_location(p2, file$2, 82, 3, 1551);
+        add_location(p2, file$2, 88, 3, 1650);
       },
       m: function mount(target, anchor) {
         insert_dev(target, p0, anchor);
@@ -5336,7 +5336,7 @@ var app = (function () {
       block: block,
       id: create_if_block$1.name,
       type: "if",
-      source: "(80:4) {#if visible}",
+      source: "(86:4) {#if visible}",
       ctx: ctx
     });
     return block;
@@ -5355,10 +5355,10 @@ var app = (function () {
         if (if_block) if_block.c();
         t = space();
         beatingheart.$$.fragment.c();
-        attr_dev(div0, "class", "right svelte-1nb1vds");
-        add_location(div0, file$2, 78, 2, 1317);
-        attr_dev(div1, "class", "landing-container svelte-1nb1vds");
-        add_location(div1, file$2, 77, 0, 1283);
+        attr_dev(div0, "class", "right svelte-io4l6y");
+        add_location(div0, file$2, 84, 2, 1416);
+        attr_dev(div1, "class", "landing-container svelte-io4l6y");
+        add_location(div1, file$2, 83, 0, 1382);
       },
       l: function claim(nodes) {
         throw new Error_1("options.hydrate only works if the component was compiled with the `hydratable: true` option");
