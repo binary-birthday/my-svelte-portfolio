@@ -102,15 +102,15 @@
   <div class="left"></div>
   <div class="form-container">
     {#if y > 1000}
-    <h1 in:slide="{{delay: 500, duration: 1000, easing: quintOut }}" out:fade="{{delay: 250, duration: 1000}}" >Get In Touch</h1>
+    <h1 in:slide="{{delay: 100, duration: 1000, easing: quintOut }}" out:fade="{{delay: 0, duration: 1000}}" >Get In Touch</h1>
     <form action="https://formspree.io/wsmartin23@gmail.com" method="POST">      
       <p class="dn">
         <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
       </p>
-      <input in:scale="{{duration: 1000, delay: 500, opacity: 0.25, start: .75, easing:elasticOut}}" out:fade="{{delay: 250, duration: 1000}}" name="name" type="text" class="form-input" placeholder="Name" />   
-      <input in:scale="{{duration: 1000, delay: 500, opacity: 0.25, start: .75, easing:elasticOut}}" out:fade="{{delay: 250, duration: 1000}}" name="email" type="text" class="form-input" placeholder="Email" />
-      <textarea in:scale="{{duration: 1000, delay: 500, opacity: 0.25, start: .75, easing:elasticOut}}" out:fade="{{delay: 250, duration: 1000}}" name="text" class="form-input" placeholder="Your Message here..."></textarea>
-      <input in:scale="{{duration: 1000, delay: 500, opacity: 0.25, start: .75, easing:elasticOut}}" out:fade="{{delay: 250, duration: 1000}}" type="submit" value="SUBMIT"/>
+      <input in:scale="{{duration: 1000, delay: 500, opacity: 0, start: .75, easing:elasticOut}}" out:fade="{{delay: 0, duration: 1000}}" name="name" type="text" class="form-input" placeholder="Name" />   
+      <input in:scale="{{duration: 1000, delay: 550, opacity: 0, start: .75, easing:elasticOut}}" out:fade="{{delay: 0, duration: 1000}}" name="email" type="text" class="form-input" placeholder="Email" />
+      <textarea in:scale="{{duration: 1000, delay: 600, opacity: 0, start: .75, easing:elasticOut}}" out:fade="{{delay: 0, duration: 1000}}" name="text" class="form-input" placeholder="Your Message here..."></textarea>
+      <input in:scale="{{duration: 1000, delay: 650, opacity: 0, start: .75, easing:elasticOut}}" out:fade="{{delay: 0, duration: 1000}}" type="submit" value="SUBMIT"/>
     </form> 
     {/if}
   </div>
