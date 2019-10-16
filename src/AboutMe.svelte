@@ -15,7 +15,7 @@
 
   .wrapper {
     display: grid;
-    grid-template-columns: 1fr minmax(82.5%, 1fr);
+    grid-template-columns: 1fr minmax(75%, 1fr);
     background-color: #fff;
     color: #444;
   }
@@ -76,19 +76,24 @@
   }
 
   @media only screen and (max-width: 700px) {
-  .profile {
-    width: 75px;
-    height: 75px;
-    margin-right: .5rem;
-    margin-bottom: .75rem;
-  }
-  .card {
-    margin-right: 0;
-    line-height: 2rem;
-  }
-  p {
-    font-size: 1.25rem;
-  }
+    .wrapper {
+      grid-template-columns: 1fr minmax(82.5%, 1fr)
+    }
+  
+    .profile {
+      width: 75px;
+      height: 75px;
+      margin-right: .5rem;
+      margin-bottom: .75rem;
+    }
+    .card {
+      margin-right: 0;
+      line-height: 2rem;
+    }
+    p {
+      font-size: 1.25rem;
+    }
+
 }
 
 </style>
