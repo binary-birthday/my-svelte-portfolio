@@ -69,9 +69,9 @@
     height: 4rem;
     display: flex;
     justify-content: space-between;
-    justify-content: space-around;
-    justify-content: space-evenly;
-    align-items: center;
+    align-items: flex-start;
+    padding-left: 2rem;
+    padding-top: 1rem;
   }
 
   i {
@@ -80,7 +80,7 @@
 
   @media only screen and (max-width: 700px) {
     .wrapper {
-      grid-template-columns: 1fr minmax(80%, 1fr)
+      grid-template-columns: 1fr minmax(82.5%, 1fr)
     }
     .profile {
       width: 75px;
@@ -97,7 +97,6 @@
       margin-right: .75rem;
       margin-bottom: .5rem;
     }
-    
 }
 
 </style>
