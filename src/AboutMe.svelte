@@ -34,7 +34,7 @@
   .card-container {
     display: flex;
     flex-direction: column;
-    /* align-items: flex-end; */
+    align-items: flex-end;
   }
 
   .card {
@@ -60,6 +60,7 @@
     font-size: 1.25rem;
     font: 300;
     font-family: 'Cormorant', serif;
+    padding-right: 2rem;
   }
 
   .icons {
@@ -86,11 +87,12 @@
       margin-bottom: .75rem;
     }
     .card {
-      padding-right: 0;
+      padding-right: 0rem;
       line-height: 2rem;
     }
     p {
       font-size: 1.25rem;
+      padding-right: 0rem;
     }
 }
 
