@@ -36,11 +36,11 @@
   opacity: .4
 }
 
-@media only screen and (max-width: 700px) {
+/* @media only screen and (max-width: 700px) {
   .background {
-    width: 100vw;
+    width: 50vw;
   }
-}
+} */
 </style>
 
 <div class="background">
