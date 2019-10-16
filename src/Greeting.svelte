@@ -59,7 +59,7 @@
     width: 100%;
     height: 70%;
     z-index: 10;
-    padding: 3rem;
+    padding-left: 3rem;
   }
 	
 	p {
