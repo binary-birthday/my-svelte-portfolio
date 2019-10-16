@@ -7,7 +7,7 @@
 <style>
   .background {
     width: 100vw;
-    height: 150%;
+    height: 125%;
     position: absolute;
     z-index: -1;
   }
@@ -91,6 +91,12 @@
   [type="submit"]:hover { 
     transform: scale(1.05)
   }
+
+  @media only screen and (max-width: 700px) {
+    .form-container {
+      max-width: 95%;
+    }
+}
 </style>
 
 <svg class="background" viewBox="0 0 1920 1080" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
