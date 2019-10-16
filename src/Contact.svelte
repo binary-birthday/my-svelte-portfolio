@@ -7,8 +7,7 @@
 <style>
   .background {
     width: 100vw;
-    max-height: 125%;
-    min-height: 100%;  
+    height: 120%;  
     position: absolute;
     z-index: -1;
   }

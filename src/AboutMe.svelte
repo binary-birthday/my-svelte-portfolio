@@ -69,6 +69,7 @@
     height: 4rem;
     display: flex;
     justify-content: space-evenly;
+    --webkit-box-pack: justify;
     align-items: center;
   }
 

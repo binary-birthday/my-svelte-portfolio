@@ -28,6 +28,7 @@
   height: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
   will-change: transform;
   position: absolute;
   z-index: 1;
