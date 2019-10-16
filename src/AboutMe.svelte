@@ -68,10 +68,7 @@
     width: 100%;
     height: 4rem;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding-left: 2rem;
-    padding-top: 1rem;
+    align-items: center;
   }
 
   i {
@@ -120,10 +117,10 @@
           </p>
         </div>
         <div class="icons">
-          <a href="https://github.com/Wade-Martin" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="https://codepen.io/wade-martin" target="_blank"><i class="fab fa-codepen"></i></a>
-          <a href="https://www.linkedin.com/in/wade-s-martin/" target="_blank"><i class="fab fa-linkedin"></i></a>
-          <a href="https://twitter.com/wine_and_Wade" target="_blank"><i class="fab fa-twitter-square"></i></a>
+          <a href="https://github.com/Wade-Martin" target="_blank">   <i class="fab fa-github">    </i></a>
+          <a href="https://codepen.io/wade-martin" target="_blank"><i class="fab fa-codepen">   </i></a>
+          <a href="https://www.linkedin.com/in/wade-s-martin/" target="_blank"><i class="fab fa-linkedin">    </i></a>
+          <a href="https://twitter.com/wine_and_Wade" target="_blank">    <i class="fab fa-twitter-square"></i></a>
         </div>
       </div>
       {/if}
