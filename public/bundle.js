@@ -5266,13 +5266,13 @@ var app = (function () {
         t3 = space();
         p2 = element("p");
         p2.textContent = "I BUILD WEB APPS";
-        attr_dev(p0, "class", "greting1 svelte-io4l6y");
+        attr_dev(p0, "class", "greting1 svelte-k5fzgj");
         toggle_class(p0, "dn", ctx.dn);
         add_location(p0, file$2, 86, 4, 1459);
-        attr_dev(p1, "class", "greting2 svelte-io4l6y");
+        attr_dev(p1, "class", "greting2 svelte-k5fzgj");
         toggle_class(p1, "dn", ctx.dn);
         add_location(p1, file$2, 87, 3, 1550);
-        attr_dev(p2, "class", "greting3 svelte-io4l6y");
+        attr_dev(p2, "class", "greting3 svelte-k5fzgj");
         toggle_class(p2, "dn", ctx.dn);
         add_location(p2, file$2, 88, 3, 1650);
       },
@@ -5355,9 +5355,9 @@ var app = (function () {
         if (if_block) if_block.c();
         t = space();
         beatingheart.$$.fragment.c();
-        attr_dev(div0, "class", "right svelte-io4l6y");
+        attr_dev(div0, "class", "right svelte-k5fzgj");
         add_location(div0, file$2, 84, 2, 1416);
-        attr_dev(div1, "class", "landing-container svelte-io4l6y");
+        attr_dev(div1, "class", "landing-container svelte-k5fzgj");
         add_location(div1, file$2, 83, 0, 1382);
       },
       l: function claim(nodes) {
@@ -5499,7 +5499,7 @@ var app = (function () {
     var block = {
       c: function create() {
         img = element("img");
-        attr_dev(img, "class", "about svelte-19tey9y");
+        attr_dev(img, "class", "about svelte-1iwqpx0");
         attr_dev(img, "src", "images/ABOUT.svg");
         attr_dev(img, "alt", "about");
         add_location(img, file$3, 101, 8, 1672);
@@ -5574,7 +5574,7 @@ var app = (function () {
         t13 = space();
         a7 = element("a");
         i3 = element("i");
-        attr_dev(img, "class", "profile svelte-19tey9y");
+        attr_dev(img, "class", "profile svelte-1iwqpx0");
         attr_dev(img, "src", "images/profile.jpg");
         attr_dev(img, "alt", "profile image");
         add_location(img, file$3, 108, 10, 2019);
@@ -5590,32 +5590,32 @@ var app = (function () {
         attr_dev(a3, "href", "https://web3-build.netlify.com/");
         attr_dev(a3, "target", "_blank");
         add_location(a3, file$3, 110, 1178, 3281);
-        attr_dev(p, "class", "svelte-19tey9y");
+        attr_dev(p, "class", "svelte-1iwqpx0");
         add_location(p, file$3, 109, 10, 2098);
         add_location(div0, file$3, 107, 8, 2003);
-        attr_dev(i0, "class", "fab fa-github svelte-19tey9y");
+        attr_dev(i0, "class", "fab fa-github svelte-1iwqpx0");
         add_location(i0, file$3, 114, 67, 3474);
         attr_dev(a4, "href", "https://github.com/Wade-Martin");
         attr_dev(a4, "target", "_blank");
         add_location(a4, file$3, 114, 10, 3417);
-        attr_dev(i1, "class", "fab fa-codepen svelte-19tey9y");
+        attr_dev(i1, "class", "fab fa-codepen svelte-1iwqpx0");
         add_location(i1, file$3, 115, 67, 3575);
         attr_dev(a5, "href", "https://codepen.io/wade-martin");
         attr_dev(a5, "target", "_blank");
         add_location(a5, file$3, 115, 10, 3518);
-        attr_dev(i2, "class", "fab fa-linkedin svelte-19tey9y");
+        attr_dev(i2, "class", "fab fa-linkedin svelte-1iwqpx0");
         add_location(i2, file$3, 116, 79, 3689);
         attr_dev(a6, "href", "https://www.linkedin.com/in/wade-s-martin/");
         attr_dev(a6, "target", "_blank");
         add_location(a6, file$3, 116, 10, 3620);
-        attr_dev(i3, "class", "fab fa-twitter-square svelte-19tey9y");
+        attr_dev(i3, "class", "fab fa-twitter-square svelte-1iwqpx0");
         add_location(i3, file$3, 117, 70, 3795);
         attr_dev(a7, "href", "https://twitter.com/wine_and_Wade");
         attr_dev(a7, "target", "_blank");
         add_location(a7, file$3, 117, 10, 3735);
-        attr_dev(div1, "class", "icons svelte-19tey9y");
+        attr_dev(div1, "class", "icons svelte-1iwqpx0");
         add_location(div1, file$3, 113, 8, 3387);
-        attr_dev(div2, "class", "card svelte-19tey9y");
+        attr_dev(div2, "class", "card svelte-1iwqpx0");
         add_location(div2, file$3, 106, 6, 1888);
       },
       m: function mount(target, anchor) {
@@ -5703,13 +5703,13 @@ var app = (function () {
         t = space();
         div1 = element("div");
         if (if_block1) if_block1.c();
-        attr_dev(div0, "class", "about-container svelte-19tey9y");
+        attr_dev(div0, "class", "about-container svelte-1iwqpx0");
         add_location(div0, file$3, 99, 4, 1614);
-        attr_dev(div1, "class", "card-container svelte-19tey9y");
+        attr_dev(div1, "class", "card-container svelte-1iwqpx0");
         add_location(div1, file$3, 104, 4, 1833);
-        attr_dev(div2, "class", "wrapper svelte-19tey9y");
+        attr_dev(div2, "class", "wrapper svelte-1iwqpx0");
         add_location(div2, file$3, 98, 2, 1588);
-        attr_dev(div3, "class", "container svelte-19tey9y");
+        attr_dev(div3, "class", "container svelte-1iwqpx0");
         add_location(div3, file$3, 96, 0, 1559);
       },
       l: function claim(nodes) {
@@ -5871,30 +5871,30 @@ var app = (function () {
         textarea = element("textarea");
         t6 = space();
         input3 = element("input");
-        attr_dev(h1, "class", "svelte-1pntrla");
+        attr_dev(h1, "class", "svelte-1tq6s6r");
         add_location(h1, file$4, 104, 4, 2194);
         attr_dev(input0, "name", "bot-field");
         add_location(input0, file$4, 107, 52, 2473);
         add_location(label, file$4, 107, 8, 2429);
-        attr_dev(p, "class", "dn svelte-1pntrla");
+        attr_dev(p, "class", "dn svelte-1tq6s6r");
         add_location(p, file$4, 106, 6, 2406);
         attr_dev(input1, "name", "name");
         attr_dev(input1, "type", "text");
-        attr_dev(input1, "class", "form-input svelte-1pntrla");
+        attr_dev(input1, "class", "form-input svelte-1tq6s6r");
         attr_dev(input1, "placeholder", "Name");
         add_location(input1, file$4, 109, 6, 2525);
         attr_dev(input2, "name", "email");
         attr_dev(input2, "type", "text");
-        attr_dev(input2, "class", "form-input svelte-1pntrla");
+        attr_dev(input2, "class", "form-input svelte-1tq6s6r");
         attr_dev(input2, "placeholder", "Email");
         add_location(input2, file$4, 110, 6, 2731);
         attr_dev(textarea, "name", "text");
-        attr_dev(textarea, "class", "form-input svelte-1pntrla");
+        attr_dev(textarea, "class", "form-input svelte-1tq6s6r");
         attr_dev(textarea, "placeholder", "Your Message here...");
         add_location(textarea, file$4, 111, 6, 2936);
         attr_dev(input3, "type", "submit");
         input3.value = "SUBMIT";
-        attr_dev(input3, "class", "svelte-1pntrla");
+        attr_dev(input3, "class", "svelte-1tq6s6r");
         add_location(input3, file$4, 112, 6, 3155);
         attr_dev(form, "action", "https://formspree.io/wsmartin23@gmail.com");
         attr_dev(form, "method", "POST");
@@ -6050,17 +6050,17 @@ var app = (function () {
         attr_dev(path2, "d", "M317.44 633.103L709.12 1080H-0.000427246V718.295L317.44 633.103Z");
         attr_dev(path2, "fill", "#313131");
         add_location(path2, file$4, 98, 1, 1995);
-        attr_dev(svg, "class", "background svelte-1pntrla");
+        attr_dev(svg, "class", "background svelte-1tq6s6r");
         attr_dev(svg, "viewBox", "0 0 1920 1080");
         attr_dev(svg, "preserveAspectRatio", "none");
         attr_dev(svg, "fill", "none");
         attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
         add_location(svg, file$4, 95, 0, 1651);
-        attr_dev(div0, "class", "left svelte-1pntrla");
+        attr_dev(div0, "class", "left svelte-1tq6s6r");
         add_location(div0, file$4, 101, 2, 2115);
-        attr_dev(div1, "class", "form-container svelte-1pntrla");
+        attr_dev(div1, "class", "form-container svelte-1tq6s6r");
         add_location(div1, file$4, 102, 2, 2142);
-        attr_dev(div2, "class", "main svelte-1pntrla");
+        attr_dev(div2, "class", "main svelte-1tq6s6r");
         add_location(div2, file$4, 100, 0, 2094);
       },
       l: function claim(nodes) {

@@ -83,7 +83,7 @@
     margin-bottom: .75rem;
   }
   .card {
-    margin-right: .25rem;
+    margin-right: .05rem;
     line-height: 2rem;
   }
   p {
