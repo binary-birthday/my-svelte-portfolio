@@ -119,7 +119,7 @@
       {/if}
     </div>
     <div class="card-container">
-      {#if y > position }
+      {#if y > (position -20) }
       <div transition:fly="{{delay: 100, duration: 3000, y: 200, opacity: .75, easing: quintOut}}" class="card">
         <div>
           <img class="profile" src="images/profile.jpg" alt="profile image" />
