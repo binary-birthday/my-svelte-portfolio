@@ -84,13 +84,17 @@
     .profile {
       width: 75px;
       height: 75px;
-      margin-right: .5rem;
+      margin-right: 1rem;
       margin-bottom: .75rem;
     }
     .card {
       padding-right: 0rem;
       line-height: 2rem;
       width: 100%;
+    }
+    .profile {
+      margin-right: .75rem;
+      margin-bottom: .5rem;
     }
     p {
       font-size: 1.25rem;
