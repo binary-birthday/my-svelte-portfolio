@@ -97,6 +97,7 @@
     .form-container {
       max-width: 95%;
       padding-right: 3rem;
+      
     }
     .background {
       min-height: 120%;
