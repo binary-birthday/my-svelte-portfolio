@@ -2,7 +2,7 @@
   import { scale, fade, slide } from 'svelte/transition';
   import { elasticOut, quintOut } from 'svelte/easing';
 
-  let element = document.querySelector('.background');
+  let element = document.getElementById("background");;
   let getRect = element.getBoundingClientRect();
   let position = getRect.top;
 
@@ -109,7 +109,7 @@
 }
 </style>
 
-<svg class="background" viewBox="0 0 1920 1080" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg class="background" id="background" viewBox="0 0 1920 1080" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
 	<path d="M1920 1078L1920 0.00305176L0.0020752 0.00622559L0.0020752 402.091V721.995L314.88 643.078L1920 1078Z" fill="black"/>
 	<path d="M1920 1066.7V1079.99L421.496 1079.99L309.761 631.773L1920 1066.7Z" fill="#1D1D1D"/>
 	<path d="M317.44 633.103L709.12 1080H-0.000427246V718.295L317.44 633.103Z" fill="#313131"/>
