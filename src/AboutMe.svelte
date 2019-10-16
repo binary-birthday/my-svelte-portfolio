@@ -68,8 +68,9 @@
     width: 100%;
     height: 4rem;
     display: flex;
+    justify-content: space-between;
+    justify-content: space-around;
     justify-content: space-evenly;
-    --webkit-box-pack: justify;
     align-items: center;
   }
 
