@@ -34,7 +34,7 @@
   .card-container {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    /* align-items: flex-end; */
   }
 
   .card {
@@ -79,7 +79,6 @@
     .wrapper {
       grid-template-columns: 1fr minmax(82.5%, 1fr)
     }
-  
     .profile {
       width: 75px;
       height: 75px;
@@ -93,7 +92,6 @@
     p {
       font-size: 1.25rem;
     }
-
 }
 
 </style>
