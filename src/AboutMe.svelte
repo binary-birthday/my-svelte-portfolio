@@ -32,16 +32,15 @@
   }
 
   .card-container {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: flex-start;
   }
 
   .card {
     width: 75%;
-    margin-top: 5rem;
-    margin-bottom: 5rem;
-    padding-right: 4rem;
+    padding: 5rem;
     line-height: 2.5rem;
   }
 
@@ -88,7 +87,7 @@
       margin-bottom: .75rem;
     }
     .card {
-      padding-right: 0rem;
+      padding-right: 0.5rem;
       padding-left: 1rem;
       line-height: 2rem;
       width: 100%;
