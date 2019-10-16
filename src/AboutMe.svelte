@@ -13,6 +13,7 @@
     element = document.getElementById("container");
     getRect = element.getBoundingClientRect();
     position = getRect.top;
+    console.log(position)
   })
 </script>
 
@@ -111,7 +112,7 @@
 
 
 <div id="container"  class="container">
-  
+  {y}
   <div class="wrapper">
     <div class="about-container">
       {#if y > position }

@@ -13,6 +13,7 @@
     element = document.getElementById("background");
     getRect = element.getBoundingClientRect();
     position = getRect.top;
+    console.log(position)
   })
 </script>
 
@@ -122,6 +123,7 @@
 	<path d="M317.44 633.103L709.12 1080H-0.000427246V718.295L317.44 633.103Z" fill="#313131"/>
 </svg>
 <div class="main">
+  {y}
   <div class="left"></div>
   <div class="form-container">
     {#if y > position}
