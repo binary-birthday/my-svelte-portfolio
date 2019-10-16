@@ -40,7 +40,7 @@
   .card {
     margin-top: 5rem;
     margin-bottom: 5rem;
-    padding-right: 2rem;
+    padding-right: 4rem;
     line-height: 2.5rem;
   }
 
