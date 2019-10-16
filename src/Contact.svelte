@@ -98,6 +98,7 @@
       max-width: 95%;
     }
     .background {
+      min-height: 120%;
       max-height: 140%;
     }
 }
