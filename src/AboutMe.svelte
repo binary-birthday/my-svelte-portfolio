@@ -89,6 +89,7 @@
     }
     .card {
       padding-right: 0rem;
+      padding-left: 1rem;
       line-height: 2rem;
       width: 100%;
     }
