@@ -1,6 +1,7 @@
 <script>
   import { scale, fade, slide } from 'svelte/transition';
-	import { elasticOut, quintOut } from 'svelte/easing';
+  import { elasticOut, quintOut } from 'svelte/easing';
+  let element_position = $('.background').offset().top;
   export let y;
 </script>
 
@@ -112,7 +113,7 @@
 <div class="main">
   <div class="left"></div>
   <div class="form-container">
-    {#if y > 1000}
+    {#if y > (element_position + 100)}
     <h1 in:slide="{{delay: 100, duration: 1000, easing: quintOut }}" out:fade="{{delay: 0, duration: 1000}}" >Get In Touch</h1>
     <form action="https://formspree.io/wsmartin23@gmail.com" method="POST">      
       <p class="dn">
