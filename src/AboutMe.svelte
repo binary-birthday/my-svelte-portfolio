@@ -90,7 +90,7 @@
     .card {
       padding-left: 1rem;
       line-height: 2rem;
-      width: 90%;
+      width: 95%;
     }
     .profile {
       margin-right: .75rem;
