@@ -113,7 +113,7 @@
 <div class="main">
   <div class="left"></div>
   <div class="form-container">
-    {#if y > (element_position + 100)}
+    {#if y > (element_position + 10)}
     <h1 in:slide="{{delay: 100, duration: 1000, easing: quintOut }}" out:fade="{{delay: 0, duration: 1000}}" >Get In Touch</h1>
     <form action="https://formspree.io/wsmartin23@gmail.com" method="POST">      
       <p class="dn">
