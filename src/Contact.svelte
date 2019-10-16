@@ -11,7 +11,6 @@
 
   onMount(() => {
     element = document.getElementById("background");
-    console.log(element)
     getRect = element.getBoundingClientRect();
     position = getRect.top;
   })
