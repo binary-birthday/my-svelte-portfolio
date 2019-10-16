@@ -69,7 +69,7 @@
     height: 4rem;
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
     padding-left: 2rem;
   }
 
