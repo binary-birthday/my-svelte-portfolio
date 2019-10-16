@@ -12,7 +12,7 @@
   onMount(() => {
     element = document.getElementById("background");
     getRect = element.getBoundingClientRect();
-    position = getRect.top - 30;
+    position = getRect.top - 10;
   })
 </script>
 

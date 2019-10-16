@@ -1,20 +1,8 @@
 <script>
   import { fly } from 'svelte/transition';
   import { quintOut, sineIn } from 'svelte/easing';
-  import { onMount } from 'svelte';
   
-  let element 
-  let getRect
-  let position
-
   export let y;
-
-  onMount(() => {
-    element = document.getElementById("container");
-    getRect = element.getBoundingClientRect();
-    position = getRect.top - 150;
-    console.log(position)
-  })
 </script>
 
 <style>
@@ -111,15 +99,16 @@
 </style>
 
 
-<div id="container"  class="container">
+<div class="container">
+  
   <div class="wrapper">
     <div class="about-container">
-      {#if y > position }
+      {#if y > 100}
         <img in:fly="{{delay: 0, duration: 2000, y: -300, opacity: .01, easing: quintOut}}" class="about" src="images/ABOUT.svg" alt="about">
       {/if}
     </div>
     <div class="card-container">
-      {#if y > position }
+      {#if y > 100}
       <div transition:fly="{{delay: 100, duration: 3000, y: 200, opacity: .75, easing: quintOut}}" class="card">
         <div>
           <img class="profile" src="images/profile.jpg" alt="profile image" />
