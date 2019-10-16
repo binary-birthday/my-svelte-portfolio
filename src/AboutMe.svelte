@@ -65,10 +65,12 @@
   }
 
   .icons {
-    width: 100%;
+    width: 90%;
     height: 4rem;
     display: flex;
+    align-self: center;
     align-items: center;
+    justify-content: space-between;
   }
 
   i {
