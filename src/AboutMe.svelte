@@ -87,7 +87,7 @@
       margin-bottom: .75rem;
     }
     .card {
-      margin-right: 0;
+      padding-right: 0;
       line-height: 2rem;
     }
     p {
