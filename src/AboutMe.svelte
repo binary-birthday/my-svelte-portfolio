@@ -40,7 +40,8 @@
 
   .card {
     width: 75%;
-    padding: 5rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
     line-height: 2.5rem;
   }
 
