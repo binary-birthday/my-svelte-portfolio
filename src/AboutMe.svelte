@@ -13,7 +13,6 @@
     element = document.getElementById("container");
     getRect = element.getBoundingClientRect();
     position = getRect.top;
-    console.log(position)
   })
 </script>
 
@@ -112,7 +111,6 @@
 
 
 <div id="container"  class="container">
-  {y}
   <div class="wrapper">
     <div class="about-container">
       {#if y > position }
@@ -120,7 +118,7 @@
       {/if}
     </div>
     <div class="card-container">
-      {#if y > (position -20) }
+      {#if y > (position - 100) }
       <div transition:fly="{{delay: 100, duration: 3000, y: 200, opacity: .75, easing: quintOut}}" class="card">
         <div>
           <img class="profile" src="images/profile.jpg" alt="profile image" />

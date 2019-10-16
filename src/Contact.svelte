@@ -13,7 +13,6 @@
     element = document.getElementById("background");
     getRect = element.getBoundingClientRect();
     position = getRect.top;
-    console.log(position)
   })
 </script>
 
@@ -123,10 +122,9 @@
 	<path d="M317.44 633.103L709.12 1080H-0.000427246V718.295L317.44 633.103Z" fill="#313131"/>
 </svg>
 <div class="main">
-  {y}
   <div class="left"></div>
   <div class="form-container">
-    {#if y > position}
+    {#if y > (position - 50)}
     <h1 in:slide="{{delay: 100, duration: 1000, easing: quintOut }}" out:fade="{{delay: 0, duration: 1000}}" >Get In Touch</h1>
     <form action="https://formspree.io/wsmartin23@gmail.com" method="POST">      
       <p class="dn">
