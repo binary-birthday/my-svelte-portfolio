@@ -13,7 +13,7 @@
     element = document.getElementById("container");
     getRect = element.getBoundingClientRect();
     position = getRect.top - 50;
-    consolelog(position)
+    console.log(position)
   })
 </script>
 
