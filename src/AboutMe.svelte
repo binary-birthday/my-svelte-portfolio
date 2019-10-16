@@ -97,9 +97,7 @@
       margin-right: .75rem;
       margin-bottom: .5rem;
     }
-    p {
-      padding-right: 1rem;
-    }
+    
 }
 
 </style>
