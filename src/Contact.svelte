@@ -100,7 +100,7 @@
 
     }
     .background {
-      height: 140px;
+      height: 140%;
     }
 }
 </style>
