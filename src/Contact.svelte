@@ -34,7 +34,7 @@
     flex-direction: column;
     align-items: flex-end;
     margin-top: 2rem;
-    padding: 1rem 1rem 1rem 0;
+    padding: 1rem 6rem 1rem 0;
   }
 
   h1 {
@@ -96,6 +96,7 @@
   @media only screen and (max-width: 700px) {
     .form-container {
       max-width: 95%;
+      padding-right: 3rem;
     }
     .background {
       min-height: 120%;
