@@ -49,7 +49,7 @@
     background-color: black;
     min-height: 100%;
     width: 100%;
-    padding-top: 5rem;
+    padding-top: 4rem;
     z-index: 2;
     display: flex;
     justify-content: flex-end;
