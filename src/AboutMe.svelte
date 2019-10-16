@@ -7,7 +7,7 @@
 <style>
   .container {
     width: 100vw;
-    min-height: 120vh;
+    min-height: 120%;
     display: flex;
     justify-content: center;
     align-items: center;

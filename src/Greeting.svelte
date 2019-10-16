@@ -47,7 +47,7 @@
 
   .landing-container {
     background-color: black;
-    min-height: 95%;
+    min-height: 100%;
     width: 100%;
     padding-top: 5rem;
     z-index: 2;
@@ -65,7 +65,7 @@
 	p {
 		color: white;
 		font-weight: 800;
-    font-size: calc(13vmin + 8*(100vw - 400px)/ 400);
+    font-size: calc(16vmin + 8*(100vw - 400px)/ 400);
   }
   
   .dn {

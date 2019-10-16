@@ -7,6 +7,7 @@
 <style>
   .background {
     width: 100vw;
+    height: 100%;
     position: absolute;
     z-index: -1;
   }

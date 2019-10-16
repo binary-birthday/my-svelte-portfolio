@@ -13,19 +13,11 @@
       yoyo: true
   });
   });
-  window.addEventListener('resize', () => {
-    // We execute the same script as before
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-  });
-  let vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
 </script>
 
 <style>
 .background {
   height: 100%;
-  height: calc(var(--vh, 1vh) * 100);
   width: 50vw;
   position: absolute;
   z-index: 1;
