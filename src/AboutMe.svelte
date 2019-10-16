@@ -15,7 +15,7 @@
 
   .wrapper {
     display: grid;
-    grid-template-columns: 1fr minmax(75%, 1fr);
+    grid-template-columns: 1fr minmax(85%, 1fr);
     background-color: #fff;
     color: #444;
   }
@@ -83,7 +83,7 @@
     margin-bottom: .75rem;
   }
   .card {
-    margin-right: .05rem;
+    margin-right: 0;
     line-height: 2rem;
   }
   p {
