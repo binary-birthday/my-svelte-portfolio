@@ -36,11 +36,11 @@
   
   const toggleVis = () => {
     visible = !visible;
-    setTimeout(() => {
-      toggleVis()
-    }, 6000);
   }
-
+  
+  onMount(() => {
+    toggleVis()
+  })
 </script>
 
 <style>

@@ -82,6 +82,10 @@ var app = (function () {
     function space() {
         return text(' ');
     }
+    function listen(node, event, handler, options) {
+        node.addEventListener(event, handler, options);
+        return () => node.removeEventListener(event, handler, options);
+    }
     function attr(node, attribute, value) {
         if (value == null)
             node.removeAttribute(attribute);
@@ -450,12 +454,32 @@ var app = (function () {
         dispatch_dev("SvelteDOMRemove", { node });
         detach(node);
     }
+    function listen_dev(node, event, handler, options, has_prevent_default, has_stop_propagation) {
+        const modifiers = options === true ? ["capture"] : options ? Array.from(Object.keys(options)) : [];
+        if (has_prevent_default)
+            modifiers.push('preventDefault');
+        if (has_stop_propagation)
+            modifiers.push('stopPropagation');
+        dispatch_dev("SvelteDOMAddEventListener", { node, event, handler, modifiers });
+        const dispose = listen(node, event, handler, options);
+        return () => {
+            dispatch_dev("SvelteDOMRemoveEventListener", { node, event, handler, modifiers });
+            dispose();
+        };
+    }
     function attr_dev(node, attribute, value) {
         attr(node, attribute, value);
         if (value == null)
             dispatch_dev("SvelteDOMRemoveAttribute", { node, attribute });
         else
             dispatch_dev("SvelteDOMSetAttribute", { node, attribute, value });
+    }
+    function set_data_dev(text, data) {
+        data = '' + data;
+        if (text.data === data)
+            return;
+        dispatch_dev("SvelteDOMSetData", { node: text, data });
+        text.data = data;
     }
     class SvelteComponentDev extends SvelteComponent {
         constructor(options) {
@@ -1042,13 +1066,13 @@ var app = (function () {
     			p2.textContent = "I BUILD WEB APPS";
     			attr_dev(p0, "class", "greting1 svelte-yna9xz");
     			toggle_class(p0, "dn", ctx.dn);
-    			add_location(p0, file$2, 80, 4, 1372);
+    			add_location(p0, file$2, 80, 4, 1358);
     			attr_dev(p1, "class", "greting2 svelte-yna9xz");
     			toggle_class(p1, "dn", ctx.dn);
-    			add_location(p1, file$2, 81, 3, 1463);
+    			add_location(p1, file$2, 81, 3, 1449);
     			attr_dev(p2, "class", "greting3 svelte-yna9xz");
     			toggle_class(p2, "dn", ctx.dn);
-    			add_location(p2, file$2, 82, 3, 1563);
+    			add_location(p2, file$2, 82, 3, 1549);
     		},
 
     		m: function mount(target, anchor) {
@@ -1121,9 +1145,9 @@ var app = (function () {
     			t = space();
     			beatingheart.$$.fragment.c();
     			attr_dev(div0, "class", "right svelte-yna9xz");
-    			add_location(div0, file$2, 78, 2, 1329);
+    			add_location(div0, file$2, 78, 2, 1315);
     			attr_dev(div1, "class", "landing-container svelte-yna9xz");
-    			add_location(div1, file$2, 77, 0, 1295);
+    			add_location(div1, file$2, 77, 0, 1281);
     		},
 
     		l: function claim(nodes) {
@@ -1215,7 +1239,15 @@ var app = (function () {
           }
 
     		};
-      }
+      }  
+      const toggleVis = () => {
+        $$invalidate('visible', visible = !visible);
+      };
+      
+      onMount(() => {
+        toggleVis();
+      });
+
     	$$self.$capture_state = () => {
     		return {};
     	};
@@ -1241,7 +1273,7 @@ var app = (function () {
     const file$3 = "src/AboutMe.svelte";
 
     function create_fragment$3(ctx) {
-    	var div6, div5, div0, img0, t0, div4, div3, div1, img1, t1, p, t2, a0, t4, a1, t6, a2, t8, a3, t10, t11, div2, a4, i0, t12, a5, i1, t13, a6, i2, t14, a7, i3;
+    	var div6, div5, div0, img0, t0, div4, div3, p0, t1, t2, t3, div1, img1, t4, p1, t5, a0, t7, a1, t9, a2, t11, a3, t13, t14, div2, a4, i0, t15, a5, i1, t16, a6, i2, t17, a7, i3, dispose;
 
     	const block = {
     		c: function create() {
@@ -1252,91 +1284,98 @@ var app = (function () {
     			t0 = space();
     			div4 = element("div");
     			div3 = element("div");
+    			p0 = element("p");
+    			t1 = text("scroll pos = ");
+    			t2 = text(ctx.scrollPos);
+    			t3 = space();
     			div1 = element("div");
     			img1 = element("img");
-    			t1 = space();
-    			p = element("p");
-    			t2 = text("Wade is a full stack web developer and 2019 Coder Academy boot camp alumnus. Wade completed the 6-month fast track Diploma program at Coder Academy in August 2019 including a four-week internship with Flex Dapps. Coder Academy's program is focussed on job-ready, in-demand web development skills including Javascript, React, NodeJS, Express, Ruby and Ruby on Rails. Among his achievements in this program are two full stack web development group projects. The first a marketplace application built using Ruby on Rails deployed with Heroku (Check out the Repo ");
+    			t4 = space();
+    			p1 = element("p");
+    			t5 = text("Wade is a full stack web developer and 2019 Coder Academy boot camp alumnus. Wade completed the 6-month fast track Diploma program at Coder Academy in August 2019 including a four-week internship with Flex Dapps. Coder Academy's program is focussed on job-ready, in-demand web development skills including Javascript, React, NodeJS, Express, Ruby and Ruby on Rails. Among his achievements in this program are two full stack web development group projects. The first a marketplace application built using Ruby on Rails deployed with Heroku (Check out the Repo ");
     			a0 = element("a");
     			a0.textContent = "Here";
-    			t4 = text("). The second a project partnered with an external business stakeholder built using the MERN stack deployed with NOW.SH and Netlify (Check out the Front End Repo ");
+    			t7 = text("). The second a project partnered with an external business stakeholder built using the MERN stack deployed with NOW.SH and Netlify (Check out the Front End Repo ");
     			a1 = element("a");
     			a1.textContent = "Here";
-    			t6 = text(", and the Back End Repo ");
+    			t9 = text(", and the Back End Repo ");
     			a2 = element("a");
     			a2.textContent = "Here";
-    			t8 = text("). During his time with Flex Dapps Wade took on a project to rebuild the Web3 Australia Organisation website using Svelte and deployed on Netlify. (Check out the site ");
+    			t11 = text("). During his time with Flex Dapps Wade took on a project to rebuild the Web3 Australia Organisation website using Svelte and deployed on Netlify. (Check out the site ");
     			a3 = element("a");
     			a3.textContent = "here";
-    			t10 = text(")");
-    			t11 = space();
+    			t13 = text(")");
+    			t14 = space();
     			div2 = element("div");
     			a4 = element("a");
     			i0 = element("i");
-    			t12 = space();
+    			t15 = space();
     			a5 = element("a");
     			i1 = element("i");
-    			t13 = space();
+    			t16 = space();
     			a6 = element("a");
     			i2 = element("i");
-    			t14 = space();
+    			t17 = space();
     			a7 = element("a");
     			i3 = element("i");
     			attr_dev(img0, "class", "about svelte-103k516");
     			attr_dev(img0, "src", "images/ABOUT.svg");
     			attr_dev(img0, "alt", "about");
-    			add_location(img0, file$3, 81, 33, 1288);
+    			add_location(img0, file$3, 82, 33, 1305);
     			attr_dev(div0, "class", "about-container svelte-103k516");
-    			add_location(div0, file$3, 81, 4, 1259);
+    			add_location(div0, file$3, 82, 4, 1276);
+    			attr_dev(p0, "class", "svelte-103k516");
+    			add_location(p0, file$3, 86, 8, 1454);
     			attr_dev(img1, "class", "profile svelte-103k516");
     			attr_dev(img1, "src", "images/profile.jpg");
     			attr_dev(img1, "alt", "profile image");
-    			add_location(img1, file$3, 85, 10, 1431);
+    			add_location(img1, file$3, 88, 10, 1558);
     			attr_dev(a0, "href", "https://github.com/Wade-Martin/rails_marketplace_app");
     			attr_dev(a0, "target", "_blank");
-    			add_location(a0, file$3, 87, 571, 2086);
+    			add_location(a0, file$3, 90, 571, 2213);
     			attr_dev(a1, "href", "https://github.com/Wade-Martin/MERN-App-Front-End");
     			attr_dev(a1, "target", "_blank");
-    			add_location(a1, file$3, 87, 820, 2335);
+    			add_location(a1, file$3, 90, 820, 2462);
     			attr_dev(a2, "href", "https://github.com/Wade-Martin/MERN-App-Back-End");
     			attr_dev(a2, "target", "_blank");
-    			add_location(a2, file$3, 87, 928, 2443);
+    			add_location(a2, file$3, 90, 928, 2570);
     			attr_dev(a3, "href", "https://web3-build.netlify.com/");
     			attr_dev(a3, "target", "_blank");
-    			add_location(a3, file$3, 87, 1178, 2693);
-    			attr_dev(p, "class", "svelte-103k516");
-    			add_location(p, file$3, 86, 10, 1510);
-    			add_location(div1, file$3, 84, 8, 1415);
+    			add_location(a3, file$3, 90, 1178, 2820);
+    			attr_dev(p1, "class", "svelte-103k516");
+    			add_location(p1, file$3, 89, 10, 1637);
+    			add_location(div1, file$3, 87, 8, 1542);
     			attr_dev(i0, "class", "fab fa-github svelte-103k516");
-    			add_location(i0, file$3, 92, 67, 2895);
+    			add_location(i0, file$3, 95, 67, 3022);
     			attr_dev(a4, "href", "https://github.com/Wade-Martin");
     			attr_dev(a4, "target", "_blank");
-    			add_location(a4, file$3, 92, 10, 2838);
+    			add_location(a4, file$3, 95, 10, 2965);
     			attr_dev(i1, "class", "fab fa-codepen svelte-103k516");
-    			add_location(i1, file$3, 93, 67, 2996);
+    			add_location(i1, file$3, 96, 67, 3123);
     			attr_dev(a5, "href", "https://codepen.io/wade-martin");
     			attr_dev(a5, "target", "_blank");
-    			add_location(a5, file$3, 93, 10, 2939);
+    			add_location(a5, file$3, 96, 10, 3066);
     			attr_dev(i2, "class", "fab fa-linkedin svelte-103k516");
-    			add_location(i2, file$3, 94, 79, 3110);
+    			add_location(i2, file$3, 97, 79, 3237);
     			attr_dev(a6, "href", "https://www.linkedin.com/in/wade-s-martin/");
     			attr_dev(a6, "target", "_blank");
-    			add_location(a6, file$3, 94, 10, 3041);
+    			add_location(a6, file$3, 97, 10, 3168);
     			attr_dev(i3, "class", "fab fa-twitter-square svelte-103k516");
-    			add_location(i3, file$3, 95, 70, 3216);
+    			add_location(i3, file$3, 98, 70, 3343);
     			attr_dev(a7, "href", "https://twitter.com/wine_and_Wade");
     			attr_dev(a7, "target", "_blank");
-    			add_location(a7, file$3, 95, 10, 3156);
+    			add_location(a7, file$3, 98, 10, 3283);
     			attr_dev(div2, "class", "icons svelte-103k516");
-    			add_location(div2, file$3, 91, 8, 2808);
+    			add_location(div2, file$3, 94, 8, 2935);
     			attr_dev(div3, "class", "card svelte-103k516");
-    			add_location(div3, file$3, 83, 6, 1388);
+    			add_location(div3, file$3, 85, 6, 1427);
     			attr_dev(div4, "class", "card-container svelte-103k516");
-    			add_location(div4, file$3, 82, 4, 1353);
+    			add_location(div4, file$3, 84, 4, 1392);
     			attr_dev(div5, "class", "wrapper svelte-103k516");
-    			add_location(div5, file$3, 80, 2, 1233);
+    			add_location(div5, file$3, 81, 2, 1250);
     			attr_dev(div6, "class", "container svelte-103k516");
-    			add_location(div6, file$3, 79, 0, 1207);
+    			add_location(div6, file$3, 80, 0, 1224);
+    			dispose = listen_dev(p0, "scroll", ctx.scroll_handler);
     		},
 
     		l: function claim(nodes) {
@@ -1351,35 +1390,44 @@ var app = (function () {
     			append_dev(div5, t0);
     			append_dev(div5, div4);
     			append_dev(div4, div3);
+    			append_dev(div3, p0);
+    			append_dev(p0, t1);
+    			append_dev(p0, t2);
+    			append_dev(div3, t3);
     			append_dev(div3, div1);
     			append_dev(div1, img1);
-    			append_dev(div1, t1);
-    			append_dev(div1, p);
-    			append_dev(p, t2);
-    			append_dev(p, a0);
-    			append_dev(p, t4);
-    			append_dev(p, a1);
-    			append_dev(p, t6);
-    			append_dev(p, a2);
-    			append_dev(p, t8);
-    			append_dev(p, a3);
-    			append_dev(p, t10);
-    			append_dev(div3, t11);
+    			append_dev(div1, t4);
+    			append_dev(div1, p1);
+    			append_dev(p1, t5);
+    			append_dev(p1, a0);
+    			append_dev(p1, t7);
+    			append_dev(p1, a1);
+    			append_dev(p1, t9);
+    			append_dev(p1, a2);
+    			append_dev(p1, t11);
+    			append_dev(p1, a3);
+    			append_dev(p1, t13);
+    			append_dev(div3, t14);
     			append_dev(div3, div2);
     			append_dev(div2, a4);
     			append_dev(a4, i0);
-    			append_dev(div2, t12);
+    			append_dev(div2, t15);
     			append_dev(div2, a5);
     			append_dev(a5, i1);
-    			append_dev(div2, t13);
+    			append_dev(div2, t16);
     			append_dev(div2, a6);
     			append_dev(a6, i2);
-    			append_dev(div2, t14);
+    			append_dev(div2, t17);
     			append_dev(div2, a7);
     			append_dev(a7, i3);
     		},
 
-    		p: noop,
+    		p: function update(changed, ctx) {
+    			if (changed.scrollPos) {
+    				set_data_dev(t2, ctx.scrollPos);
+    			}
+    		},
+
     		i: noop,
     		o: noop,
 
@@ -1387,16 +1435,34 @@ var app = (function () {
     			if (detaching) {
     				detach_dev(div6);
     			}
+
+    			dispose();
     		}
     	};
     	dispatch_dev("SvelteRegisterBlock", { block, id: create_fragment$3.name, type: "component", source: "", ctx });
     	return block;
     }
 
+    function instance$3($$self, $$props, $$invalidate) {
+    	let scrollPos;
+
+    	const scroll_handler = (e) => $$invalidate('scrollPos', scrollPos = { y: e.scrollY });
+
+    	$$self.$capture_state = () => {
+    		return {};
+    	};
+
+    	$$self.$inject_state = $$props => {
+    		if ('scrollPos' in $$props) $$invalidate('scrollPos', scrollPos = $$props.scrollPos);
+    	};
+
+    	return { scrollPos, scroll_handler };
+    }
+
     class AboutMe extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, null, create_fragment$3, safe_not_equal, []);
+    		init(this, options, instance$3, create_fragment$3, safe_not_equal, []);
     		dispatch_dev("SvelteRegisterComponent", { component: this, tagName: "AboutMe", options, id: create_fragment$3.name });
     	}
     }

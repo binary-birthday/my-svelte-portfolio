@@ -1,4 +1,5 @@
 <script>
+  let scrollPos;
 </script>
 
 <style>
@@ -80,8 +81,10 @@
 <div class="container">
   <div class="wrapper">
     <div class="about-container"><img class="about" src="images/ABOUT.svg" alt="about"></div>
+    <!-- {if x =} -->
     <div class="card-container">
       <div class="card">
+        <p on:scroll="{e => scrollPos = { y: e.scrollY }}">scroll pos = {scrollPos}</p>
         <div>
           <img class="profile" src="images/profile.jpg" alt="profile image" />
           <p> 
