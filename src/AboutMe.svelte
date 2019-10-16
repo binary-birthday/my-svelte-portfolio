@@ -15,7 +15,7 @@
 
   .wrapper {
     display: grid;
-    grid-template-columns: 1fr minmax(60%, 1fr);
+    grid-template-columns: 1fr minmax(82.5%, 1fr);
     background-color: #fff;
     color: #444;
   }
@@ -35,11 +35,11 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .card {
-    width: 75%;
+    width: 80%;
     padding-top: 5rem;
     padding-bottom: 5rem;
     line-height: 2.5rem;
@@ -78,9 +78,6 @@
   }
 
   @media only screen and (max-width: 700px) {
-    .wrapper {
-      grid-template-columns: 1fr minmax(82.5%, 1fr)
-    }
     .profile {
       width: 75px;
       height: 75px;
