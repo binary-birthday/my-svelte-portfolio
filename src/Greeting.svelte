@@ -72,12 +72,6 @@
     display: none;
   }
 
-  @media only screen and (max-width: 700px) {
-  .landing-container {
-    padding-top: 2rem;
-  }
-}
-
 </style>
 	
 
