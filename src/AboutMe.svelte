@@ -70,7 +70,7 @@
     display: flex;
     align-self: center;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-;
   }
 
   i {
