@@ -15,7 +15,7 @@
 
   .wrapper {
     display: grid;
-    grid-template-columns: 1fr minmax(75%, 1fr);
+    grid-template-columns: 1fr minmax(70%, 1fr);
     background-color: #fff;
     color: #444;
   }
