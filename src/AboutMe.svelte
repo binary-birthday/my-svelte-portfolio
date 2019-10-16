@@ -91,7 +91,7 @@
       padding-right: 0.5rem;
       padding-left: 1rem;
       line-height: 2rem;
-      width: 100%;
+      width: 95%;
     }
     .profile {
       margin-right: .75rem;
