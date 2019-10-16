@@ -50,6 +50,8 @@
 @media only screen and (max-width: 700px) {
   .background {
     width: 100vw;
+    position: absolute;
+    left: 0;
   }
 }
 </style>
