@@ -1,12 +1,19 @@
 <script>
   import { scale, fade, slide } from 'svelte/transition';
+  import { onMount } from 'svelte';
   import { elasticOut, quintOut } from 'svelte/easing';
 
-  let element = document.getElementById("background");;
-  let getRect = element.getBoundingClientRect();
-  let position = getRect.top;
+  let element 
+  let getRect
+  let position
 
   export let y;
+
+  onMount(() => {
+    element = document.getElementById("#background");;
+    getRect = element.getBoundingClientRect();
+    position = getRect.top;
+  })
 </script>
 
 <style>
