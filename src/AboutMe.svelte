@@ -87,7 +87,7 @@
     line-height: 2rem;
   }
   p {
-    font-size: 1rem;
+    font-size: 1.25rem;
   }
 }
 

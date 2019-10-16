@@ -5499,10 +5499,10 @@ var app = (function () {
     var block = {
       c: function create() {
         img = element("img");
-        attr_dev(img, "class", "about svelte-ogwtvz");
+        attr_dev(img, "class", "about svelte-19tey9y");
         attr_dev(img, "src", "images/ABOUT.svg");
         attr_dev(img, "alt", "about");
-        add_location(img, file$3, 101, 8, 1669);
+        add_location(img, file$3, 101, 8, 1672);
       },
       m: function mount(target, anchor) {
         insert_dev(target, img, anchor);
@@ -5574,49 +5574,49 @@ var app = (function () {
         t13 = space();
         a7 = element("a");
         i3 = element("i");
-        attr_dev(img, "class", "profile svelte-ogwtvz");
+        attr_dev(img, "class", "profile svelte-19tey9y");
         attr_dev(img, "src", "images/profile.jpg");
         attr_dev(img, "alt", "profile image");
-        add_location(img, file$3, 108, 10, 2016);
+        add_location(img, file$3, 108, 10, 2019);
         attr_dev(a0, "href", "https://github.com/Wade-Martin/rails_marketplace_app");
         attr_dev(a0, "target", "_blank");
-        add_location(a0, file$3, 110, 571, 2671);
+        add_location(a0, file$3, 110, 571, 2674);
         attr_dev(a1, "href", "https://github.com/Wade-Martin/MERN-App-Front-End");
         attr_dev(a1, "target", "_blank");
-        add_location(a1, file$3, 110, 820, 2920);
+        add_location(a1, file$3, 110, 820, 2923);
         attr_dev(a2, "href", "https://github.com/Wade-Martin/MERN-App-Back-End");
         attr_dev(a2, "target", "_blank");
-        add_location(a2, file$3, 110, 928, 3028);
+        add_location(a2, file$3, 110, 928, 3031);
         attr_dev(a3, "href", "https://web3-build.netlify.com/");
         attr_dev(a3, "target", "_blank");
-        add_location(a3, file$3, 110, 1178, 3278);
-        attr_dev(p, "class", "svelte-ogwtvz");
-        add_location(p, file$3, 109, 10, 2095);
-        add_location(div0, file$3, 107, 8, 2000);
-        attr_dev(i0, "class", "fab fa-github svelte-ogwtvz");
-        add_location(i0, file$3, 114, 67, 3471);
+        add_location(a3, file$3, 110, 1178, 3281);
+        attr_dev(p, "class", "svelte-19tey9y");
+        add_location(p, file$3, 109, 10, 2098);
+        add_location(div0, file$3, 107, 8, 2003);
+        attr_dev(i0, "class", "fab fa-github svelte-19tey9y");
+        add_location(i0, file$3, 114, 67, 3474);
         attr_dev(a4, "href", "https://github.com/Wade-Martin");
         attr_dev(a4, "target", "_blank");
-        add_location(a4, file$3, 114, 10, 3414);
-        attr_dev(i1, "class", "fab fa-codepen svelte-ogwtvz");
-        add_location(i1, file$3, 115, 67, 3572);
+        add_location(a4, file$3, 114, 10, 3417);
+        attr_dev(i1, "class", "fab fa-codepen svelte-19tey9y");
+        add_location(i1, file$3, 115, 67, 3575);
         attr_dev(a5, "href", "https://codepen.io/wade-martin");
         attr_dev(a5, "target", "_blank");
-        add_location(a5, file$3, 115, 10, 3515);
-        attr_dev(i2, "class", "fab fa-linkedin svelte-ogwtvz");
-        add_location(i2, file$3, 116, 79, 3686);
+        add_location(a5, file$3, 115, 10, 3518);
+        attr_dev(i2, "class", "fab fa-linkedin svelte-19tey9y");
+        add_location(i2, file$3, 116, 79, 3689);
         attr_dev(a6, "href", "https://www.linkedin.com/in/wade-s-martin/");
         attr_dev(a6, "target", "_blank");
-        add_location(a6, file$3, 116, 10, 3617);
-        attr_dev(i3, "class", "fab fa-twitter-square svelte-ogwtvz");
-        add_location(i3, file$3, 117, 70, 3792);
+        add_location(a6, file$3, 116, 10, 3620);
+        attr_dev(i3, "class", "fab fa-twitter-square svelte-19tey9y");
+        add_location(i3, file$3, 117, 70, 3795);
         attr_dev(a7, "href", "https://twitter.com/wine_and_Wade");
         attr_dev(a7, "target", "_blank");
-        add_location(a7, file$3, 117, 10, 3732);
-        attr_dev(div1, "class", "icons svelte-ogwtvz");
-        add_location(div1, file$3, 113, 8, 3384);
-        attr_dev(div2, "class", "card svelte-ogwtvz");
-        add_location(div2, file$3, 106, 6, 1885);
+        add_location(a7, file$3, 117, 10, 3735);
+        attr_dev(div1, "class", "icons svelte-19tey9y");
+        add_location(div1, file$3, 113, 8, 3387);
+        attr_dev(div2, "class", "card svelte-19tey9y");
+        add_location(div2, file$3, 106, 6, 1888);
       },
       m: function mount(target, anchor) {
         insert_dev(target, div2, anchor);
@@ -5703,14 +5703,14 @@ var app = (function () {
         t = space();
         div1 = element("div");
         if (if_block1) if_block1.c();
-        attr_dev(div0, "class", "about-container svelte-ogwtvz");
-        add_location(div0, file$3, 99, 4, 1611);
-        attr_dev(div1, "class", "card-container svelte-ogwtvz");
-        add_location(div1, file$3, 104, 4, 1830);
-        attr_dev(div2, "class", "wrapper svelte-ogwtvz");
-        add_location(div2, file$3, 98, 2, 1585);
-        attr_dev(div3, "class", "container svelte-ogwtvz");
-        add_location(div3, file$3, 96, 0, 1556);
+        attr_dev(div0, "class", "about-container svelte-19tey9y");
+        add_location(div0, file$3, 99, 4, 1614);
+        attr_dev(div1, "class", "card-container svelte-19tey9y");
+        add_location(div1, file$3, 104, 4, 1833);
+        attr_dev(div2, "class", "wrapper svelte-19tey9y");
+        add_location(div2, file$3, 98, 2, 1588);
+        attr_dev(div3, "class", "container svelte-19tey9y");
+        add_location(div3, file$3, 96, 0, 1559);
       },
       l: function claim(nodes) {
         throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
