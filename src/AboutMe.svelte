@@ -39,7 +39,7 @@
   }
 
   .card {
-    width: 80%;
+    width: 70%;
     padding-top: 5rem;
     padding-bottom: 5rem;
     line-height: 2.5rem;
@@ -87,7 +87,7 @@
     .card {
       padding-left: 1rem;
       line-height: 2rem;
-      width: 95%;
+      width: 90%;
     }
     .profile {
       margin-right: .75rem;
