@@ -15,7 +15,7 @@
 
   .wrapper {
     display: grid;
-    grid-template-columns: 1fr minmax(70%, 1fr);
+    grid-template-columns: 1fr minmax(60%, 1fr);
     background-color: #fff;
     color: #444;
   }
@@ -70,6 +70,7 @@
     justify-content: space-between;
     align-items: flex-start;
     padding-left: 2rem;
+    padding-top: 1rem;
   }
 
   i {
