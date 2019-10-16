@@ -1,7 +1,7 @@
 <script>
   import { scale, fade, slide } from 'svelte/transition';
   import { elasticOut, quintOut } from 'svelte/easing';
-  let element_position = $('.background').offset().top;
+  let element_position = document.querySelector('.background').offset().top;
   export let y;
 </script>
 
