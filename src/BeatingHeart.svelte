@@ -2,9 +2,8 @@
   import { onMount } from 'svelte';
 
   onMount(() => {
-    TweenMax.fromTo(anatomicalHeart,.6,
-    {
-      visible:true,
+    TweenMax.fromTo(anatomicalHeart, .6, 
+    { 
       scale:1
     },
     {
@@ -30,6 +29,7 @@
   height: 105%;
   display: flex;
   justify-content: center;
+  will-change: transform;
 }
 
 #anatomicalHeart {
