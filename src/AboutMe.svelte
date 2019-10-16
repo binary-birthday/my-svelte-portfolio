@@ -12,7 +12,7 @@
   onMount(() => {
     element = document.getElementById("container");
     getRect = element.getBoundingClientRect();
-    position = getRect.top - 50;
+    position = getRect.top - 300;
     console.log(position)
   })
 </script>
