@@ -78,7 +78,7 @@
 
   @media only screen and (max-width: 700px) {
     .wrapper {
-      grid-template-columns: 1fr minmax(82.5%, 1fr)
+      grid-template-columns: 1fr minmax(80%, 1fr)
     }
     .profile {
       width: 75px;
