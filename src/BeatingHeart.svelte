@@ -24,7 +24,7 @@
 
 <style>
 .background {
-  height: 100vh;
+  height: 100%;
   height: calc(var(--vh, 1vh) * 100);
   width: 50vw;
   position: absolute;
@@ -45,7 +45,7 @@
 
 @media only screen and (max-width: 700px) {
   .background {
-    width: 50vw;
+    width: 100vw;
   }
 }
 </style>

@@ -5138,7 +5138,7 @@ var app = (function () {
         attr_dev(g1, "id", "atrium-group");
         add_location(g1, file$1, 67, 0, 29456);
         attr_dev(g2, "id", "anatomicalHeart");
-        attr_dev(g2, "class", "svelte-3oxew8");
+        attr_dev(g2, "class", "svelte-1kdff8z");
         add_location(g2, file$1, 55, 2, 1089);
         attr_dev(svg, "width", "100%");
         attr_dev(svg, "height", "100%");
@@ -5146,9 +5146,9 @@ var app = (function () {
         attr_dev(svg, "fill", "none");
         attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
         add_location(svg, file$1, 54, 2, 983);
-        attr_dev(div0, "class", "pericardium svelte-3oxew8");
+        attr_dev(div0, "class", "pericardium svelte-1kdff8z");
         add_location(div0, file$1, 53, 2, 955);
-        attr_dev(div1, "class", "background svelte-3oxew8");
+        attr_dev(div1, "class", "background svelte-1kdff8z");
         add_location(div1, file$1, 52, 0, 928);
       },
       l: function claim(nodes) {
