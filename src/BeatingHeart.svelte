@@ -37,10 +37,12 @@
   display: flex;
   justify-content: center;
   will-change: transform;
+  position: absolute;
 }
 
 #anatomicalHeart {
-  opacity: .4
+  opacity: .4;
+  position: absolute;
 }
 
 @media only screen and (max-width: 700px) {
