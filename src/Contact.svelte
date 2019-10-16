@@ -9,6 +9,12 @@
 
   export let y;
 
+  window.addEventListener('resize', () => {
+    element = document.getElementById("background");
+    getRect = element.getBoundingClientRect();
+    position = getRect.top - 10;
+  });
+
   onMount(() => {
     element = document.getElementById("background");
     getRect = element.getBoundingClientRect();
