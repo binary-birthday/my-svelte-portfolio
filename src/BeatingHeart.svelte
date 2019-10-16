@@ -38,11 +38,13 @@
   justify-content: center;
   will-change: transform;
   position: absolute;
+  z-index: 1;
 }
 
 #anatomicalHeart {
   opacity: .4;
   position: absolute;
+  z-index: 1;
 }
 
 @media only screen and (max-width: 700px) {
