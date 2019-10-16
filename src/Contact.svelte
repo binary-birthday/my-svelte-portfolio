@@ -7,7 +7,8 @@
 <style>
   .background {
     width: 100vw;
-    height: 125%;
+    max-height: 125%;
+    min-height: 100%;  
     position: absolute;
     z-index: -1;
   }
@@ -95,6 +96,9 @@
   @media only screen and (max-width: 700px) {
     .form-container {
       max-width: 95%;
+    }
+    .background {
+      max-height: 140%;
     }
 }
 </style>

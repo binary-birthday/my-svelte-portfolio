@@ -68,7 +68,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    /* padding-left: 2rem; */
+    padding-left: 2rem;
   }
 
   i {
