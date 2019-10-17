@@ -4,8 +4,6 @@
   import { fly } from 'svelte/transition';
   import { quintOut } from 'svelte/easing'
 
-  let dn = true;
-  
   let visible = false;
 
   function typewriter(node, { delay = 100, speed = 50 }) {
@@ -20,7 +18,6 @@
 
 		const text = node.textContent;
     const duration = text.length * speed;
-    dn = false;
 
 		return {
       delay,
@@ -33,13 +30,9 @@
 
 		};
   };
-  
-  const toggleVis = () => {
-    visible = !visible;
-  }
-  
+
   onMount(() => {
-    toggleVis()
+    visible = true;
   })
 </script>
 
@@ -47,7 +40,7 @@
 
   .landing-container {
     background-color: black;
-    height: 120%;
+    height: 105%;
     width: 100%;
     padding-top: 4rem;
     z-index: 2;
@@ -57,7 +50,7 @@
 
   .right {
     width: 100%;
-    height: 70%;
+    height: 50%;
     z-index: 10;
     padding-left: 3rem;
   }
@@ -65,21 +58,18 @@
 	p {
 		color: white;
 		font-weight: 800;
-    font-size: calc(16vmin + 8*(100vw - 400px)/ 400);
+    font-size: calc(14.5vmin + 8*(90vw - 400px)/ 400);
   }
-  
-  .dn {
-    display: none;
-  }
+
 
 </style>
 	
 <div class="landing-container">
   <div class="right">
     {#if visible}	
-    <p class:dn={dn} in:typewriter="{{delay: 1200, speed: 50}}" class="greting1">HELLO!</p>
-	  <p class:dn={dn} in:typewriter="{{delay: 2000, speed: 50}}" class="greting2">MY NAME IS WADE</p>
-	  <p class:dn={dn} in:typewriter="{{delay: 3000, speed: 50}}" class="greting3">I BUILD WEB APPS</p>
+    <p in:typewriter="{{delay: 1200, speed: 50}}" class="greting1">HELLO!</p>
+	  <p in:typewriter="{{delay: 2000, speed: 50}}" class="greting2">MY NAME IS WADE</p>
+	  <p in:typewriter="{{delay: 3000, speed: 50}}" class="greting3">I BUILD WEB APPS</p>
     {/if}
   </div>
   <BeatingHeart />

@@ -121,15 +121,15 @@
   <div class="left"></div>
   <div class="form-container">
     {#if (scrollPos + windowHeight) >= elementPos }
-    <h1 transition:slide="{{delay: 500, duration: 1000, easing: quintOut }}"  >Get In Touch</h1>
+    <h1 transition:slide="{{delay: 500, duration: 2000, easing: quintOut }}"  >Get In Touch</h1>
     <form action="https://formspree.io/wsmartin23@gmail.com" method="POST">      
       <p class="dn">
         <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
       </p>
-      <input transition:scale="{{duration: 1000, delay: 550, opacity: 0, start: .75, easing:elasticOut}}" name="name" type="text" class="form-input" placeholder="Name" />   
-      <input transition:scale="{{duration: 1000, delay: 600, opacity: 0, start: .75, easing:elasticOut}}" name="email" type="text" class="form-input" placeholder="Email" />
-      <textarea transition:scale="{{duration: 1000, delay: 650, opacity: 0, start: .75, easing:elasticOut}}" name="text" class="form-input" placeholder="Your Message here..."></textarea>
-      <input transition:scale="{{duration: 1000, delay: 700, opacity: 0, start: .75, easing:elasticOut}}" type="submit" value="SUBMIT"/>
+      <input transition:scale="{{duration: 800, delay: 1200, opacity: 0, start: .8, easing:elasticOut}}" name="name" type="text" class="form-input" placeholder="Name" />   
+      <input transition:scale="{{duration: 800, delay: 1250, opacity: 0, start: .8, easing:elasticOut}}" name="email" type="text" class="form-input" placeholder="Email" />
+      <textarea transition:scale="{{duration: 800, delay: 1300, opacity: 0, start: .8, easing:elasticOut}}" name="text" class="form-input" placeholder="Your Message here..."></textarea>
+      <input transition:scale="{{duration: 800, delay: 1350, opacity: 0, start: .8, easing:elasticOut}}" type="submit" value="SUBMIT"/>
     </form> 
     {/if}
   </div>

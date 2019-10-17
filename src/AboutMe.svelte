@@ -6,9 +6,6 @@
   export let scrollPos;
   export let loaded = false;
 
-  afterUpdate(() => {
-		loaded = !loaded
-	});
 </script>
 
 <style>
@@ -106,13 +103,11 @@
 <div class="container" loaded={loaded}>
   
   <div class="wrapper">
+    {#if scrollPos > 100} 
     <div class="about-container">
-      {#if scrollPos > 100}
-        <img in:fly="{{delay: 0, duration: 2000, y: -300, opacity: .01, easing: quintOut}}" class="about" src="images/ABOUT.svg" alt="about">
-      {/if}
+      <img in:fly="{{delay: 0, duration: 2000, y: -300, opacity: .01, easing: quintOut}}" class="about" src="images/ABOUT.svg" alt="about">
     </div>
     <div class="card-container">
-      {#if scrollPos > 100}
       <div transition:fly="{{delay: 100, duration: 3000, y: 200, opacity: .75, easing: quintOut}}" class="card">
         <div>
           <img class="profile" src="images/profile.jpg" alt="profile image" />
@@ -127,8 +122,8 @@
           <a href="https://twitter.com/wine_and_Wade" target="_blank">    <i class="fab fa-twitter-square"></i></a>
         </div>
       </div>
-      {/if}
     </div>
+    {/if}
   </div>
 </div>
 

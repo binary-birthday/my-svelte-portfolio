@@ -9,21 +9,35 @@
 	let scrollPos;
 	let elementPos
 	let windowHeight;
-	let loaded;
+
+	let loaded = false;
 	
-	$: if (loaded) {
-		elementPos = document.getElementById('main').getBoundingClientRect().top;
+	const setVhVar = () => {
+		document.documentElement.style.setProperty('--vh', `${windowHeight}px`);
+	}
+
+	const getPostion = () => {
+		let newPostion = document.getElementById('main').getBoundingClientRect().top;
+		return newPostion;
+	}
+
+	$: if (scrollPos > 199 ) {
+    loaded = true;
+  }
+	
+	$: if (loaded === true) {
+		elementPos = getPostion();
 	}
 
 
 	const handleResize = () => {
-		document.documentElement.style.setProperty('--vh', `${windowHeight}px`);
-		elementPos = document.getElementById('main').getBoundingClientRect().top;
-		console.log('onResize:', (elementPos - (elementPos * .333)), elementPos)
+		setVhVar()
+		elementPos = getPostion();
 	};
 
 	onMount(() => {
-		document.documentElement.style.setProperty('--vh', `${windowHeight}px`);		
+		setVhVar();
+		elementPos = getPostion();
   })
 
 </script>
@@ -31,6 +45,7 @@
 <style>
 	div {
 		height: var(--vh);
+		height: 100vh;
 		width: 100vw;
 	}
 </style>
