@@ -8,7 +8,7 @@
 
   const getOffset = ( element ) => {
     let y = 0;
-    while( elelement && !isNaN( element.offsetTop ) ) {
+    while( element && !isNaN( element.offsetTop ) ) {
         y += element.offsetTop - element.scrollTop;
     }
     return { top: y };
