@@ -12,13 +12,13 @@
   window.addEventListener('resize', () => {
     element = document.getElementById("background");
     getRect = element.getBoundingClientRect();
-    position = getRect.top - 75;
+    position = getRect.top - 40;
   });
 
   onMount(() => {
     element = document.getElementById("background");
     getRect = element.getBoundingClientRect();
-    position = getRect.top - 75;
+    position = getRect.top - 40;
   })
 </script>
 
