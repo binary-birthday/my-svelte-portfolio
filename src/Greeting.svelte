@@ -74,20 +74,25 @@
     padding-left: 3rem;
   }
 	
-	p {
+	span {
 		color: white;
     font-family: 'Oswald', sans-serif;
 		font-weight: 600;
-    font-size: calc(8vmin + 8*(90vw - 400px)/ 400);
+    font-size: calc(8vh + 8*(90vw - 400px)/ 400);
   }
 
   @media only screen and (max-width: 700px) {
     .landing-container {
       height: 110%;
     }
-    /* p {
-      font-size: calc(7.5vh + 8*(90vw - 400px)/ 400);
-    } */
+   span {
+      font-size: calc(8.5vh + 8*(90vw - 400px)/ 400);
+    }
+    .strong {
+    color: #0E79B2;
+    text-shadow: .5px .5px #00000022;
+  }
+
   }
 
 
@@ -96,11 +101,11 @@
 <div bind:offsetHeight={height} class="landing-container">
   {#if visible}	
   <div class="right">
-    <p in:typewriter="{{delay: 1200, speed: 50}}" >Hi, my name is</p>
-	  <p in:typewriter="{{delay: 2000, speed: 50}}" class="strong">Wade Martin.</p>
-	  <p in:typewriter="{{delay: 3000, speed: 50}}" >I build webapps. </p>
-	  <p in:typewriter="{{delay: 4200, speed: 50}}" >Welcome to my</p>
-	  <p in:typewriter="{{delay: 5000, speed: 50}}" >portfolio!</p>
+    <span in:typewriter="{{delay: 1200, speed: 50}}" >Hi, my name is</span><br>
+	  <span in:typewriter="{{delay: 2000, speed: 50}}" class="strong">Wade Martin.</span><br>
+	  <span in:typewriter="{{delay: 3000, speed: 50}}" >I build webapps.</span><br>
+	  <span in:typewriter="{{delay: 4200, speed: 50}}" >Welcome to my</span><br>
+	  <span in:typewriter="{{delay: 5000, speed: 50}}" >portfolio!</span><br>
   </div>
   <BeatingHeart />
   {/if}

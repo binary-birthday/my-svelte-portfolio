@@ -4694,7 +4694,7 @@ var app = (function () {
     };
   }
 
-  var file = "src/NavBar.svelte"; // (29:0) {#if scrollPos > 1}
+  var file = "src/NavBar.svelte"; // (29:0) {#if scrollPos > 50}
 
   function create_if_block(ctx) {
     var div, svg, path0, path0_intro, path1, path1_intro, path2, path2_intro, path3, path3_intro, path4, path4_intro, path5, path5_intro, path6, path6_intro, path7, path7_intro, path8, path8_intro, path9, path9_intro, path10, path10_intro, div_intro;
@@ -4717,64 +4717,64 @@ var app = (function () {
         attr_dev(path0, "d", "M2 160.001V2.375H72V160.001L36.7407 86.675L2 160.001Z");
         attr_dev(path0, "stroke", "#E01E41");
         attr_dev(path0, "stroke-width", "4");
-        add_location(path0, file, 31, 4, 657);
+        add_location(path0, file, 31, 4, 658);
         attr_dev(path1, "class", "a1");
         attr_dev(path1, "d", "M92 160.001L125.25 2.375L162 160.001H92Z");
         attr_dev(path1, "stroke", "#E01E41");
         attr_dev(path1, "stroke-width", "4");
-        add_location(path1, file, 32, 4, 829);
+        add_location(path1, file, 32, 4, 830);
         attr_dev(path2, "class", "d");
         attr_dev(path2, "d", "M182 2.37497V160.001C182 160.001 252 171.474 252 81.6865C252 -8.10056 182 2.37497 182 2.37497Z");
         attr_dev(path2, "stroke", "#E01E41");
         attr_dev(path2, "stroke-width", "4");
-        add_location(path2, file, 33, 4, 989);
+        add_location(path2, file, 33, 4, 990);
         attr_dev(path3, "class", "e");
         attr_dev(path3, "d", "M342 160.001H272V81.188M272 81.188V2.375H342L272 81.188ZM272 81.188H342");
         attr_dev(path3, "stroke", "#E01E41");
         attr_dev(path3, "stroke-width", "4");
-        add_location(path3, file, 34, 4, 1202);
+        add_location(path3, file, 34, 4, 1203);
         attr_dev(path4, "class", "s");
         attr_dev(path4, "d", "M449.477 2C449.477 2 414 17.2164 414 45.45C414 79.2995 465.466 76.0006 465.466 114.081C465.466 152.162 428.491 160 428.491 160M473.046 160V154.182H479V160H473.046Z");
         attr_dev(path4, "stroke", "#E01E41");
         attr_dev(path4, "stroke-width", "4");
-        add_location(path4, file, 35, 4, 1392);
+        add_location(path4, file, 35, 4, 1393);
         attr_dev(path5, "class", "m");
         attr_dev(path5, "d", "M621 4.13416V159.02H551V4.13416L586.259 76.1853L621 4.13416Z");
         attr_dev(path5, "stroke", "#E01E41");
         attr_dev(path5, "stroke-width", "4");
-        add_location(path5, file, 36, 4, 1675);
+        add_location(path5, file, 36, 4, 1676);
         attr_dev(path6, "class", "a2");
         attr_dev(path6, "d", "M641 160L674.25 5.11475L711 160H641Z");
         attr_dev(path6, "stroke", "#E01E41");
         attr_dev(path6, "stroke-width", "4");
-        add_location(path6, file, 37, 4, 1854);
+        add_location(path6, file, 37, 4, 1855);
         attr_dev(path7, "class", "r");
         attr_dev(path7, "d", "M731 4.13443V159.02H800.947L777.5 75.6953C777.5 75.6953 799 74.715 799 32.5628C799 -9.58949 731 4.13443 731 4.13443Z");
         attr_dev(path7, "stroke", "#E01E41");
         attr_dev(path7, "stroke-width", "4");
-        add_location(path7, file, 38, 4, 2010);
+        add_location(path7, file, 38, 4, 2011);
         attr_dev(path8, "class", "t");
         attr_dev(path8, "d", "M856 160V3.15381M856 3.15381H821M856 3.15381H891");
         attr_dev(path8, "stroke", "#E01E41");
         attr_dev(path8, "stroke-width", "4");
-        add_location(path8, file, 39, 4, 2245);
+        add_location(path8, file, 39, 4, 2246);
         attr_dev(path9, "class", "i");
         attr_dev(path9, "d", "M910 2.17383V159.02");
         attr_dev(path9, "stroke", "#E01E41");
         attr_dev(path9, "stroke-width", "4");
-        add_location(path9, file, 40, 4, 2412);
+        add_location(path9, file, 40, 4, 2413);
         attr_dev(path10, "class", "n");
         attr_dev(path10, "d", "M1015 159.02L945 2.17383V159.02H1015ZM1015 159.02V2.17383");
         attr_dev(path10, "stroke", "#E01E41");
         attr_dev(path10, "stroke-width", "4");
-        add_location(path10, file, 41, 4, 2551);
+        add_location(path10, file, 41, 4, 2552);
         attr_dev(svg, "class", "myName svelte-cdtbid");
         attr_dev(svg, "viewBox", "0 0 1017 163");
         attr_dev(svg, "fill", "none");
         attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
-        add_location(svg, file, 30, 2, 562);
+        add_location(svg, file, 30, 2, 563);
         attr_dev(div, "class", "navbar svelte-cdtbid");
-        add_location(div, file, 29, 0, 481);
+        add_location(div, file, 29, 0, 482);
       },
       m: function mount(target, anchor) {
         insert_dev(target, div, anchor);
@@ -4935,7 +4935,7 @@ var app = (function () {
       block: block,
       id: create_if_block.name,
       type: "if",
-      source: "(29:0) {#if scrollPos > 1}",
+      source: "(29:0) {#if scrollPos > 50}",
       ctx: ctx
     });
     return block;
@@ -4943,7 +4943,7 @@ var app = (function () {
 
   function create_fragment(ctx) {
     var if_block_anchor;
-    var if_block = ctx.scrollPos > 1 && create_if_block(ctx);
+    var if_block = ctx.scrollPos > 50 && create_if_block(ctx);
     var block = {
       c: function create() {
         if (if_block) if_block.c();
@@ -4957,7 +4957,7 @@ var app = (function () {
         insert_dev(target, if_block_anchor, anchor);
       },
       p: function update(changed, ctx) {
-        if (ctx.scrollPos > 1) {
+        if (ctx.scrollPos > 50) {
           if (!if_block) {
             if_block = create_if_block(ctx);
             if_block.c();
@@ -5321,56 +5321,71 @@ var app = (function () {
   }(SvelteComponentDev);
 
   var Error_1 = globals.Error;
-  var file$2 = "src/Greeting.svelte"; // (98:2) {#if visible}
+  var file$2 = "src/Greeting.svelte"; // (102:2) {#if visible}
 
   function create_if_block$1(ctx) {
-    var div, p0, p0_intro, t1, p1, p1_intro, t3, p2, p2_intro, t5, p3, p3_intro, t7, p4, p4_intro, t9, current;
+    var div, span0, span0_intro, br0, t1, span1, span1_intro, br1, t3, span2, span2_intro, br2, t5, span3, span3_intro, br3, t7, span4, span4_intro, br4, t9, current;
     var beatingheart = new BeatingHeart({
       $$inline: true
     });
     var block = {
       c: function create() {
         div = element("div");
-        p0 = element("p");
-        p0.textContent = "Hi, my name is";
+        span0 = element("span");
+        span0.textContent = "Hi, my name is";
+        br0 = element("br");
         t1 = space();
-        p1 = element("p");
-        p1.textContent = "Wade Martin.";
+        span1 = element("span");
+        span1.textContent = "Wade Martin.";
+        br1 = element("br");
         t3 = space();
-        p2 = element("p");
-        p2.textContent = "I build webapps.";
+        span2 = element("span");
+        span2.textContent = "I build webapps.";
+        br2 = element("br");
         t5 = space();
-        p3 = element("p");
-        p3.textContent = "Welcome to my";
+        span3 = element("span");
+        span3.textContent = "Welcome to my";
+        br3 = element("br");
         t7 = space();
-        p4 = element("p");
-        p4.textContent = "portfolio!";
+        span4 = element("span");
+        span4.textContent = "portfolio!";
+        br4 = element("br");
         t9 = space();
         beatingheart.$$.fragment.c();
-        attr_dev(p0, "class", "svelte-1j41gu");
-        add_location(p0, file$2, 99, 4, 1765);
-        attr_dev(p1, "class", "strong svelte-1j41gu");
-        add_location(p1, file$2, 100, 3, 1834);
-        attr_dev(p2, "class", "svelte-1j41gu");
-        add_location(p2, file$2, 101, 3, 1915);
-        attr_dev(p3, "class", "svelte-1j41gu");
-        add_location(p3, file$2, 102, 3, 1987);
-        attr_dev(p4, "class", "svelte-1j41gu");
-        add_location(p4, file$2, 103, 3, 2055);
-        attr_dev(div, "class", "right svelte-1j41gu");
-        add_location(div, file$2, 98, 2, 1741);
+        attr_dev(span0, "class", "svelte-4rhzyw");
+        add_location(span0, file$2, 103, 4, 1815);
+        add_location(br0, file$2, 103, 75, 1886);
+        attr_dev(span1, "class", "strong svelte-4rhzyw");
+        add_location(span1, file$2, 104, 3, 1894);
+        add_location(br1, file$2, 104, 86, 1977);
+        attr_dev(span2, "class", "svelte-4rhzyw");
+        add_location(span2, file$2, 105, 3, 1985);
+        add_location(br2, file$2, 105, 76, 2058);
+        attr_dev(span3, "class", "svelte-4rhzyw");
+        add_location(span3, file$2, 106, 3, 2066);
+        add_location(br3, file$2, 106, 73, 2136);
+        attr_dev(span4, "class", "svelte-4rhzyw");
+        add_location(span4, file$2, 107, 3, 2144);
+        add_location(br4, file$2, 107, 70, 2211);
+        attr_dev(div, "class", "right svelte-4rhzyw");
+        add_location(div, file$2, 102, 2, 1791);
       },
       m: function mount(target, anchor) {
         insert_dev(target, div, anchor);
-        append_dev(div, p0);
+        append_dev(div, span0);
+        append_dev(div, br0);
         append_dev(div, t1);
-        append_dev(div, p1);
+        append_dev(div, span1);
+        append_dev(div, br1);
         append_dev(div, t3);
-        append_dev(div, p2);
+        append_dev(div, span2);
+        append_dev(div, br2);
         append_dev(div, t5);
-        append_dev(div, p3);
+        append_dev(div, span3);
+        append_dev(div, br3);
         append_dev(div, t7);
-        append_dev(div, p4);
+        append_dev(div, span4);
+        append_dev(div, br4);
         insert_dev(target, t9, anchor);
         mount_component(beatingheart, target, anchor);
         current = true;
@@ -5378,53 +5393,53 @@ var app = (function () {
       i: function intro(local) {
         if (current) return;
 
-        if (!p0_intro) {
+        if (!span0_intro) {
           add_render_callback(function () {
-            p0_intro = create_in_transition(p0, typewriter, {
+            span0_intro = create_in_transition(span0, typewriter, {
               delay: 1200,
               speed: 50
             });
-            p0_intro.start();
+            span0_intro.start();
           });
         }
 
-        if (!p1_intro) {
+        if (!span1_intro) {
           add_render_callback(function () {
-            p1_intro = create_in_transition(p1, typewriter, {
+            span1_intro = create_in_transition(span1, typewriter, {
               delay: 2000,
               speed: 50
             });
-            p1_intro.start();
+            span1_intro.start();
           });
         }
 
-        if (!p2_intro) {
+        if (!span2_intro) {
           add_render_callback(function () {
-            p2_intro = create_in_transition(p2, typewriter, {
+            span2_intro = create_in_transition(span2, typewriter, {
               delay: 3000,
               speed: 50
             });
-            p2_intro.start();
+            span2_intro.start();
           });
         }
 
-        if (!p3_intro) {
+        if (!span3_intro) {
           add_render_callback(function () {
-            p3_intro = create_in_transition(p3, typewriter, {
+            span3_intro = create_in_transition(span3, typewriter, {
               delay: 4200,
               speed: 50
             });
-            p3_intro.start();
+            span3_intro.start();
           });
         }
 
-        if (!p4_intro) {
+        if (!span4_intro) {
           add_render_callback(function () {
-            p4_intro = create_in_transition(p4, typewriter, {
+            span4_intro = create_in_transition(span4, typewriter, {
               delay: 5000,
               speed: 50
             });
-            p4_intro.start();
+            span4_intro.start();
           });
         }
 
@@ -5448,7 +5463,7 @@ var app = (function () {
       block: block,
       id: create_if_block$1.name,
       type: "if",
-      source: "(98:2) {#if visible}",
+      source: "(102:2) {#if visible}",
       ctx: ctx
     });
     return block;
@@ -5464,8 +5479,8 @@ var app = (function () {
         add_render_callback(function () {
           return ctx.div_resize_handler.call(div);
         });
-        attr_dev(div, "class", "landing-container svelte-1j41gu");
-        add_location(div, file$2, 96, 0, 1663);
+        attr_dev(div, "class", "landing-container svelte-4rhzyw");
+        add_location(div, file$2, 100, 0, 1713);
       },
       l: function claim(nodes) {
         throw new Error_1("options.hydrate only works if the component was compiled with the `hydratable: true` option");
