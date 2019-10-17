@@ -15,6 +15,12 @@
   let vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty('--vh', `${vh}px`);
 
+	const handleScroll = () => {
+		if(scrollPos === contactComponentPos) {
+			console.log("contact transition starting")
+		}
+	}
+
 </script>
 
 <style>
@@ -31,11 +37,11 @@
 </style>
 
 <svelte:window bind:scrollY={scrollPos}/>
-<div>
+<div on:scroll(handleScroll)>
 	<NavBar />
 	<Greeting />
 	<AboutMe y={scrollPos}/>
-	<Contact y={scrollPos}/>
+	<Contact y={scrollPos} postion={contactComponentPos}/>
 </div>
 
 

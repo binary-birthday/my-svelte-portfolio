@@ -5,9 +5,10 @@
 
   let element 
   let getRect
-  let position
+  export let position
 
   export let y;
+
 
   window.addEventListener('resize', () => {
     element = document.getElementById("background");
