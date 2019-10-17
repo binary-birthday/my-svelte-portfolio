@@ -24,7 +24,8 @@
   
 	.myName {
     height: 3.75rem;
-    padding-left: 3rem;
+    padding-right: 2rem;
+    justify-self: flex-end;
 	}
 </style>
 
