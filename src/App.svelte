@@ -17,7 +17,7 @@
 	}
 
 	const getPostion = () => {
-		let newPostion = document.getElementById('main').getBoundingClientRect().top;
+		let newPostion = document.getElementById('form').getBoundingClientRect().top;
 		return newPostion;
 	}
 
