@@ -58,7 +58,13 @@
 	p {
 		color: white;
 		font-weight: 800;
-    font-size: calc(12.75vmin + 8*(90vw - 400px)/ 400);
+    font-size: calc(14vmin + 8*(90vw - 400px)/ 400);
+  }
+
+  @media only screen and (max-width: 700px) {
+    p {
+      font-size: calc(18vmin + 8*(90vw - 400px)/ 400);
+    }
   }
 
 
