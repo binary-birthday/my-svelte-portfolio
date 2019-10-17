@@ -34,6 +34,7 @@
 
   .about {
     margin-top: .5rem;
+    z-index: 2;
     width: calc(18vmin + 8*(100vw - 400px)/ 400);
   }
 
