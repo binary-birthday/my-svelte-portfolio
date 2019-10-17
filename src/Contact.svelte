@@ -14,7 +14,6 @@
     width: 100%;
     height: 100%;
     display: flex;
-    align-items: center;
   }
 
   .background {
@@ -36,7 +35,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    margin-top: 2rem;
+    margin-top: 3rem;
     padding: 1rem 6rem 1rem 0;
   }
 
