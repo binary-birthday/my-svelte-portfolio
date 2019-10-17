@@ -26,7 +26,7 @@
 	}
 </style>
 
-{#if scrollPos > 1}
+{#if scrollPos > 50}
 <div class="navbar" in:slide="{{delay: 0, duration: 100, easing: quintOut }}">
   <svg class="myName" viewBox="0 0 1017 163" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path class="w" in:draw="{{duration: 400, delay: 100, easing: quintOut}}" d="M2 160.001V2.375H72V160.001L36.7407 86.675L2 160.001Z" stroke="#E01E41" stroke-width="4"/>
