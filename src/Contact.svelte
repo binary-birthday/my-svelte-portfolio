@@ -6,7 +6,7 @@
   let element; 
   let getRect;
   let fromTop;
-  let postion;
+  let position;
 
   let calcPosition = () => {
     if(fromTop > 1000) {
