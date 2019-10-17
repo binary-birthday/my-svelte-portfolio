@@ -120,7 +120,7 @@
   </svg>  
   <div class="left"></div>
   <div class="form-container">
-    {#if scrollPos >= (elementPos - windowHeight + (windowHeight * .15))}
+    {#if (scrollPos + windowHeight) >= elementPos }
     <h1 transition:slide="{{delay: 500, duration: 1000, easing: quintOut }}"  >Get In Touch</h1>
     <form action="https://formspree.io/wsmartin23@gmail.com" method="POST">      
       <p class="dn">
