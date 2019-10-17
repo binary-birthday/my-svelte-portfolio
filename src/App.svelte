@@ -14,13 +14,13 @@
 	const handleResize = () => {
 		document.documentElement.style.setProperty('--vh', `${windowHeight}px`);
 		elementPos = document.getElementById('main').getBoundingClientRect().top;
-		console.log('onResize:', (elementPos - (elementPos * .333)))
+		console.log('onResize:', (elementPos - (elementPos * .333)), elementPos)
 	};
 
 	onMount(() => {
 		document.documentElement.style.setProperty('--vh', `${windowHeight}px`);
 		elementPos = document.getElementById('main').getBoundingClientRect().top;	
-		console.log('onMount:', (elementPos - (elementPos * .333)))
+		console.log('onMount:', (elementPos - (elementPos * .333)), elementPos)
 		
   })
 
