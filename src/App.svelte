@@ -6,7 +6,6 @@
 	import Contact from './Contact.svelte';
 
 	let scrollPos;
-	let contactComponentPos;
 
 	window.addEventListener('resize', () => {
     // We execute the same script as before
@@ -15,12 +14,6 @@
   });
   let vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty('--vh', `${vh}px`);
-
-	const handleScroll = () => {
-		if(scrollPos === contactComponentPos) {
-			console.log("contact transition starting")
-		}
-	}
 
 </script>
 
@@ -38,11 +31,11 @@
 </style>
 
 <svelte:window bind:scrollY={scrollPos}/>
-<div on:scroll(handleScroll)>
+<div>
 	<NavBar />
 	<Greeting />
 	<AboutMe y={scrollPos}/>
-	<Contact y={scrollPos} postion={contactComponentPos}/>
+	<Contact y={scrollPos}/>
 </div>
 
 

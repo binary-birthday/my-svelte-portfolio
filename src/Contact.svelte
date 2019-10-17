@@ -3,9 +3,18 @@
   import { onMount } from 'svelte';
   import { elasticOut, quintOut } from 'svelte/easing';
 
-  let element 
-  let getRect
-  export let position
+  let element; 
+  let getRect;
+  let fromTop;
+  let postion;
+
+  let calcPosition = () => {
+    if(fromTop > 1000) {
+      return fromTop - (fromTop / 20)
+    } else {
+      return fromTop - (fromTop / 10)
+    }
+  };
 
   export let y;
 
@@ -13,13 +22,14 @@
   window.addEventListener('resize', () => {
     element = document.getElementById("background");
     getRect = element.getBoundingClientRect();
-    position = getRect.top - 200;
+    fromTop = getRect.top;
+    position = calcPosition()
   });
 
   onMount(() => {
     element = document.getElementById("background");
     getRect = element.getBoundingClientRect();
-    position = getRect.top - 200;
+    position = calcPosition();
   })
 </script>
 
