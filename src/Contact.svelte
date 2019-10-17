@@ -119,7 +119,7 @@
   <div class="left"></div>
   <div id="form" class="form-container">
     {#if (scrollPos + windowHeight) >= elementPos }
-    <h1 transition:slide="{{delay: 500, duration: 2000, easing: quintOut }}"  >Get In Touch</h1>
+    <h1 transition:slide="{{delay: 500, duration: 800, easing: quintOut }}"  >Get In Touch</h1>
     <form action="https://formspree.io/wsmartin23@gmail.com" method="POST">      
       <p class="dn">
         <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
