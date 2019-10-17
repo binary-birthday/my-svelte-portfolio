@@ -34,7 +34,7 @@
 
 svg {
   width: 100%;
-  height: 100%
+  height: 100%;
 }
 
 #anatomicalHeart {
@@ -44,11 +44,8 @@ svg {
 }
 
 @media only screen and (max-width: 700px) {
-  .background {
-    width: 90%;
-    position: absolute;
-    left: 0;
-    /* padding-top: 2rem; */
+  .svg {
+    height: 90%;
   }
 }
 </style>

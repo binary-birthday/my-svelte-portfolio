@@ -48,7 +48,7 @@
   .contact {
     margin-top: 6rem;
     z-index: 2;
-    opacity: .4;
+    opacity: .5;
     width: calc(10vmin + 8*(100vw - 400px)/ 400);
   }
 
