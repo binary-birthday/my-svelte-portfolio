@@ -10,7 +10,8 @@
 
 	const handleResize = () => {
     let vh = windowHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
+		document.documentElement.style.setProperty('--vh', `${vh}px`);
+		console.log(windowHeight)
   };
 	
 	let vh = windowHeight * 0.01;
