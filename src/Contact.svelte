@@ -31,7 +31,6 @@
 
   .form-container {
     max-width: 60%;
-    height: 90%;
     color: white;
     z-index: 10;
     display: flex;
@@ -119,10 +118,10 @@
 	  <path d="M317.44 633.103L709.12 1080H-0.000427246V718.295L317.44 633.103Z" fill="#313131"/>
   </svg>  
   <div class="left"></div>
-  <div class="form-container">
+  <div id="form" class="form-container">
     {#if (scrollPos + windowHeight) >= elementPos }
     <h1 transition:slide="{{delay: 500, duration: 2000, easing: quintOut }}"  >Get In Touch</h1>
-    <form id="form" action="https://formspree.io/wsmartin23@gmail.com" method="POST">      
+    <form action="https://formspree.io/wsmartin23@gmail.com" method="POST">      
       <p class="dn">
         <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
       </p>
