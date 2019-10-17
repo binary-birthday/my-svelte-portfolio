@@ -62,8 +62,7 @@
 
   .strong {
     font-weight: 100;
-    /* font-stretch: wider; */
-    font-style: italic;
+    font-style: oblique;
     transform: scale(1.02);
     color: #0E79B2;
   }
