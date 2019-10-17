@@ -3,37 +3,19 @@
   import { onMount } from 'svelte';
   import { elasticOut, quintOut } from 'svelte/easing';
 
-  let element; 
-  let getRect;
-  let fromTop;
-  let position;
-
-  let calcPosition = () => {
-    let pos;
-    if(fromTop > 1000) {
-      pos = (fromTop - (fromTop/6))
-      return pos
-    } else {
-      pos = (fromTop - (fromTop/3))
-      return pos
-    }
-  };
+  let element;
+  let elementTopPosition;
 
   export let y;
 
-
   window.addEventListener('resize', () => {
     element = document.getElementById("background");
-    getRect = element.getBoundingClientRect();
-    fromTop = getRect.top;
-    position = calcPosition()
+    elementTopPosition = element.offsetTop;
   });
 
   onMount(() => {
     element = document.getElementById("background");
-    getRect = element.getBoundingClientRect();
-    fromTop = getRect.top;
-    position = calcPosition();
+    elementTopPosition = element.offsetTop;
   })
 </script>
 
@@ -145,7 +127,7 @@
 <div class="main">
   <div class="left"></div>
   <div class="form-container">
-    {#if y > position}
+    {#if y > elementTopPosition}
     <h1 in:slide="{{delay: 500, duration: 1500, easing: quintOut }}" out:fade="{{delay: 0, duration: 200}}" >Get In Touch</h1>
     <form action="https://formspree.io/wsmartin23@gmail.com" method="POST">      
       <p class="dn">
