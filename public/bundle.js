@@ -3377,38 +3377,6 @@ var app = (function () {
     return Array.from(element.childNodes);
   }
 
-  function add_resize_listener(element, fn) {
-    if (getComputedStyle(element).position === 'static') {
-      element.style.position = 'relative';
-    }
-
-    var object = document.createElement('object');
-    object.setAttribute('style', 'display: block; position: absolute; top: 0; left: 0; height: 100%; width: 100%; overflow: hidden; pointer-events: none; z-index: -1;');
-    object.type = 'text/html';
-    object.tabIndex = -1;
-    var win;
-
-    object.onload = function () {
-      win = object.contentDocument.defaultView;
-      win.addEventListener('resize', fn);
-    };
-
-    if (/Trident/.test(navigator.userAgent)) {
-      element.appendChild(object);
-      object.data = 'about:blank';
-    } else {
-      object.data = 'about:blank';
-      element.appendChild(object);
-    }
-
-    return {
-      cancel: function cancel() {
-        win && win.removeEventListener && win.removeEventListener('resize', fn);
-        element.removeChild(object);
-      }
-    };
-  }
-
   function toggle_class(element, name, toggle) {
     element.classList[toggle ? 'add' : 'remove'](name);
   }
@@ -4627,62 +4595,62 @@ var app = (function () {
         attr_dev(path0, "d", "M2 160.001V2.375H72V160.001L36.7407 86.675L2 160.001Z");
         attr_dev(path0, "stroke", "#E01E41");
         attr_dev(path0, "stroke-width", "4");
-        add_location(path0, file, 33, 4, 597);
+        add_location(path0, file, 33, 4, 591);
         attr_dev(path1, "class", "a1");
         attr_dev(path1, "d", "M92 160.001L125.25 2.375L162 160.001H92Z");
         attr_dev(path1, "stroke", "#E01E41");
         attr_dev(path1, "stroke-width", "4");
-        add_location(path1, file, 34, 4, 769);
+        add_location(path1, file, 34, 4, 763);
         attr_dev(path2, "class", "d");
         attr_dev(path2, "d", "M182 2.37497V160.001C182 160.001 252 171.474 252 81.6865C252 -8.10056 182 2.37497 182 2.37497Z");
         attr_dev(path2, "stroke", "#E01E41");
         attr_dev(path2, "stroke-width", "4");
-        add_location(path2, file, 35, 4, 929);
+        add_location(path2, file, 35, 4, 923);
         attr_dev(path3, "class", "e");
         attr_dev(path3, "d", "M342 160.001H272V81.188M272 81.188V2.375H342L272 81.188ZM272 81.188H342");
         attr_dev(path3, "stroke", "#E01E41");
         attr_dev(path3, "stroke-width", "4");
-        add_location(path3, file, 36, 4, 1142);
+        add_location(path3, file, 36, 4, 1136);
         attr_dev(path4, "class", "s");
         attr_dev(path4, "d", "M449.477 2C449.477 2 414 17.2164 414 45.45C414 79.2995 465.466 76.0006 465.466 114.081C465.466 152.162 428.491 160 428.491 160M473.046 160V154.182H479V160H473.046Z");
         attr_dev(path4, "stroke", "#E01E41");
         attr_dev(path4, "stroke-width", "4");
-        add_location(path4, file, 37, 4, 1332);
+        add_location(path4, file, 37, 4, 1326);
         attr_dev(path5, "class", "m");
         attr_dev(path5, "d", "M621 4.13416V159.02H551V4.13416L586.259 76.1853L621 4.13416Z");
         attr_dev(path5, "stroke", "#E01E41");
         attr_dev(path5, "stroke-width", "4");
-        add_location(path5, file, 38, 4, 1615);
+        add_location(path5, file, 38, 4, 1609);
         attr_dev(path6, "class", "a2");
         attr_dev(path6, "d", "M641 160L674.25 5.11475L711 160H641Z");
         attr_dev(path6, "stroke", "#E01E41");
         attr_dev(path6, "stroke-width", "4");
-        add_location(path6, file, 39, 4, 1794);
+        add_location(path6, file, 39, 4, 1788);
         attr_dev(path7, "class", "r");
         attr_dev(path7, "d", "M731 4.13443V159.02H800.947L777.5 75.6953C777.5 75.6953 799 74.715 799 32.5628C799 -9.58949 731 4.13443 731 4.13443Z");
         attr_dev(path7, "stroke", "#E01E41");
         attr_dev(path7, "stroke-width", "4");
-        add_location(path7, file, 40, 4, 1950);
+        add_location(path7, file, 40, 4, 1944);
         attr_dev(path8, "class", "t");
         attr_dev(path8, "d", "M856 160V3.15381M856 3.15381H821M856 3.15381H891");
         attr_dev(path8, "stroke", "#E01E41");
         attr_dev(path8, "stroke-width", "4");
-        add_location(path8, file, 41, 4, 2185);
+        add_location(path8, file, 41, 4, 2179);
         attr_dev(path9, "class", "i");
         attr_dev(path9, "d", "M910 2.17383V159.02");
         attr_dev(path9, "stroke", "#E01E41");
         attr_dev(path9, "stroke-width", "4");
-        add_location(path9, file, 42, 4, 2352);
+        add_location(path9, file, 42, 4, 2346);
         attr_dev(path10, "class", "n");
         attr_dev(path10, "d", "M1015 159.02L945 2.17383V159.02H1015ZM1015 159.02V2.17383");
         attr_dev(path10, "stroke", "#E01E41");
         attr_dev(path10, "stroke-width", "4");
-        add_location(path10, file, 43, 4, 2491);
-        attr_dev(svg, "class", "myName svelte-3leosy");
+        add_location(path10, file, 43, 4, 2485);
+        attr_dev(svg, "class", "myName svelte-1xiqnao");
         attr_dev(svg, "viewBox", "0 0 1017 163");
         attr_dev(svg, "fill", "none");
         attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
-        add_location(svg, file, 32, 1, 502);
+        add_location(svg, file, 32, 1, 496);
       },
       m: function mount(target, anchor) {
         insert_dev(target, svg, anchor);
@@ -4844,8 +4812,8 @@ var app = (function () {
       c: function create() {
         div = element("div");
         if (if_block) if_block.c();
-        attr_dev(div, "class", "navbar svelte-3leosy");
-        add_location(div, file, 30, 0, 464);
+        attr_dev(div, "class", "navbar svelte-1xiqnao");
+        add_location(div, file, 30, 0, 458);
       },
       l: function claim(nodes) {
         throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -5195,7 +5163,7 @@ var app = (function () {
   }(SvelteComponentDev);
 
   var Error_1 = globals.Error;
-  var file$2 = "src/Greeting.svelte"; // (80:4) {#if visible}
+  var file$2 = "src/Greeting.svelte"; // (79:4) {#if visible}
 
   function create_if_block$1(ctx) {
     var p0, p0_intro, t1, p1, p1_intro, t3, p2, p2_intro;
@@ -5209,15 +5177,15 @@ var app = (function () {
         t3 = space();
         p2 = element("p");
         p2.textContent = "I BUILD WEB APPS";
-        attr_dev(p0, "class", "greting1 svelte-1qxw7vl");
+        attr_dev(p0, "class", "greting1 svelte-1ap6p5e");
         toggle_class(p0, "dn", ctx.dn);
-        add_location(p0, file$2, 80, 4, 1361);
-        attr_dev(p1, "class", "greting2 svelte-1qxw7vl");
+        add_location(p0, file$2, 79, 4, 1360);
+        attr_dev(p1, "class", "greting2 svelte-1ap6p5e");
         toggle_class(p1, "dn", ctx.dn);
-        add_location(p1, file$2, 81, 3, 1452);
-        attr_dev(p2, "class", "greting3 svelte-1qxw7vl");
+        add_location(p1, file$2, 80, 3, 1451);
+        attr_dev(p2, "class", "greting3 svelte-1ap6p5e");
         toggle_class(p2, "dn", ctx.dn);
-        add_location(p2, file$2, 82, 3, 1552);
+        add_location(p2, file$2, 81, 3, 1551);
       },
       m: function mount(target, anchor) {
         insert_dev(target, p0, anchor);
@@ -5279,7 +5247,7 @@ var app = (function () {
       block: block,
       id: create_if_block$1.name,
       type: "if",
-      source: "(80:4) {#if visible}",
+      source: "(79:4) {#if visible}",
       ctx: ctx
     });
     return block;
@@ -5298,10 +5266,10 @@ var app = (function () {
         if (if_block) if_block.c();
         t = space();
         beatingheart.$$.fragment.c();
-        attr_dev(div0, "class", "right svelte-1qxw7vl");
-        add_location(div0, file$2, 78, 2, 1318);
-        attr_dev(div1, "class", "landing-container svelte-1qxw7vl");
-        add_location(div1, file$2, 77, 0, 1284);
+        attr_dev(div0, "class", "right svelte-1ap6p5e");
+        add_location(div0, file$2, 77, 2, 1317);
+        attr_dev(div1, "class", "landing-container svelte-1ap6p5e");
+        add_location(div1, file$2, 76, 0, 1283);
       },
       l: function claim(nodes) {
         throw new Error_1("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -5792,8 +5760,7 @@ var app = (function () {
     return AboutMe;
   }(SvelteComponentDev);
 
-  var console_1 = globals.console;
-  var file$4 = "src/Contact.svelte"; // (125:4) {#if scrollPos > (windowHeight - elementHeight)}
+  var file$4 = "src/Contact.svelte"; // (122:4) {#if scrollPos >= (elementPos - (elementPos * .05))}
 
   function create_if_block$3(ctx) {
     var h1, h1_transition, t1, form, p, label, t2, input0, t3, input1, input1_transition, t4, input2, input2_transition, t5, textarea, textarea_transition, t6, input3, input3_transition, current;
@@ -5815,34 +5782,34 @@ var app = (function () {
         textarea = element("textarea");
         t6 = space();
         input3 = element("input");
-        attr_dev(h1, "class", "svelte-1yjzsuq");
-        add_location(h1, file$4, 125, 4, 2601);
+        attr_dev(h1, "class", "svelte-9b146h");
+        add_location(h1, file$4, 122, 4, 2575);
         attr_dev(input0, "name", "bot-field");
-        add_location(input0, file$4, 128, 52, 2849);
-        add_location(label, file$4, 128, 8, 2805);
-        attr_dev(p, "class", "dn svelte-1yjzsuq");
-        add_location(p, file$4, 127, 6, 2782);
+        add_location(input0, file$4, 125, 52, 2823);
+        add_location(label, file$4, 125, 8, 2779);
+        attr_dev(p, "class", "dn svelte-9b146h");
+        add_location(p, file$4, 124, 6, 2756);
         attr_dev(input1, "name", "name");
         attr_dev(input1, "type", "text");
-        attr_dev(input1, "class", "form-input svelte-1yjzsuq");
+        attr_dev(input1, "class", "form-input svelte-9b146h");
         attr_dev(input1, "placeholder", "Name");
-        add_location(input1, file$4, 130, 6, 2901);
+        add_location(input1, file$4, 127, 6, 2875);
         attr_dev(input2, "name", "email");
         attr_dev(input2, "type", "text");
-        attr_dev(input2, "class", "form-input svelte-1yjzsuq");
+        attr_dev(input2, "class", "form-input svelte-9b146h");
         attr_dev(input2, "placeholder", "Email");
-        add_location(input2, file$4, 131, 6, 3075);
+        add_location(input2, file$4, 128, 6, 3049);
         attr_dev(textarea, "name", "text");
-        attr_dev(textarea, "class", "form-input svelte-1yjzsuq");
+        attr_dev(textarea, "class", "form-input svelte-9b146h");
         attr_dev(textarea, "placeholder", "Your Message here...");
-        add_location(textarea, file$4, 132, 6, 3248);
+        add_location(textarea, file$4, 129, 6, 3222);
         attr_dev(input3, "type", "submit");
         input3.value = "SUBMIT";
-        attr_dev(input3, "class", "svelte-1yjzsuq");
-        add_location(input3, file$4, 133, 6, 3435);
+        attr_dev(input3, "class", "svelte-9b146h");
+        add_location(input3, file$4, 130, 6, 3409);
         attr_dev(form, "action", "https://formspree.io/wsmartin23@gmail.com");
         attr_dev(form, "method", "POST");
-        add_location(form, file$4, 126, 4, 2698);
+        add_location(form, file$4, 123, 4, 2672);
       },
       m: function mount(target, anchor) {
         insert_dev(target, h1, anchor);
@@ -5972,15 +5939,15 @@ var app = (function () {
       block: block,
       id: create_if_block$3.name,
       type: "if",
-      source: "(125:4) {#if scrollPos > (windowHeight - elementHeight)}",
+      source: "(122:4) {#if scrollPos >= (elementPos - (elementPos * .05))}",
       ctx: ctx
     });
     return block;
   }
 
   function create_fragment$4(ctx) {
-    var div2, svg, path0, path1, path2, t0, div0, t1, div1, div2_resize_listener, current;
-    var if_block = ctx.scrollPos > ctx.windowHeight - ctx.elementHeight && create_if_block$3(ctx);
+    var div2, svg, path0, path1, path2, t0, div0, t1, div1, current;
+    var if_block = ctx.scrollPos >= ctx.elementPos - ctx.elementPos * .05 && create_if_block$3(ctx);
     var block = {
       c: function create() {
         div2 = element("div");
@@ -5995,28 +5962,28 @@ var app = (function () {
         if (if_block) if_block.c();
         attr_dev(path0, "d", "M1920 1078L1920 0.00305176L0.0020752 0.00622559L0.0020752 402.091V721.995L314.88 643.078L1920 1078Z");
         attr_dev(path0, "fill", "black");
-        add_location(path0, file$4, 118, 3, 2159);
+        add_location(path0, file$4, 115, 3, 2129);
         attr_dev(path1, "d", "M1920 1066.7V1079.99L421.496 1079.99L309.761 631.773L1920 1066.7Z");
         attr_dev(path1, "fill", "#1D1D1D");
-        add_location(path1, file$4, 119, 3, 2287);
+        add_location(path1, file$4, 116, 3, 2257);
         attr_dev(path2, "d", "M317.44 633.103L709.12 1080H-0.000427246V718.295L317.44 633.103Z");
         attr_dev(path2, "fill", "#313131");
-        add_location(path2, file$4, 120, 3, 2383);
-        attr_dev(svg, "class", "background svelte-1yjzsuq");
+        add_location(path2, file$4, 117, 3, 2353);
+        attr_dev(svg, "class", "background svelte-9b146h");
         attr_dev(svg, "viewBox", "0 0 1920 1080");
         attr_dev(svg, "preserveAspectRatio", "none");
         attr_dev(svg, "fill", "none");
         attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
-        add_location(svg, file$4, 117, 2, 2033);
-        attr_dev(div0, "class", "left svelte-1yjzsuq");
-        add_location(div0, file$4, 122, 2, 2488);
-        attr_dev(div1, "class", "form-container svelte-1yjzsuq");
-        add_location(div1, file$4, 123, 2, 2515);
-        add_render_callback(function () {
-          return ctx.div2_resize_handler.call(div2);
-        });
-        attr_dev(div2, "class", "main svelte-1yjzsuq");
-        add_location(div2, file$4, 116, 0, 1978);
+        add_location(svg, file$4, 114, 2, 2003);
+        attr_dev(div0, "class", "left svelte-9b146h");
+        add_location(div0, file$4, 119, 2, 2458);
+        attr_dev(div1, "class", "form-container svelte-9b146h");
+        add_location(div1, file$4, 120, 2, 2485);
+        attr_dev(div2, "class", "main svelte-9b146h");
+        attr_dev(div2, "id", "main");
+        attr_dev(div2, "scrollpos", ctx.scrollPos);
+        attr_dev(div2, "elementpos", ctx.elementPos);
+        add_location(div2, file$4, 113, 0, 1925);
       },
       l: function claim(nodes) {
         throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -6032,11 +5999,10 @@ var app = (function () {
         append_dev(div2, t1);
         append_dev(div2, div1);
         if (if_block) if_block.m(div1, null);
-        div2_resize_listener = add_resize_listener(div2, ctx.div2_resize_handler.bind(div2));
         current = true;
       },
       p: function update(changed, ctx) {
-        if (ctx.scrollPos > ctx.windowHeight - ctx.elementHeight) {
+        if (ctx.scrollPos >= ctx.elementPos - ctx.elementPos * .05) {
           if (!if_block) {
             if_block = create_if_block$3(ctx);
             if_block.c();
@@ -6049,6 +6015,14 @@ var app = (function () {
             if_block = null;
           });
           check_outros();
+        }
+
+        if (!current || changed.scrollPos) {
+          attr_dev(div2, "scrollpos", ctx.scrollPos);
+        }
+
+        if (!current || changed.elementPos) {
+          attr_dev(div2, "elementpos", ctx.elementPos);
         }
       },
       i: function intro(local) {
@@ -6066,7 +6040,6 @@ var app = (function () {
         }
 
         if (if_block) if_block.d();
-        div2_resize_listener.cancel();
       }
     };
     dispatch_dev("SvelteRegisterBlock", {
@@ -6080,46 +6053,33 @@ var app = (function () {
   }
 
   function instance$4($$self, $$props, $$invalidate) {
-    var elementHeight;
-    var scrollPos = $$props.scrollPos,
-        windowHeight = $$props.windowHeight;
-    onMount(function () {
-      console.log(windowHeight - elementHeight);
-    });
-    var writable_props = ['scrollPos', 'windowHeight'];
+    var elementPos = $$props.elementPos,
+        scrollPos = $$props.scrollPos;
+    var writable_props = ['elementPos', 'scrollPos'];
     Object.keys($$props).forEach(function (key) {
-      if (!writable_props.includes(key) && !key.startsWith('$$')) console_1.warn("<Contact> was created with unknown prop '".concat(key, "'"));
+      if (!writable_props.includes(key) && !key.startsWith('$$')) console.warn("<Contact> was created with unknown prop '".concat(key, "'"));
     });
-
-    function div2_resize_handler() {
-      elementHeight = this.offsetHeight;
-      $$invalidate('elementHeight', elementHeight);
-    }
 
     $$self.$set = function ($$props) {
+      if ('elementPos' in $$props) $$invalidate('elementPos', elementPos = $$props.elementPos);
       if ('scrollPos' in $$props) $$invalidate('scrollPos', scrollPos = $$props.scrollPos);
-      if ('windowHeight' in $$props) $$invalidate('windowHeight', windowHeight = $$props.windowHeight);
     };
 
     $$self.$capture_state = function () {
       return {
-        elementHeight: elementHeight,
-        scrollPos: scrollPos,
-        windowHeight: windowHeight
+        elementPos: elementPos,
+        scrollPos: scrollPos
       };
     };
 
     $$self.$inject_state = function ($$props) {
-      if ('elementHeight' in $$props) $$invalidate('elementHeight', elementHeight = $$props.elementHeight);
+      if ('elementPos' in $$props) $$invalidate('elementPos', elementPos = $$props.elementPos);
       if ('scrollPos' in $$props) $$invalidate('scrollPos', scrollPos = $$props.scrollPos);
-      if ('windowHeight' in $$props) $$invalidate('windowHeight', windowHeight = $$props.windowHeight);
     };
 
     return {
-      elementHeight: elementHeight,
-      scrollPos: scrollPos,
-      windowHeight: windowHeight,
-      div2_resize_handler: div2_resize_handler
+      elementPos: elementPos,
+      scrollPos: scrollPos
     };
   }
 
@@ -6134,7 +6094,7 @@ var app = (function () {
       _classCallCheck(this, Contact);
 
       _this = _possibleConstructorReturn(this, _getPrototypeOf(Contact).call(this, options));
-      init(_assertThisInitialized(_this), options, instance$4, create_fragment$4, safe_not_equal, ["scrollPos", "windowHeight"]);
+      init(_assertThisInitialized(_this), options, instance$4, create_fragment$4, safe_not_equal, ["elementPos", "scrollPos"]);
       dispatch_dev("SvelteRegisterComponent", {
         component: _assertThisInitialized(_this),
         tagName: "Contact",
@@ -6144,19 +6104,19 @@ var app = (function () {
       var ctx = _this.$$.ctx;
       var props = options.props || {};
 
-      if (ctx.scrollPos === undefined && !('scrollPos' in props)) {
-        console_1.warn("<Contact> was created without expected prop 'scrollPos'");
+      if (ctx.elementPos === undefined && !('elementPos' in props)) {
+        console.warn("<Contact> was created without expected prop 'elementPos'");
       }
 
-      if (ctx.windowHeight === undefined && !('windowHeight' in props)) {
-        console_1.warn("<Contact> was created without expected prop 'windowHeight'");
+      if (ctx.scrollPos === undefined && !('scrollPos' in props)) {
+        console.warn("<Contact> was created without expected prop 'scrollPos'");
       }
 
       return _this;
     }
 
     _createClass(Contact, [{
-      key: "scrollPos",
+      key: "elementPos",
       get: function get() {
         throw new Error("<Contact>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
       },
@@ -6164,7 +6124,7 @@ var app = (function () {
         throw new Error("<Contact>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
       }
     }, {
-      key: "windowHeight",
+      key: "scrollPos",
       get: function get() {
         throw new Error("<Contact>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
       },
@@ -6208,7 +6168,7 @@ var app = (function () {
     var contact = new Contact({
       props: {
         scrollPos: ctx.scrollPos,
-        windowHeight: ctx.windowHeight
+        elementPos: ctx.elementPos
       },
       $$inline: true
     });
@@ -6222,8 +6182,8 @@ var app = (function () {
         aboutme.$$.fragment.c();
         t2 = space();
         contact.$$.fragment.c();
-        attr_dev(div, "class", "svelte-kbej34");
-        add_location(div, file$5, 30, 0, 684);
+        attr_dev(div, "class", "svelte-1ddmi21");
+        add_location(div, file$5, 36, 0, 927);
         dispose = [listen_dev(window, "resize", ctx.handleResize), listen_dev(window, "scroll", function () {
           scrolling = true;
           clearTimeout(scrolling_timeout);
@@ -6258,7 +6218,7 @@ var app = (function () {
         aboutme.$set(aboutme_changes);
         var contact_changes = {};
         if (changed.scrollPos) contact_changes.scrollPos = ctx.scrollPos;
-        if (changed.windowHeight) contact_changes.windowHeight = ctx.windowHeight;
+        if (changed.elementPos) contact_changes.elementPos = ctx.elementPos;
         contact.$set(contact_changes);
       },
       i: function intro(local) {
@@ -6300,15 +6260,20 @@ var app = (function () {
 
   function instance$5($$self, $$props, $$invalidate) {
     var scrollPos;
+    var elementPos;
     var windowHeight;
-    var windowWidth;
 
     var handleResize = function handleResize() {
       document.documentElement.style.setProperty('--vh', "".concat(windowHeight, "px"));
-      console.log(windowHeight);
+      $$invalidate('elementPos', elementPos = document.getElementById('main').getBoundingClientRect().top);
+      console.log('onResize:', elementPos);
     };
 
-    document.documentElement.style.setProperty('--vh', "".concat(windowHeight, "px"));
+    onMount(function () {
+      document.documentElement.style.setProperty('--vh', "".concat(windowHeight, "px"));
+      $$invalidate('elementPos', elementPos = document.getElementById('main').getBoundingClientRect().top);
+      console.log('onMount:', elementPos);
+    });
 
     function onwindowscroll() {
       scrollPos = window.pageYOffset;
@@ -6326,12 +6291,13 @@ var app = (function () {
 
     $$self.$inject_state = function ($$props) {
       if ('scrollPos' in $$props) $$invalidate('scrollPos', scrollPos = $$props.scrollPos);
+      if ('elementPos' in $$props) $$invalidate('elementPos', elementPos = $$props.elementPos);
       if ('windowHeight' in $$props) $$invalidate('windowHeight', windowHeight = $$props.windowHeight);
-      if ('windowWidth' in $$props) windowWidth = $$props.windowWidth;
     };
 
     return {
       scrollPos: scrollPos,
+      elementPos: elementPos,
       windowHeight: windowHeight,
       handleResize: handleResize,
       onwindowscroll: onwindowscroll,

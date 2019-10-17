@@ -47,7 +47,7 @@
 
   .landing-container {
     background-color: black;
-    height: 105%;
+    height: 120%;
     width: 100%;
     padding-top: 4rem;
     z-index: 2;
@@ -74,7 +74,6 @@
 
 </style>
 	
-
 <div class="landing-container">
   <div class="right">
     {#if visible}	

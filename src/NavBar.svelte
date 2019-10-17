@@ -24,7 +24,7 @@
   
 	.myName {
     height: 3.75rem;
-    /* padding-left: 3rem; */
+    padding-left: 3rem;
 	}
 </style>
 

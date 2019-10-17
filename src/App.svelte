@@ -4,25 +4,31 @@
 	import Greeting from './Greeting.svelte';
 	import AboutMe from './AboutMe.svelte';
 	import Contact from './Contact.svelte';
+  import { onMount } from 'svelte';
 
 	let scrollPos;
+	let elementPos
 	let windowHeight;
-	let windowWidth;
 
 
 	const handleResize = () => {
 		document.documentElement.style.setProperty('--vh', `${windowHeight}px`);
-		console.log(windowHeight)
+		elementPos = document.getElementById('main').getBoundingClientRect().top;
+		console.log('onResize:', elementPos)
 	};
-	
-  document.documentElement.style.setProperty('--vh', `${windowHeight}px`);
+
+	onMount(() => {
+		document.documentElement.style.setProperty('--vh', `${windowHeight}px`);
+		elementPos = document.getElementById('main').getBoundingClientRect().top;	
+		console.log('onMount:', elementPos)
+		
+  })
 
 </script>
 
 <style>
 	div {
 		height: var(--vh);
-		height: 100vh;
 		width: 100vw;
 	}
 </style>
@@ -31,8 +37,8 @@
 <div>
 	<NavBar />
 	<Greeting />
-	<AboutMe scrollPos={scrollPos}/>
-	<Contact scrollPos={scrollPos} windowHeight={windowHeight}/>
+	<AboutMe scrollPos={scrollPos} />
+	<Contact scrollPos={scrollPos} elementPos={elementPos}/>
 </div>
 
 
