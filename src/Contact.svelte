@@ -4,20 +4,29 @@
   import { elasticOut, quintOut } from 'svelte/easing';
 
   let element;
-  let elementTopPosition;
+  let position
+
+  const getOffset = ( element ) => {
+    let y = 0;
+    while( elelement && !isNaN( element.offsetTop ) ) {
+        y += element.offsetTop - element.scrollTop;
+    }
+    return { top: y };
+  }
+
 
   export let y;
 
   window.addEventListener('resize', () => {
     element = document.getElementById("background");
-    elementTopPosition = element.offsetTop;
-    console.log(element, elementTopPosition)
+    position = getOffset(element).top;
+    console.log(position);
   });
 
   onMount(() => {
     element = document.getElementById("background");
-    elementTopPosition = element.offsetTop;
-    console.log(element, elementTopPosition)
+    position = getOffset(element).top;
+    console.log(position);
   })
 </script>
 
@@ -129,7 +138,7 @@
 <div class="main">
   <div class="left"></div>
   <div class="form-container">
-    {#if y > elementTopPosition}
+    {#if y > position}
     <h1 transition:slide="{{delay: 0, duration: 1000, easing: quintOut }}" >Get In Touch</h1>
     <form action="https://formspree.io/wsmartin23@gmail.com" method="POST">      
       <p class="dn">
