@@ -28,7 +28,7 @@
 
   .about-container {
     display: flex;
-    align-items: flex-start;
+    align-items: flex-end;
     justify-content: center;
   }
 
