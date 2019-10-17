@@ -99,7 +99,10 @@
     .form-container {
       max-width: 95%;
       padding-right: 3rem;
-
+      height: 80%;
+    }
+    .left{
+      width: 30%;
     }
     .main {
       height: 150%;

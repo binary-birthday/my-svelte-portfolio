@@ -63,7 +63,7 @@
 
   @media only screen and (max-width: 700px) {
     p {
-      font-size: calc(18vmin + 8*(90vw - 400px)/ 400);
+      font-size: calc(17vmin + 8*(90vw - 400px)/ 400);
     }
   }
 
