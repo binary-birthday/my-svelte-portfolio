@@ -2,7 +2,7 @@
   import { fly } from 'svelte/transition';
   import { quintOut, sineIn } from 'svelte/easing';
   
-  export let y;
+  export let scrollPos;
 </script>
 
 <style>
@@ -103,12 +103,12 @@
   
   <div class="wrapper">
     <div class="about-container">
-      {#if y > 100}
+      {#if scrollPos > 100}
         <img in:fly="{{delay: 0, duration: 2000, y: -300, opacity: .01, easing: quintOut}}" class="about" src="images/ABOUT.svg" alt="about">
       {/if}
     </div>
     <div class="card-container">
-      {#if y > 100}
+      {#if scrollPos > 100}
       <div transition:fly="{{delay: 100, duration: 3000, y: 200, opacity: .75, easing: quintOut}}" class="card">
         <div>
           <img class="profile" src="images/profile.jpg" alt="profile image" />

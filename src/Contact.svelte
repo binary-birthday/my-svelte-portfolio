@@ -1,24 +1,14 @@
 <script>
   import { scale, fade, slide } from 'svelte/transition';
-  import { onMount } from 'svelte';
   import { elasticOut, quintOut } from 'svelte/easing';
+  import { onMount } from 'svelte';
 
-  let element 
-  let getRect
-  let position
+  let height;
 
-  export let y;
-
-  window.addEventListener('resize', () => {
-    element = document.getElementById("background");
-    getRect = element.getBoundingClientRect();
-    position = getRect.top - 40;
-  });
+  export let scrollPos;
 
   onMount(() => {
-    element = document.getElementById("background");
-    getRect = element.getBoundingClientRect();
-    position = getRect.top - 40;
+    console.log(height) 
   })
 </script>
 
@@ -122,15 +112,15 @@
 }
 </style>
 
-<svg class="background" id="background" viewBox="0 0 1920 1080" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg class="background" viewBox="0 0 1920 1080" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
 	<path d="M1920 1078L1920 0.00305176L0.0020752 0.00622559L0.0020752 402.091V721.995L314.88 643.078L1920 1078Z" fill="black"/>
 	<path d="M1920 1066.7V1079.99L421.496 1079.99L309.761 631.773L1920 1066.7Z" fill="#1D1D1D"/>
 	<path d="M317.44 633.103L709.12 1080H-0.000427246V718.295L317.44 633.103Z" fill="#313131"/>
 </svg>
-<div class="main">
+<div class="main" bind:offsetHeight={height}>
   <div class="left"></div>
   <div class="form-container">
-    {#if y > position}
+    {#if scrollPos > height}
     <h1 in:slide="{{delay: 0, duration: 1500, easing: quintOut }}" out:fade="{{delay: 0, duration: 1000}}" >Get In Touch</h1>
     <form action="https://formspree.io/wsmartin23@gmail.com" method="POST">      
       <p class="dn">

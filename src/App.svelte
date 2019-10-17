@@ -6,13 +6,14 @@
 	import Contact from './Contact.svelte';
 
 	let scrollPos;
+	let windowHeight;
 
-	window.addEventListener('resize', () => {
-    // We execute the same script as before
-    let vh = window.innerHeight * 0.01;
+	const handleResize = () => {
+    let vh = windowHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
-  });
-  let vh = window.innerHeight * 0.01;
+  };
+	
+	let vh = windowHeight * 0.01;
   document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 </script>
@@ -30,12 +31,12 @@
 
 </style>
 
-<svelte:window bind:scrollY={scrollPos}/>
+<svelte:window bind:scrollY={scrollPos} bind:innerHeight={windowHeight} on:resize={handleResize}/>
 <div>
 	<NavBar />
 	<Greeting />
-	<AboutMe y={scrollPos}/>
-	<Contact y={scrollPos}/>
+	<AboutMe scrollPos={scrollPos}/>
+	<Contact scrollPos={scrollPos} windowHeight={windowHeight}/>
 </div>
 
 
