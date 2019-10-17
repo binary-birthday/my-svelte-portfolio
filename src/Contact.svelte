@@ -3,30 +3,22 @@
   import { onMount } from 'svelte';
   import { elasticOut, quintOut } from 'svelte/easing';
 
-  let element;
+  let element 
+  let getRect
   let position
-
-  const getOffset = ( element ) => {
-    let y = 0;
-    while( element && !isNaN( element.offsetTop ) ) {
-        y += element.offsetTop - element.scrollTop;
-    }
-    return { top: y };
-  }
-
 
   export let y;
 
   window.addEventListener('resize', () => {
     element = document.getElementById("background");
-    position = getOffset(element).top;
-    console.log(position);
+    getRect = element.getBoundingClientRect();
+    position = getRect.top - 40;
   });
 
   onMount(() => {
     element = document.getElementById("background");
-    position = getOffset(element).top;
-    console.log(position);
+    getRect = element.getBoundingClientRect();
+    position = getRect.top - 40;
   })
 </script>
 
@@ -139,15 +131,15 @@
   <div class="left"></div>
   <div class="form-container">
     {#if y > position}
-    <h1 transition:slide="{{delay: 0, duration: 1000, easing: quintOut }}" >Get In Touch</h1>
+    <h1 in:slide="{{delay: 0, duration: 1500, easing: quintOut }}" out:fade="{{delay: 0, duration: 1000}}" >Get In Touch</h1>
     <form action="https://formspree.io/wsmartin23@gmail.com" method="POST">      
       <p class="dn">
         <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
       </p>
-      <input transition:scale="{{duration: 1000, delay: 50, opacity: 0, start: .75, easing:elasticOut}}" name="name" type="text" class="form-input" placeholder="Name" />   
-      <input transition:scale="{{duration: 1000, delay: 100, opacity: 0, start: .75, easing:elasticOut}}" name="email" type="text" class="form-input" placeholder="Email" />
-      <textarea transition:scale="{{duration: 1000, delay: 150, opacity: 0, start: .75, easing:elasticOut}}" name="text" class="form-input" placeholder="Your Message here..."></textarea>
-      <input transition:scale="{{duration: 1000, delay: 200, opacity: 0, start: .75, easing:elasticOut}}" type="submit" value="SUBMIT"/>
+      <input in:scale="{{duration: 1500, delay: 50, opacity: 0, start: .75, easing:elasticOut}}" out:fade="{{delay: 0, duration: 1000}}" name="name" type="text" class="form-input" placeholder="Name" />   
+      <input in:scale="{{duration: 1500, delay: 100, opacity: 0, start: .75, easing:elasticOut}}" out:fade="{{delay: 0, duration: 1000}}" name="email" type="text" class="form-input" placeholder="Email" />
+      <textarea in:scale="{{duration: 1500, delay: 150, opacity: 0, start: .75, easing:elasticOut}}" out:fade="{{delay: 0, duration: 1000}}" name="text" class="form-input" placeholder="Your Message here..."></textarea>
+      <input in:scale="{{duration: 1500, delay: 200, opacity: 0, start: .75, easing:elasticOut}}" out:fade="{{delay: 0, duration: 1000}}" type="submit" value="SUBMIT"/>
     </form> 
     {/if}
   </div>
