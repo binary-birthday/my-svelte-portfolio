@@ -22,6 +22,7 @@
 <style>
 	div {
 		height: var(--vh);
+		height: 100vh;
 		width: 100vw;
 	}
 </style>
