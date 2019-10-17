@@ -45,7 +45,11 @@ svg {
 
 @media only screen and (max-width: 700px) {
   .background {
-    position: absolute;
+    left: 0;
+  }
+  .pericardium {
+    justify-content: center;
+    align-items: center;
   }
 }
 </style>
