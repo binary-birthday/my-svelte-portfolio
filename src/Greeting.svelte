@@ -8,7 +8,7 @@
 
   let height;
 
-  $: if(scrollPos >= (height * .6)) {
+  $: if(scrollPos >= (height * .25)) {
     visible = false;
   }
 
