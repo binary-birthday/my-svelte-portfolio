@@ -14,19 +14,21 @@
 </script>
 
 <style>
-  .background {
-    width: 100vw;
-    height: 100%;  
-    position: absolute;
-    z-index: -1;
-  }
-
   .main {
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
   }
+
+  .background {
+    width: 100%;
+    height: 100%;  
+    position: absolute;
+    z-index: -1;
+  }
+
+
   
   .left {
     height: 100%;
@@ -107,18 +109,19 @@
       padding-right: 3rem;
 
     }
-    .background {
+    .main {
       height: 150%;
     }
 }
 </style>
 
-<svg class="background" viewBox="0 0 1920 1080" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
-	<path d="M1920 1078L1920 0.00305176L0.0020752 0.00622559L0.0020752 402.091V721.995L314.88 643.078L1920 1078Z" fill="black"/>
-	<path d="M1920 1066.7V1079.99L421.496 1079.99L309.761 631.773L1920 1066.7Z" fill="#1D1D1D"/>
-	<path d="M317.44 633.103L709.12 1080H-0.000427246V718.295L317.44 633.103Z" fill="#313131"/>
-</svg>
+
 <div class="main" bind:offsetHeight={elementHeight}>
+  <svg class="background" viewBox="0 0 1920 1080" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+	  <path d="M1920 1078L1920 0.00305176L0.0020752 0.00622559L0.0020752 402.091V721.995L314.88 643.078L1920 1078Z" fill="black"/>
+	  <path d="M1920 1066.7V1079.99L421.496 1079.99L309.761 631.773L1920 1066.7Z" fill="#1D1D1D"/>
+	  <path d="M317.44 633.103L709.12 1080H-0.000427246V718.295L317.44 633.103Z" fill="#313131"/>
+  </svg>  
   <div class="left"></div>
   <div class="form-container">
     {#if scrollPos > (windowHeight - elementHeight)}
