@@ -119,7 +119,7 @@
   </svg>  
   <div class="left"></div>
   <div class="form-container">
-    {#if scrollPos >= (elementPos - (elementPos * .01))}
+    {#if scrollPos >= (elementPos - (elementPos * .333))}
     <h1 transition:slide="{{delay: 0, duration: 500, easing: quintOut }}"  >Get In Touch</h1>
     <form action="https://formspree.io/wsmartin23@gmail.com" method="POST">      
       <p class="dn">
