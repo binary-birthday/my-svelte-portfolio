@@ -6,6 +6,7 @@
 	import Contact from './Contact.svelte';
 
 	let scrollPos;
+	let contactComponentPos;
 
 	window.addEventListener('resize', () => {
     // We execute the same script as before
