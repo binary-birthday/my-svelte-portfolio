@@ -14,6 +14,7 @@
   .navbar {
     height: 4.5rem;
     width: 100vw;
+    background-color: white;
 		top: 0;
 		position: fixed;
 		display: flex;
