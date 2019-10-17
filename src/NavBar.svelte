@@ -31,7 +31,7 @@
 	}
 </style>
 
-{#if scrollPos > 1}
+{#if visible }
 <div class="navbar" in:slide="{{delay: 5000, duration: 100, easing: quintOut }}">
 	{#if visible}
   <svg class="myName" viewBox="0 0 1017 163" fill="none" xmlns="http://www.w3.org/2000/svg">
