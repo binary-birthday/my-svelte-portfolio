@@ -42,6 +42,7 @@
     background-color: black;
     height: 105%;
     width: 100%;
+    padding-top: 4rem;
     z-index: 2;
     display: flex;
     justify-content: flex-end;

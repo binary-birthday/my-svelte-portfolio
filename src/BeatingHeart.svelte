@@ -18,7 +18,7 @@
 <style>
 .background {
   height: 100%;
-  width: 65%;
+  width: 85%;
   position: absolute;
   z-index: 1;
 }
