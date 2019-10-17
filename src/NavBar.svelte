@@ -31,7 +31,8 @@
 
 {#if visible}
 <div class="navbar" in:slide="{{delay: 5000, duration: 100, easing: quintOut }}">
-	<svg class="myName" viewBox="0 0 1017 163" fill="none" xmlns="http://www.w3.org/2000/svg">
+	{#if visible}
+  <svg class="myName" viewBox="0 0 1017 163" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path class="w" in:draw="{{duration: 400, delay: 5100, easing: quintOut}}" d="M2 160.001V2.375H72V160.001L36.7407 86.675L2 160.001Z" stroke="#E01E41" stroke-width="4"/>
     <path class="a1" in:draw="{{duration: 400, delay: 5200, easing: quintOut}}" d="M92 160.001L125.25 2.375L162 160.001H92Z" stroke="#E01E41" stroke-width="4"/>
     <path class="d" in:draw="{{duration: 400, delay: 5300, easing: quintOut}}" d="M182 2.37497V160.001C182 160.001 252 171.474 252 81.6865C252 -8.10056 182 2.37497 182 2.37497Z" stroke="#E01E41" stroke-width="4"/>
@@ -44,5 +45,6 @@
     <path class="i" in:draw="{{duration: 400, delay: 6000, easing: quintOut}}" d="M910 2.17383V159.02" stroke="#E01E41" stroke-width="4"/>
     <path class="n" in:draw="{{duration: 400, delay: 6100, easing: quintOut}}"  d="M1015 159.02L945 2.17383V159.02H1015ZM1015 159.02V2.17383" stroke="#E01E41" stroke-width="4"/>
   </svg>
+  {/if}
 </div>
 {/if}
