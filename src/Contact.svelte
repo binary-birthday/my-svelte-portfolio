@@ -121,15 +121,15 @@
   <div class="left"></div>
   <div class="form-container">
     {#if scrollPos > height}
-    <h1 in:slide="{{delay: 0, duration: 1500, easing: quintOut }}" out:fade="{{delay: 0, duration: 1000}}" >Get In Touch</h1>
+    <h1 transition:slide="{{delay: 500, duration: 2000, easing: quintOut }}"  >Get In Touch</h1>
     <form action="https://formspree.io/wsmartin23@gmail.com" method="POST">      
       <p class="dn">
         <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
       </p>
-      <input in:scale="{{duration: 1500, delay: 50, opacity: 0, start: .75, easing:elasticOut}}" out:fade="{{delay: 0, duration: 1000}}" name="name" type="text" class="form-input" placeholder="Name" />   
-      <input in:scale="{{duration: 1500, delay: 100, opacity: 0, start: .75, easing:elasticOut}}" out:fade="{{delay: 0, duration: 1000}}" name="email" type="text" class="form-input" placeholder="Email" />
-      <textarea in:scale="{{duration: 1500, delay: 150, opacity: 0, start: .75, easing:elasticOut}}" out:fade="{{delay: 0, duration: 1000}}" name="text" class="form-input" placeholder="Your Message here..."></textarea>
-      <input in:scale="{{duration: 1500, delay: 200, opacity: 0, start: .75, easing:elasticOut}}" out:fade="{{delay: 0, duration: 1000}}" type="submit" value="SUBMIT"/>
+      <input transition:scale="{{duration: 2000, delay: 600, opacity: 0, start: .75, easing:elasticOut}}" name="name" type="text" class="form-input" placeholder="Name" />   
+      <input transition:scale="{{duration: 2000, delay: 650, opacity: 0, start: .75, easing:elasticOut}}" name="email" type="text" class="form-input" placeholder="Email" />
+      <textarea transition:scale="{{duration: 2000, delay: 700, opacity: 0, start: .75, easing:elasticOut}}" name="text" class="form-input" placeholder="Your Message here..."></textarea>
+      <input transition:scale="{{duration: 2000, delay: 750, opacity: 0, start: .75, easing:elasticOut}}" type="submit" value="SUBMIT"/>
     </form> 
     {/if}
   </div>
