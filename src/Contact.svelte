@@ -11,11 +11,13 @@
   window.addEventListener('resize', () => {
     element = document.getElementById("background");
     elementTopPosition = element.offsetTop;
+    console.log(element, elementTopPosition)
   });
 
   onMount(() => {
     element = document.getElementById("background");
     elementTopPosition = element.offsetTop;
+    console.log(element, elementTopPosition)
   })
 </script>
 
