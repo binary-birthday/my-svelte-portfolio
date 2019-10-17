@@ -19,13 +19,13 @@
 		position: fixed;
 		display: flex;
 		align-items: center;
+    justify-content: flex-end;
     z-index: 100;
 	}
   
 	.myName {
     height: 3.75rem;
     padding-right: 2rem;
-    justify-self: flex-end;
 	}
 </style>
 
