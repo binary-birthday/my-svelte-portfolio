@@ -29,6 +29,7 @@
   onMount(() => {
     element = document.getElementById("background");
     getRect = element.getBoundingClientRect();
+    fromTop = getRect.top;
     position = calcPosition();
   })
 </script>
