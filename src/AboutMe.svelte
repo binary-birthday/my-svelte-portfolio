@@ -1,8 +1,14 @@
 <script>
   import { fly } from 'svelte/transition';
   import { quintOut, sineIn } from 'svelte/easing';
-  
+  import { afterUpdate } from 'svelte';
+
   export let scrollPos;
+  export let loaded = false;
+
+  afterUpdate(() => {
+		loaded = !loaded
+	});
 </script>
 
 <style>
@@ -97,7 +103,7 @@
 </style>
 
 
-<div class="container">
+<div class="container" loaded={loaded}>
   
   <div class="wrapper">
     <div class="about-container">

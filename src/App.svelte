@@ -9,6 +9,11 @@
 	let scrollPos;
 	let elementPos
 	let windowHeight;
+	let loaded;
+	
+	$: if (loaded) {
+		elementPos = document.getElementById('main').getBoundingClientRect().top;
+	}
 
 
 	const handleResize = () => {
@@ -18,10 +23,7 @@
 	};
 
 	onMount(() => {
-		document.documentElement.style.setProperty('--vh', `${windowHeight}px`);
-		elementPos = document.getElementById('main').getBoundingClientRect().top;	
-		console.log('onMount:', (elementPos - (elementPos * .333)), elementPos)
-		
+		document.documentElement.style.setProperty('--vh', `${windowHeight}px`);		
   })
 
 </script>
@@ -37,7 +39,7 @@
 <div>
 	<NavBar />
 	<Greeting />
-	<AboutMe scrollPos={scrollPos} />
+	<AboutMe scrollPos={scrollPos} loaded={loaded}/>
 	<Contact scrollPos={scrollPos} elementPos={elementPos} windowHeight={windowHeight}/>
 </div>
 

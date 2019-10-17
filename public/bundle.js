@@ -3471,6 +3471,10 @@ var app = (function () {
     get_current_component().$$.on_mount.push(fn);
   }
 
+  function afterUpdate(fn) {
+    get_current_component().$$.after_update.push(fn);
+  }
+
   var dirty_components = [];
   var binding_callbacks = [];
   var render_callbacks = [];
@@ -5403,7 +5407,7 @@ var app = (function () {
     return Greeting;
   }(SvelteComponentDev);
 
-  var file$3 = "src/AboutMe.svelte"; // (104:6) {#if scrollPos > 100}
+  var file$3 = "src/AboutMe.svelte"; // (110:6) {#if scrollPos > 100}
 
   function create_if_block_1(ctx) {
     var img, img_intro;
@@ -5413,7 +5417,7 @@ var app = (function () {
         attr_dev(img, "class", "about svelte-1k1jyt1");
         attr_dev(img, "src", "images/ABOUT.svg");
         attr_dev(img, "alt", "about");
-        add_location(img, file$3, 104, 8, 1760);
+        add_location(img, file$3, 110, 8, 1890);
       },
       m: function mount(target, anchor) {
         insert_dev(target, img, anchor);
@@ -5443,11 +5447,11 @@ var app = (function () {
       block: block,
       id: create_if_block_1.name,
       type: "if",
-      source: "(104:6) {#if scrollPos > 100}",
+      source: "(110:6) {#if scrollPos > 100}",
       ctx: ctx
     });
     return block;
-  } // (109:6) {#if scrollPos > 100}
+  } // (115:6) {#if scrollPos > 100}
 
 
   function create_if_block$2(ctx) {
@@ -5488,46 +5492,46 @@ var app = (function () {
         attr_dev(img, "class", "profile svelte-1k1jyt1");
         attr_dev(img, "src", "images/profile.jpg");
         attr_dev(img, "alt", "profile image");
-        add_location(img, file$3, 111, 10, 2115);
+        add_location(img, file$3, 117, 10, 2245);
         attr_dev(a0, "href", "https://github.com/Wade-Martin/rails_marketplace_app");
         attr_dev(a0, "target", "_blank");
-        add_location(a0, file$3, 113, 571, 2770);
+        add_location(a0, file$3, 119, 571, 2900);
         attr_dev(a1, "href", "https://github.com/Wade-Martin/MERN-App-Front-End");
         attr_dev(a1, "target", "_blank");
-        add_location(a1, file$3, 113, 820, 3019);
+        add_location(a1, file$3, 119, 820, 3149);
         attr_dev(a2, "href", "https://github.com/Wade-Martin/MERN-App-Back-End");
         attr_dev(a2, "target", "_blank");
-        add_location(a2, file$3, 113, 928, 3127);
+        add_location(a2, file$3, 119, 928, 3257);
         attr_dev(a3, "href", "https://web3-build.netlify.com/");
         attr_dev(a3, "target", "_blank");
-        add_location(a3, file$3, 113, 1178, 3377);
+        add_location(a3, file$3, 119, 1178, 3507);
         attr_dev(p, "class", "svelte-1k1jyt1");
-        add_location(p, file$3, 112, 10, 2194);
-        add_location(div0, file$3, 110, 8, 2099);
+        add_location(p, file$3, 118, 10, 2324);
+        add_location(div0, file$3, 116, 8, 2229);
         attr_dev(i0, "class", "fab fa-github svelte-1k1jyt1");
-        add_location(i0, file$3, 117, 70, 3573);
+        add_location(i0, file$3, 123, 70, 3703);
         attr_dev(a4, "href", "https://github.com/Wade-Martin");
         attr_dev(a4, "target", "_blank");
-        add_location(a4, file$3, 117, 10, 3513);
+        add_location(a4, file$3, 123, 10, 3643);
         attr_dev(i1, "class", "fab fa-codepen svelte-1k1jyt1");
-        add_location(i1, file$3, 118, 67, 3678);
+        add_location(i1, file$3, 124, 67, 3808);
         attr_dev(a5, "href", "https://codepen.io/wade-martin");
         attr_dev(a5, "target", "_blank");
-        add_location(a5, file$3, 118, 10, 3621);
+        add_location(a5, file$3, 124, 10, 3751);
         attr_dev(i2, "class", "fab fa-linkedin svelte-1k1jyt1");
-        add_location(i2, file$3, 119, 79, 3795);
+        add_location(i2, file$3, 125, 79, 3925);
         attr_dev(a6, "href", "https://www.linkedin.com/in/wade-s-martin/");
         attr_dev(a6, "target", "_blank");
-        add_location(a6, file$3, 119, 10, 3726);
+        add_location(a6, file$3, 125, 10, 3856);
         attr_dev(i3, "class", "fab fa-twitter-square svelte-1k1jyt1");
-        add_location(i3, file$3, 120, 74, 3909);
+        add_location(i3, file$3, 126, 74, 4039);
         attr_dev(a7, "href", "https://twitter.com/wine_and_Wade");
         attr_dev(a7, "target", "_blank");
-        add_location(a7, file$3, 120, 10, 3845);
+        add_location(a7, file$3, 126, 10, 3975);
         attr_dev(div1, "class", "icons svelte-1k1jyt1");
-        add_location(div1, file$3, 116, 8, 3483);
+        add_location(div1, file$3, 122, 8, 3613);
         attr_dev(div2, "class", "card svelte-1k1jyt1");
-        add_location(div2, file$3, 109, 6, 1984);
+        add_location(div2, file$3, 115, 6, 2114);
       },
       m: function mount(target, anchor) {
         insert_dev(target, div2, anchor);
@@ -5595,7 +5599,7 @@ var app = (function () {
       block: block,
       id: create_if_block$2.name,
       type: "if",
-      source: "(109:6) {#if scrollPos > 100}",
+      source: "(115:6) {#if scrollPos > 100}",
       ctx: ctx
     });
     return block;
@@ -5615,13 +5619,14 @@ var app = (function () {
         div1 = element("div");
         if (if_block1) if_block1.c();
         attr_dev(div0, "class", "about-container svelte-1k1jyt1");
-        add_location(div0, file$3, 102, 4, 1694);
+        add_location(div0, file$3, 108, 4, 1824);
         attr_dev(div1, "class", "card-container svelte-1k1jyt1");
-        add_location(div1, file$3, 107, 4, 1921);
+        add_location(div1, file$3, 113, 4, 2051);
         attr_dev(div2, "class", "wrapper svelte-1k1jyt1");
-        add_location(div2, file$3, 101, 2, 1668);
+        add_location(div2, file$3, 107, 2, 1798);
         attr_dev(div3, "class", "container svelte-1k1jyt1");
-        add_location(div3, file$3, 99, 0, 1639);
+        attr_dev(div3, "loaded", ctx.loaded);
+        add_location(div3, file$3, 105, 0, 1753);
       },
       l: function claim(nodes) {
         throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -5663,6 +5668,10 @@ var app = (function () {
           });
           check_outros();
         }
+
+        if (!current || changed.loaded) {
+          attr_dev(div3, "loaded", ctx.loaded);
+        }
       },
       i: function intro(local) {
         if (current) return;
@@ -5694,28 +5703,37 @@ var app = (function () {
   }
 
   function instance$3($$self, $$props, $$invalidate) {
-    var scrollPos = $$props.scrollPos;
-    var writable_props = ['scrollPos'];
+    var scrollPos = $$props.scrollPos,
+        _$$props$loaded = $$props.loaded,
+        loaded = _$$props$loaded === void 0 ? false : _$$props$loaded;
+    afterUpdate(function () {
+      $$invalidate('loaded', loaded = !loaded);
+    });
+    var writable_props = ['scrollPos', 'loaded'];
     Object.keys($$props).forEach(function (key) {
       if (!writable_props.includes(key) && !key.startsWith('$$')) console.warn("<AboutMe> was created with unknown prop '".concat(key, "'"));
     });
 
     $$self.$set = function ($$props) {
       if ('scrollPos' in $$props) $$invalidate('scrollPos', scrollPos = $$props.scrollPos);
+      if ('loaded' in $$props) $$invalidate('loaded', loaded = $$props.loaded);
     };
 
     $$self.$capture_state = function () {
       return {
-        scrollPos: scrollPos
+        scrollPos: scrollPos,
+        loaded: loaded
       };
     };
 
     $$self.$inject_state = function ($$props) {
       if ('scrollPos' in $$props) $$invalidate('scrollPos', scrollPos = $$props.scrollPos);
+      if ('loaded' in $$props) $$invalidate('loaded', loaded = $$props.loaded);
     };
 
     return {
-      scrollPos: scrollPos
+      scrollPos: scrollPos,
+      loaded: loaded
     };
   }
 
@@ -5730,7 +5748,7 @@ var app = (function () {
       _classCallCheck(this, AboutMe);
 
       _this = _possibleConstructorReturn(this, _getPrototypeOf(AboutMe).call(this, options));
-      init(_assertThisInitialized(_this), options, instance$3, create_fragment$3, safe_not_equal, ["scrollPos"]);
+      init(_assertThisInitialized(_this), options, instance$3, create_fragment$3, safe_not_equal, ["scrollPos", "loaded"]);
       dispatch_dev("SvelteRegisterComponent", {
         component: _assertThisInitialized(_this),
         tagName: "AboutMe",
@@ -5755,12 +5773,20 @@ var app = (function () {
       set: function set(value) {
         throw new Error("<AboutMe>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
       }
+    }, {
+      key: "loaded",
+      get: function get() {
+        throw new Error("<AboutMe>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+      },
+      set: function set(value) {
+        throw new Error("<AboutMe>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+      }
     }]);
 
     return AboutMe;
   }(SvelteComponentDev);
 
-  var file$4 = "src/Contact.svelte"; // (122:4) {#if scrollPos >= (elementPos - (elementPos * .05))}
+  var file$4 = "src/Contact.svelte"; // (123:4) {#if (scrollPos + windowHeight) >= elementPos }
 
   function create_if_block$3(ctx) {
     var h1, h1_transition, t1, form, p, label, t2, input0, t3, input1, input1_transition, t4, input2, input2_transition, t5, textarea, textarea_transition, t6, input3, input3_transition, current;
@@ -5783,33 +5809,33 @@ var app = (function () {
         t6 = space();
         input3 = element("input");
         attr_dev(h1, "class", "svelte-9b146h");
-        add_location(h1, file$4, 122, 4, 2575);
+        add_location(h1, file$4, 123, 4, 2625);
         attr_dev(input0, "name", "bot-field");
-        add_location(input0, file$4, 125, 52, 2823);
-        add_location(label, file$4, 125, 8, 2779);
+        add_location(input0, file$4, 126, 52, 2873);
+        add_location(label, file$4, 126, 8, 2829);
         attr_dev(p, "class", "dn svelte-9b146h");
-        add_location(p, file$4, 124, 6, 2756);
+        add_location(p, file$4, 125, 6, 2806);
         attr_dev(input1, "name", "name");
         attr_dev(input1, "type", "text");
         attr_dev(input1, "class", "form-input svelte-9b146h");
         attr_dev(input1, "placeholder", "Name");
-        add_location(input1, file$4, 127, 6, 2875);
+        add_location(input1, file$4, 128, 6, 2925);
         attr_dev(input2, "name", "email");
         attr_dev(input2, "type", "text");
         attr_dev(input2, "class", "form-input svelte-9b146h");
         attr_dev(input2, "placeholder", "Email");
-        add_location(input2, file$4, 128, 6, 3049);
+        add_location(input2, file$4, 129, 6, 3099);
         attr_dev(textarea, "name", "text");
         attr_dev(textarea, "class", "form-input svelte-9b146h");
         attr_dev(textarea, "placeholder", "Your Message here...");
-        add_location(textarea, file$4, 129, 6, 3222);
+        add_location(textarea, file$4, 130, 6, 3272);
         attr_dev(input3, "type", "submit");
         input3.value = "SUBMIT";
         attr_dev(input3, "class", "svelte-9b146h");
-        add_location(input3, file$4, 130, 6, 3409);
+        add_location(input3, file$4, 131, 6, 3459);
         attr_dev(form, "action", "https://formspree.io/wsmartin23@gmail.com");
         attr_dev(form, "method", "POST");
-        add_location(form, file$4, 123, 4, 2672);
+        add_location(form, file$4, 124, 4, 2722);
       },
       m: function mount(target, anchor) {
         insert_dev(target, h1, anchor);
@@ -5834,15 +5860,15 @@ var app = (function () {
         add_render_callback(function () {
           if (!h1_transition) h1_transition = create_bidirectional_transition(h1, slide, {
             delay: 500,
-            duration: 2000,
+            duration: 1000,
             easing: quintOut
           }, true);
           h1_transition.run(1);
         });
         add_render_callback(function () {
           if (!input1_transition) input1_transition = create_bidirectional_transition(input1, scale, {
-            duration: 2000,
-            delay: 600,
+            duration: 1000,
+            delay: 550,
             opacity: 0,
             start: .75,
             easing: elasticOut
@@ -5851,8 +5877,8 @@ var app = (function () {
         });
         add_render_callback(function () {
           if (!input2_transition) input2_transition = create_bidirectional_transition(input2, scale, {
-            duration: 2000,
-            delay: 650,
+            duration: 1000,
+            delay: 600,
             opacity: 0,
             start: .75,
             easing: elasticOut
@@ -5861,8 +5887,8 @@ var app = (function () {
         });
         add_render_callback(function () {
           if (!textarea_transition) textarea_transition = create_bidirectional_transition(textarea, scale, {
-            duration: 2000,
-            delay: 700,
+            duration: 1000,
+            delay: 650,
             opacity: 0,
             start: .75,
             easing: elasticOut
@@ -5871,8 +5897,8 @@ var app = (function () {
         });
         add_render_callback(function () {
           if (!input3_transition) input3_transition = create_bidirectional_transition(input3, scale, {
-            duration: 2000,
-            delay: 750,
+            duration: 1000,
+            delay: 700,
             opacity: 0,
             start: .75,
             easing: elasticOut
@@ -5884,37 +5910,37 @@ var app = (function () {
       o: function outro(local) {
         if (!h1_transition) h1_transition = create_bidirectional_transition(h1, slide, {
           delay: 500,
-          duration: 2000,
+          duration: 1000,
           easing: quintOut
         }, false);
         h1_transition.run(0);
         if (!input1_transition) input1_transition = create_bidirectional_transition(input1, scale, {
-          duration: 2000,
-          delay: 600,
+          duration: 1000,
+          delay: 550,
           opacity: 0,
           start: .75,
           easing: elasticOut
         }, false);
         input1_transition.run(0);
         if (!input2_transition) input2_transition = create_bidirectional_transition(input2, scale, {
-          duration: 2000,
-          delay: 650,
+          duration: 1000,
+          delay: 600,
           opacity: 0,
           start: .75,
           easing: elasticOut
         }, false);
         input2_transition.run(0);
         if (!textarea_transition) textarea_transition = create_bidirectional_transition(textarea, scale, {
-          duration: 2000,
-          delay: 700,
+          duration: 1000,
+          delay: 650,
           opacity: 0,
           start: .75,
           easing: elasticOut
         }, false);
         textarea_transition.run(0);
         if (!input3_transition) input3_transition = create_bidirectional_transition(input3, scale, {
-          duration: 2000,
-          delay: 750,
+          duration: 1000,
+          delay: 700,
           opacity: 0,
           start: .75,
           easing: elasticOut
@@ -5939,7 +5965,7 @@ var app = (function () {
       block: block,
       id: create_if_block$3.name,
       type: "if",
-      source: "(122:4) {#if scrollPos >= (elementPos - (elementPos * .05))}",
+      source: "(123:4) {#if (scrollPos + windowHeight) >= elementPos }",
       ctx: ctx
     });
     return block;
@@ -5947,7 +5973,7 @@ var app = (function () {
 
   function create_fragment$4(ctx) {
     var div2, svg, path0, path1, path2, t0, div0, t1, div1, current;
-    var if_block = ctx.scrollPos >= ctx.elementPos - ctx.elementPos * .05 && create_if_block$3(ctx);
+    var if_block = ctx.scrollPos + ctx.windowHeight >= ctx.elementPos && create_if_block$3(ctx);
     var block = {
       c: function create() {
         div2 = element("div");
@@ -5962,28 +5988,29 @@ var app = (function () {
         if (if_block) if_block.c();
         attr_dev(path0, "d", "M1920 1078L1920 0.00305176L0.0020752 0.00622559L0.0020752 402.091V721.995L314.88 643.078L1920 1078Z");
         attr_dev(path0, "fill", "black");
-        add_location(path0, file$4, 115, 3, 2129);
+        add_location(path0, file$4, 116, 3, 2184);
         attr_dev(path1, "d", "M1920 1066.7V1079.99L421.496 1079.99L309.761 631.773L1920 1066.7Z");
         attr_dev(path1, "fill", "#1D1D1D");
-        add_location(path1, file$4, 116, 3, 2257);
+        add_location(path1, file$4, 117, 3, 2312);
         attr_dev(path2, "d", "M317.44 633.103L709.12 1080H-0.000427246V718.295L317.44 633.103Z");
         attr_dev(path2, "fill", "#313131");
-        add_location(path2, file$4, 117, 3, 2353);
+        add_location(path2, file$4, 118, 3, 2408);
         attr_dev(svg, "class", "background svelte-9b146h");
         attr_dev(svg, "viewBox", "0 0 1920 1080");
         attr_dev(svg, "preserveAspectRatio", "none");
         attr_dev(svg, "fill", "none");
         attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
-        add_location(svg, file$4, 114, 2, 2003);
+        add_location(svg, file$4, 115, 2, 2058);
         attr_dev(div0, "class", "left svelte-9b146h");
-        add_location(div0, file$4, 119, 2, 2458);
+        add_location(div0, file$4, 120, 2, 2513);
         attr_dev(div1, "class", "form-container svelte-9b146h");
-        add_location(div1, file$4, 120, 2, 2485);
+        add_location(div1, file$4, 121, 2, 2540);
         attr_dev(div2, "class", "main svelte-9b146h");
         attr_dev(div2, "id", "main");
+        attr_dev(div2, "windowheight", ctx.windowHeight);
         attr_dev(div2, "scrollpos", ctx.scrollPos);
         attr_dev(div2, "elementpos", ctx.elementPos);
-        add_location(div2, file$4, 113, 0, 1925);
+        add_location(div2, file$4, 114, 0, 1952);
       },
       l: function claim(nodes) {
         throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -6002,7 +6029,7 @@ var app = (function () {
         current = true;
       },
       p: function update(changed, ctx) {
-        if (ctx.scrollPos >= ctx.elementPos - ctx.elementPos * .05) {
+        if (ctx.scrollPos + ctx.windowHeight >= ctx.elementPos) {
           if (!if_block) {
             if_block = create_if_block$3(ctx);
             if_block.c();
@@ -6015,6 +6042,10 @@ var app = (function () {
             if_block = null;
           });
           check_outros();
+        }
+
+        if (!current || changed.windowHeight) {
+          attr_dev(div2, "windowheight", ctx.windowHeight);
         }
 
         if (!current || changed.scrollPos) {
@@ -6054,8 +6085,9 @@ var app = (function () {
 
   function instance$4($$self, $$props, $$invalidate) {
     var elementPos = $$props.elementPos,
-        scrollPos = $$props.scrollPos;
-    var writable_props = ['elementPos', 'scrollPos'];
+        scrollPos = $$props.scrollPos,
+        windowHeight = $$props.windowHeight;
+    var writable_props = ['elementPos', 'scrollPos', 'windowHeight'];
     Object.keys($$props).forEach(function (key) {
       if (!writable_props.includes(key) && !key.startsWith('$$')) console.warn("<Contact> was created with unknown prop '".concat(key, "'"));
     });
@@ -6063,23 +6095,27 @@ var app = (function () {
     $$self.$set = function ($$props) {
       if ('elementPos' in $$props) $$invalidate('elementPos', elementPos = $$props.elementPos);
       if ('scrollPos' in $$props) $$invalidate('scrollPos', scrollPos = $$props.scrollPos);
+      if ('windowHeight' in $$props) $$invalidate('windowHeight', windowHeight = $$props.windowHeight);
     };
 
     $$self.$capture_state = function () {
       return {
         elementPos: elementPos,
-        scrollPos: scrollPos
+        scrollPos: scrollPos,
+        windowHeight: windowHeight
       };
     };
 
     $$self.$inject_state = function ($$props) {
       if ('elementPos' in $$props) $$invalidate('elementPos', elementPos = $$props.elementPos);
       if ('scrollPos' in $$props) $$invalidate('scrollPos', scrollPos = $$props.scrollPos);
+      if ('windowHeight' in $$props) $$invalidate('windowHeight', windowHeight = $$props.windowHeight);
     };
 
     return {
       elementPos: elementPos,
-      scrollPos: scrollPos
+      scrollPos: scrollPos,
+      windowHeight: windowHeight
     };
   }
 
@@ -6094,7 +6130,7 @@ var app = (function () {
       _classCallCheck(this, Contact);
 
       _this = _possibleConstructorReturn(this, _getPrototypeOf(Contact).call(this, options));
-      init(_assertThisInitialized(_this), options, instance$4, create_fragment$4, safe_not_equal, ["elementPos", "scrollPos"]);
+      init(_assertThisInitialized(_this), options, instance$4, create_fragment$4, safe_not_equal, ["elementPos", "scrollPos", "windowHeight"]);
       dispatch_dev("SvelteRegisterComponent", {
         component: _assertThisInitialized(_this),
         tagName: "Contact",
@@ -6112,6 +6148,10 @@ var app = (function () {
         console.warn("<Contact> was created without expected prop 'scrollPos'");
       }
 
+      if (ctx.windowHeight === undefined && !('windowHeight' in props)) {
+        console.warn("<Contact> was created without expected prop 'windowHeight'");
+      }
+
       return _this;
     }
 
@@ -6125,6 +6165,14 @@ var app = (function () {
       }
     }, {
       key: "scrollPos",
+      get: function get() {
+        throw new Error("<Contact>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+      },
+      set: function set(value) {
+        throw new Error("<Contact>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+      }
+    }, {
+      key: "windowHeight",
       get: function get() {
         throw new Error("<Contact>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
       },
@@ -6161,14 +6209,16 @@ var app = (function () {
     });
     var aboutme = new AboutMe({
       props: {
-        scrollPos: ctx.scrollPos
+        scrollPos: ctx.scrollPos,
+        loaded: ctx.loaded
       },
       $$inline: true
     });
     var contact = new Contact({
       props: {
         scrollPos: ctx.scrollPos,
-        elementPos: ctx.elementPos
+        elementPos: ctx.elementPos,
+        windowHeight: ctx.windowHeight
       },
       $$inline: true
     });
@@ -6183,7 +6233,7 @@ var app = (function () {
         t2 = space();
         contact.$$.fragment.c();
         attr_dev(div, "class", "svelte-1ddmi21");
-        add_location(div, file$5, 36, 0, 927);
+        add_location(div, file$5, 38, 0, 959);
         dispose = [listen_dev(window, "resize", ctx.handleResize), listen_dev(window, "scroll", function () {
           scrolling = true;
           clearTimeout(scrolling_timeout);
@@ -6219,6 +6269,7 @@ var app = (function () {
         var contact_changes = {};
         if (changed.scrollPos) contact_changes.scrollPos = ctx.scrollPos;
         if (changed.elementPos) contact_changes.elementPos = ctx.elementPos;
+        if (changed.windowHeight) contact_changes.windowHeight = ctx.windowHeight;
         contact.$set(contact_changes);
       },
       i: function intro(local) {
@@ -6262,17 +6313,16 @@ var app = (function () {
     var scrollPos;
     var elementPos;
     var windowHeight;
+    var loaded;
 
     var handleResize = function handleResize() {
       document.documentElement.style.setProperty('--vh', "".concat(windowHeight, "px"));
       $$invalidate('elementPos', elementPos = document.getElementById('main').getBoundingClientRect().top);
-      console.log('onResize:', elementPos);
+      console.log('onResize:', elementPos - elementPos * .333, elementPos);
     };
 
     onMount(function () {
       document.documentElement.style.setProperty('--vh', "".concat(windowHeight, "px"));
-      $$invalidate('elementPos', elementPos = document.getElementById('main').getBoundingClientRect().top);
-      console.log('onMount:', elementPos);
     });
 
     function onwindowscroll() {
@@ -6293,12 +6343,26 @@ var app = (function () {
       if ('scrollPos' in $$props) $$invalidate('scrollPos', scrollPos = $$props.scrollPos);
       if ('elementPos' in $$props) $$invalidate('elementPos', elementPos = $$props.elementPos);
       if ('windowHeight' in $$props) $$invalidate('windowHeight', windowHeight = $$props.windowHeight);
+      if ('loaded' in $$props) $$invalidate('loaded', loaded = $$props.loaded);
+    };
+
+    $$self.$$.update = function () {
+      var $$dirty = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
+        loaded: 1
+      };
+
+      if ($$dirty.loaded) {
+        if (loaded) {
+          $$invalidate('elementPos', elementPos = document.getElementById('main').getBoundingClientRect().top);
+        }
+      }
     };
 
     return {
       scrollPos: scrollPos,
       elementPos: elementPos,
       windowHeight: windowHeight,
+      loaded: loaded,
       handleResize: handleResize,
       onwindowscroll: onwindowscroll,
       onwindowresize: onwindowresize
