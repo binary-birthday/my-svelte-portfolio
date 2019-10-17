@@ -58,7 +58,7 @@
 	p {
 		color: white;
 		font-weight: 800;
-    font-size: calc(14.5vmin + 8*(90vw - 400px)/ 400);
+    font-size: calc(12.75vmin + 8*(90vw - 400px)/ 400);
   }
 
 
