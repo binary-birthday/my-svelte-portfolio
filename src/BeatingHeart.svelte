@@ -17,8 +17,8 @@
 
 <style>
 .background {
-  height: 100%;
-  width: 85%;
+  height: 120%;
+  width: 100%;
   position: absolute;
   z-index: 1;
 }
@@ -27,6 +27,7 @@
   width: 100%;
   height: 100%;
   display: flex;
+  justify-content: center;
   align-items: center;
   will-change: transform;
   position: absolute;

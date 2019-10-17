@@ -47,7 +47,7 @@
 		height: var(--vh);
 		height: 100vh;
 		width: 100vw;
-	}
+	} 
 </style>
 
 <svelte:window bind:scrollY={scrollPos} bind:innerHeight={windowHeight} on:resize={handleResize}/>

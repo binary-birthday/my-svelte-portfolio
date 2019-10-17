@@ -40,7 +40,7 @@
 
   .landing-container {
     background-color: black;
-    height: 105%;
+    height: 125%;
     width: 100%;
     padding-top: 4rem;
     z-index: 2;
