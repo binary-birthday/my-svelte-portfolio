@@ -105,7 +105,7 @@
   <div class="wrapper">
     {#if scrollPos > 100} 
     <div class="about-container">
-      <img in:fly="{{delay: 0, duration: 2000, y: -300, opacity: .01, easing: quintOut}}" class="about" src="images/ABOUT.svg" alt="about">
+      <img transition:fly="{{delay: 0, duration: 2000, y: -500, opacity: .01, easing: quintOut}}" class="about" src="images/ABOUT.svg" alt="about">
     </div>
     <div class="card-container">
       <div transition:fly="{{delay: 100, duration: 3000, y: 200, opacity: .75, easing: quintOut}}" class="card">
