@@ -1,5 +1,5 @@
 <script>
-  import { fly } from 'svelte/transition';
+  import { fly, fade } from 'svelte/transition';
   import { quintOut, sineIn } from 'svelte/easing';
   import { afterUpdate } from 'svelte';
 
@@ -106,7 +106,7 @@
   <div class="wrapper">
     {#if scrollPos > 100} 
     <div class="about-container">
-      <img transition:fly="{{delay: 0, duration: 4000, y: -400, opacity: .01, easing: quintOut}}" class="about" src="images/ABOUT.svg" alt="about">
+      <img in:fly="{{delay: 0, duration: 4000, y: -400, opacity: .01, easing: quintOut}}" out:fade="{{delay: 250, duration: 300}}" class="about" src="images/ABOUT.svg" alt="about">
     </div>
     <div class="card-container">
       <div transition:fly="{{delay: 100, duration: 3000, y: 200, opacity: .75, easing: quintOut}}" class="card">
