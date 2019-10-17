@@ -2,12 +2,11 @@
   import { onMount } from 'svelte';
 
   onMount(() => {
-    TweenMax.fromTo(anatomicalHeart, .6, 
+    TweenMax.fromTo(anatomicalHeart, 1.2, 
     { 
       scale:1
     },
-    {
-      scale:1.05,
+    { scale:1.05,
       repeat: -1,
       ease: Elastic.easeOut,
       yoyo: true
