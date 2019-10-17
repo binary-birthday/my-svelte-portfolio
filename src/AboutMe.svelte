@@ -28,12 +28,12 @@
 
   .about-container {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
   }
 
   .about {
-    margin-top: .5rem;
+    margin-top: 2rem;
     z-index: 2;
     width: calc(18vmin + 8*(100vw - 400px)/ 400);
   }
