@@ -28,8 +28,6 @@
     z-index: -1;
   }
 
-
-  
   .left {
     height: 100%;
     width: 50%;

@@ -7,6 +7,10 @@
 
 	let scrollPos;
 	let windowHeight;
+	let windowWidth;
+	$: width = windowWidth;
+	$: height = windowHeight;
+
 
 	const handleResize = () => {
     let vh = windowHeight * 0.01;
@@ -21,19 +25,10 @@
 
 <style>
 
-
-
-	div {
-		width: 100vw;
-		height: 100vh;
-		height: calc(var(--vh, 1vh) * 100);
-	}
-
-
 </style>
 
-<svelte:window bind:scrollY={scrollPos} bind:innerHeight={windowHeight} on:resize={handleResize}/>
-<div>
+<svelte:window bind:scrollY={scrollPos} bind:innerHeight={windowHeight} bind:innerWidth={windowWidth} on:resize={handleResize}/>
+<div {width} {height}>
 	<NavBar />
 	<Greeting />
 	<AboutMe scrollPos={scrollPos}/>

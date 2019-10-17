@@ -18,7 +18,7 @@
 <style>
 .background {
   height: 100%;
-  width: 50vw;
+  width: 50%;
   position: absolute;
   z-index: 1;
 }
@@ -42,7 +42,7 @@
 
 @media only screen and (max-width: 700px) {
   .background {
-    width: 90vw;
+    width: 90%;
     position: absolute;
     left: 0;
     padding-top: 2rem;
@@ -52,7 +52,7 @@
 
 <div class="background">
   <div class="pericardium">
-  <svg width="100%" height="100%" viewBox="0 0 300 500" fill="none"   xmlns="http://www.w3.org/2000/svg">
+  <svg width="95%" height="95%" viewBox="0 0 300 500" fill="none"   xmlns="http://www.w3.org/2000/svg">
   <g id="anatomicalHeart">
     <g id="ventricle-group">
       <path id="Vector 3" d="M181     341C181.596 340.837 181.096 339.967 181.5 339.5C182.151 338.746 183.375 339.775 184 339C184.957 337.813 182.6 337.057 181.5 336C180.598 335.134 180.034 333.297 179 334C178.018 334.668 179.265 335.836 179.5 337C179.818 338.578 178.9 340.817 180.5 341C180.694 341.022 180.812 341.051 181 341Z" fill="#E3193D"/>

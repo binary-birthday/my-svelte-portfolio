@@ -7,8 +7,8 @@
 
 <style>
   .container {
-    width: 100vw;
-    min-height: 120%;
+    width: 100%;
+    min-height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,6 +16,8 @@
 
   .wrapper {
     display: grid;
+    height: 100%;
+    width: 100%;
     grid-template-columns: 1fr minmax(82.5%, 1fr);
     background-color: #fff;
     color: #444;
@@ -82,17 +84,13 @@
     .profile {
       width: 75px;
       height: 75px;
-      margin-right: 1rem;
-      margin-bottom: .75rem;
+      margin-right: .75rem;
+      margin-bottom: .5rem;
     }
     .card {
       padding-left: 1rem;
       line-height: 2rem;
       width: 90%;
-    }
-    .profile {
-      margin-right: .75rem;
-      margin-bottom: .5rem;
     }
 }
 
