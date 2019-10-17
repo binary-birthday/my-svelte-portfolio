@@ -154,7 +154,7 @@
     </div>
     {#if visible }    
     <div class="svg-container">
-      <img in:fly="{{delay: 0, duration: 4000, y: -400, opacity: .01, easing: quintOut}}" out:fade="{{delay: 250, duration: 300}}" class="contact" src="images/contact.svg" alt="contact">
+      <img in:fly="{{delay: 0, duration: 4000, y: -400, opacity: .01, easing: quintOut}}" out:fade="{{delay: 0, duration: 300}}" class="contact" src="images/contact.svg" alt="contact">
     </div>
     {/if}
 
