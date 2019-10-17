@@ -38,7 +38,7 @@
 	<NavBar />
 	<Greeting />
 	<AboutMe scrollPos={scrollPos} />
-	<Contact scrollPos={scrollPos} elementPos={elementPos}/>
+	<Contact scrollPos={scrollPos} elementPos={elementPos} windowHeight={windowHeight}/>
 </div>
 
 
