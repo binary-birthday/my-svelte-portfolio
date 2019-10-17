@@ -53,7 +53,7 @@
 <svelte:window bind:scrollY={scrollPos} bind:innerHeight={windowHeight} on:resize={handleResize}/>
 <div>
 	<NavBar scrollPos={scrollPos} />
-	<Greeting />
+	<Greeting scrollPos={scrollPos} />
 	<AboutMe scrollPos={scrollPos} loaded={loaded}/>
 	<Contact scrollPos={scrollPos} elementPos={elementPos} windowHeight={windowHeight}/>
 </div>

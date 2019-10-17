@@ -23,7 +23,6 @@
     width: 100%;
     grid-template-columns: 1fr minmax(82.5%, 1fr);
     background-color: #fff;
-    color: #444;
   }
 
   .about-container {
@@ -33,9 +32,9 @@
   }
 
   .about {
-    margin-top: 2rem;
+    margin-top: 4rem;
     z-index: 2;
-    width: calc(18vmin + 8*(100vw - 400px)/ 400);
+    width: calc(12vmin + 8*(100vw - 400px)/ 400);
   }
 
   .card-container {
@@ -95,6 +94,9 @@
       padding-left: 1rem;
       line-height: 2rem;
       width: 90%;
+    }
+    .about {
+      margin-top: 2rem;
     }
 }
 

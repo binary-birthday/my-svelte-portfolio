@@ -4,6 +4,18 @@
   import { fly } from 'svelte/transition';
   import { quintOut } from 'svelte/easing'
 
+  export let scrollPos;
+
+  let height;
+
+  $: if(scrollPos >= (height * .6)) {
+    visible = false;
+  }
+
+  $: if(scrollPos < 100) {
+    visible = true;
+  }
+
   let visible = false;
 
   function typewriter(node, { delay = 100, speed = 50 }) {
@@ -71,7 +83,7 @@
 
 </style>
 	
-<div class="landing-container">
+<div bind:offsetHeight={height} class="landing-container">
   <div class="right">
     {#if visible}	
     <p in:typewriter="{{delay: 1200, speed: 50}}" class="greting1">HELLO!</p>
