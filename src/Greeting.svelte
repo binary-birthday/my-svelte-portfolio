@@ -63,6 +63,7 @@
   .strong {
     font-weight: 100;
     transform: scale(1.01);
+    color: #3993DD;
   }
 
   .right {
