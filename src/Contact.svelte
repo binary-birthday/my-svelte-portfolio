@@ -9,10 +9,13 @@
   let position;
 
   let calcPosition = () => {
+    let pos;
     if(fromTop > 1000) {
-      return fromTop - (fromTop / 20)
+      pos = (fromTop - (fromTop/20))
+      return pos
     } else {
-      return fromTop - (fromTop / 10)
+      pos = (fromTop - (fromTop/10))
+      return pos
     }
   };
 
