@@ -3,12 +3,13 @@
   import { elasticOut, quintOut } from 'svelte/easing';
   import { onMount } from 'svelte';
 
-  let height;
+  let elementHeight;
 
   export let scrollPos;
+  export let windowHeight;
 
   onMount(() => {
-    console.log(height) 
+    console.log((windowHeight - elementHeight)) 
   })
 </script>
 
@@ -117,10 +118,10 @@
 	<path d="M1920 1066.7V1079.99L421.496 1079.99L309.761 631.773L1920 1066.7Z" fill="#1D1D1D"/>
 	<path d="M317.44 633.103L709.12 1080H-0.000427246V718.295L317.44 633.103Z" fill="#313131"/>
 </svg>
-<div class="main" bind:offsetHeight={height}>
+<div class="main" bind:offsetHeight={elementHeight}>
   <div class="left"></div>
   <div class="form-container">
-    {#if scrollPos > height}
+    {#if scrollPos > (windowHeight - elementHeight)}
     <h1 transition:slide="{{delay: 500, duration: 2000, easing: quintOut }}"  >Get In Touch</h1>
     <form action="https://formspree.io/wsmartin23@gmail.com" method="POST">      
       <p class="dn">
