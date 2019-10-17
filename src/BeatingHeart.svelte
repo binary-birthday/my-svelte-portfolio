@@ -17,17 +17,19 @@
 
 <style>
 .background {
-  height: 120%;
+  height: 100%;
   width: 100%;
   position: absolute;
   z-index: 1;
 }
 
 .pericardium {
-  width: 100%;
-  height: 100%;
+  width: 120%;
+  height: 130%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+  padding-right: 1.5rem;
+  transform: translateY(-50px);
   align-items: center;
   will-change: transform;
   position: absolute;
