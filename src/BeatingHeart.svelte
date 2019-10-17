@@ -44,8 +44,8 @@ svg {
 }
 
 @media only screen and (max-width: 700px) {
-  .svg {
-    height: 90%;
+  .background {
+    position: absolute;
   }
 }
 </style>
