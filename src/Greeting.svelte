@@ -62,8 +62,10 @@
 
   .strong {
     font-weight: 100;
-    transform: scale(1.01);
-    color: #3993DD;
+    /* font-stretch: wider; */
+    font-style: italic;
+    transform: scale(1.02);
+    color: #0E79B2;
   }
 
   .right {
