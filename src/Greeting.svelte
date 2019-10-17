@@ -83,10 +83,6 @@
     .landing-container {
       height: 110%;
     }
-
-    p {
-      font-size: calc(10vh + 8*(90vw - 400px)/ 400);
-    }
   }
 
 
