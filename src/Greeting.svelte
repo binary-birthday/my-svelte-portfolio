@@ -70,7 +70,8 @@
 	
 	p {
 		color: white;
-		font-weight: 800;
+    font-family: 'Oswald', sans-serif;
+		font-weight: 600;
     font-size: calc(14vmin + 8*(90vw - 400px)/ 400);
   }
 
