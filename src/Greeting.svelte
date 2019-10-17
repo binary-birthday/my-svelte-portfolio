@@ -97,8 +97,8 @@
     <p in:typewriter="{{delay: 1200, speed: 50}}" >Hi, my name is</p>
 	  <p in:typewriter="{{delay: 2000, speed: 50}}" class="strong">Wade Martin.</p>
 	  <p in:typewriter="{{delay: 3000, speed: 50}}" >I build webapps. </p>
-	  <p in:typewriter="{{delay: 4000, speed: 50}}" >Welcome to my</p>
-	  <p in:typewriter="{{delay: 4800, speed: 50}}" >portfolio!</p>
+	  <p in:typewriter="{{delay: 4200, speed: 50}}" >Welcome to my</p>
+	  <p in:typewriter="{{delay: 5000, speed: 50}}" >portfolio!</p>
   </div>
   <BeatingHeart />
   {/if}
