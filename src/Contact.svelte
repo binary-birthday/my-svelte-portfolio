@@ -119,16 +119,16 @@
   </svg>  
   <div class="left"></div>
   <div class="form-container">
-    {#if scrollPos >= (elementPos - (elementPos * .15))}
-    <h1 transition:slide="{{delay: 500, duration: 1000, easing: quintOut }}"  >Get In Touch</h1>
+    {#if scrollPos >= (elementPos - (elementPos * .025))}
+    <h1 transition:slide="{{delay: 1000, duration: 1000, easing: quintOut }}"  >Get In Touch</h1>
     <form action="https://formspree.io/wsmartin23@gmail.com" method="POST">      
       <p class="dn">
         <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
       </p>
-      <input transition:scale="{{duration: 1000, delay: 750, opacity: 0, start: .75, easing:elasticOut}}" name="name" type="text" class="form-input" placeholder="Name" />   
-      <input transition:scale="{{duration: 1000, delay: 800, opacity: 0, start: .75, easing:elasticOut}}" name="email" type="text" class="form-input" placeholder="Email" />
-      <textarea transition:scale="{{duration: 1000, delay: 850, opacity: 0, start: .75, easing:elasticOut}}" name="text" class="form-input" placeholder="Your Message here..."></textarea>
-      <input transition:scale="{{duration: 1000, delay: 900, opacity: 0, start: .75, easing:elasticOut}}" type="submit" value="SUBMIT"/>
+      <input transition:scale="{{duration: 1000, delay: 1050, opacity: 0, start: .75, easing:elasticOut}}" name="name" type="text" class="form-input" placeholder="Name" />   
+      <input transition:scale="{{duration: 1000, delay: 1100, opacity: 0, start: .75, easing:elasticOut}}" name="email" type="text" class="form-input" placeholder="Email" />
+      <textarea transition:scale="{{duration: 1000, delay: 1150, opacity: 0, start: .75, easing:elasticOut}}" name="text" class="form-input" placeholder="Your Message here..."></textarea>
+      <input transition:scale="{{duration: 1000, delay: 1200, opacity: 0, start: .75, easing:elasticOut}}" type="submit" value="SUBMIT"/>
     </form> 
     {/if}
   </div>
