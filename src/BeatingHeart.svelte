@@ -1,5 +1,7 @@
 <script>
   import { onMount } from 'svelte';
+  import { fade } from 'svelte/transition';
+  import { quintOut } from 'svelte/easing'
 
   onMount(() => {
     TweenMax.fromTo(anatomicalHeart, .8, 
@@ -25,16 +27,15 @@
 .pericardium {
   width: 100%;
   height: 100%;
-  display: flex;
-  transform: translateY(-50px);
+  padding-top: 2rem;
   will-change: transform;
   position: absolute;
   z-index: 1;
 }
 
 svg {
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: 105%;
 }
 
 #anatomicalHeart {
@@ -48,16 +49,20 @@ svg {
     left: 0;
   }
   .pericardium {
-    justify-content: center;
-    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  svg {
+    height: 90%;
   }
 }
 </style>
 
 <div class="background">
   <div class="pericardium">
-  <svg viewBox="0 0 300 500" fill="none" preserveAspectRatio="xMaxYMin" xmlns="http://www.w3.org/2000/svg">
-  <g id="anatomicalHeart">
+  <svg viewBox="0 0 300 500" fill="none" preserveAspectRatio="xMaxYMax" xmlns="http://www.w3.org/2000/svg">
+  <g transition:fade="{{delay: 0, duration: 4000}}" id="anatomicalHeart">
     <g id="ventricle-group">
       <path id="Vector 3" d="M181     341C181.596 340.837 181.096 339.967 181.5 339.5C182.151 338.746 183.375 339.775 184 339C184.957 337.813 182.6 337.057 181.5 336C180.598 335.134 180.034 333.297 179 334C178.018 334.668 179.265 335.836 179.5 337C179.818 338.578 178.9 340.817 180.5 341C180.694 341.022 180.812 341.051 181 341Z" fill="#E3193D"/>
 <path id="Vector 3_2" d="M163.5 377C163.975 377.938 165.047 378.602 164.5 379.5C163.819 380.619 162.426 378.926 161.5 378C160.574 377.074 160.468 376.223 160 375C159.424 373.496 157.488 371.555 159 371C160.432 370.475 160.59 372.776 161.5 374C162.34 375.13 162.863 375.744 163.5 377Z" fill="#E3193D"/>

@@ -1,5 +1,5 @@
 <script>
-  import { scale, slide, fly, fade } from 'svelte/transition';
+  import { scale, draw, fade } from 'svelte/transition';
   import { elasticOut, quintOut } from 'svelte/easing';
   import { onMount } from 'svelte';
 
@@ -9,15 +9,13 @@
 
   let visible = false;
 
-  $: if((scrollPos + (windowHeight *.8)) >= elementPos) {
-    console.log('>= init transition in', scrollPos, windowHeight, elementPos)
-    visible = true;
+  $: if((scrollPos + (windowHeight)) > elementPos) {
+    visible = true
+    console.log(visible)
+  } else {
+    visible = false
   }
 
-   $: if((scrollPos + windowHeight) < elementPos) {
-    console.log('< init fade out', scrollPos, windowHeight, elementPos)    
-    visible = false;
-  }
 
 </script>
 
@@ -32,7 +30,7 @@
 
   .background {
     width: 100%;
-    height: 100%;  
+    min-height: 100%;  
     position: absolute;
     z-index: -1;
   }
@@ -45,26 +43,23 @@
     color: #444;
   }
 
+  .svg-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .contact {
-    margin-top: 6rem;
     z-index: 2;
     opacity: .5;
-    width: calc(10vmin + 8*(100vw - 400px)/ 400);
+    width: calc(14vmin + 8*(100vw - 400px)/ 400);
   }
 
   .form-container {
-    max-width: 60%;
-    color: white;
-    z-index: 10;
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    margin-top: 3rem;
-    padding-left: 3rem;
-    width: 70%;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-    line-height: 2.5rem;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
   }
 
   .dn {
@@ -111,7 +106,7 @@
     padding-bottom:10px;
     transition: all 0.3s;
     margin-top:-4px;
-    font-weight:700;
+    font-weight:100;
   }
 
   [type="submit"]:hover { 
@@ -119,14 +114,11 @@
   }
 
   @media only screen and (max-width: 700px) {
-    .form-container {
-      max-width: 95%;
-      padding-right: 3rem;
-      height: 80%;
-    }
-   
+   form {
+     width: 90%;
+   }
     .background {
-      height: 150%;
+      min-height: 100%;
     }
 }
 </style>
@@ -145,8 +137,8 @@
         <p class="dn">
           <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
         </p>
-        <input transition:scale="{{duration: 800, delay: 1000, opacity: 0, start: .8, easing:elasticOut}}" name="name" type="text" class="form-input" placeholder="Name" />   
-        <input transition:scale="{{duration: 800, delay: 1050, opacity: 0, start: .8, easing:elasticOut}}" name="email" type="text" class="form-input" placeholder="Email" />
+        <input transition:scale="{{duration: 800, delay: 1000, opacity: 0, start: .8, easing:elasticOut}}" name="name" type="text" class="form-input" placeholder="Your Name" />   
+        <input transition:scale="{{duration: 800, delay: 1050, opacity: 0, start: .8, easing:elasticOut}}" name="email" type="text" class="form-input" placeholder="Your Email" />
         <textarea transition:scale="{{duration: 800, delay: 1100, opacity: 0, start: .8, easing:elasticOut}}" name="text" class="form-input" placeholder="Your Message here..."></textarea>
         <input transition:scale="{{duration: 800, delay: 1150, opacity: 0, start: .8, easing:elasticOut}}" type="submit" value="SUBMIT"/>
       </form> 
@@ -154,7 +146,17 @@
     </div>
     {#if visible }    
     <div class="svg-container">
-      <img in:fly="{{delay: 0, duration: 4000, y: -400, opacity: .01, easing: quintOut}}" out:fade="{{delay: 0, duration: 300}}" class="contact" src="images/contact.svg" alt="contact">
+    <svg out:fade="{{delay: 0, duration: 300}}" class="contact" viewBox="0 0 164 844" fill="none" stroke="#E01E41" xmlns="http://www.w3.org/2000/svg">
+      <path in:draw="{{duration: 2000, delay: 2000, easing: quintOut}}" d="M2 96L162 96L162 166L2 166L76.4304 130.741L2 96Z" stroke-width="4"/>
+      <path in:draw="{{duration: 2000, delay: 2000, easing: quintOut}}" d="M162 5V75L82 75M82 75H2L2 5L82 75ZM82 75V5" stroke-width="4"/>
+      <path in:draw="{{duration: 2000, delay: 2000, easing: quintOut}}" d="M150.409 744.827C135.412 752.546 37.2521 753.553 16.3474 744.827C-4.55725 736.101 -0.921503 692.807 16.3474 686.43C33.6163 680.053 134.504 678.375 150.409 686.43C166.315 694.485 165.406 737.108 150.409 744.827Z" stroke-width="4"/>
+      <path in:draw="{{duration: 2000, delay: 2000, easing: quintOut}}" d="M150.149 772C166.411 780.701 165.482 826.742 150.149 835.08C134.816 843.418 25.1964 845.155 13.0839 835.08C0.971438 825.005 -4.14142 793.68 13.0839 772" stroke-width="4"/>
+      <path in:draw="{{duration: 2000, delay: 2000, easing: quintOut}}" d="M150.149 338C166.411 346.701 165.482 392.742 150.149 401.08C134.816 409.418 25.1964 411.155 13.0839 401.08C0.971438 391.005 -4.14142 359.68 13.0839 338" stroke-width="4"/>
+      <path in:draw="{{duration: 2000, delay: 2000, easing: quintOut}}" d="M162 590L2 660H162V590ZM162 590H2" stroke-width="4"/>
+      <path in:draw="{{duration: 2000, delay: 2000, easing: quintOut}}" d="M162 534H2M2 534L2 569M2 534L2 499" stroke-width="4"/>
+      <path in:draw="{{duration: 2000, delay: 2000, easing: quintOut}}" d="M162 282H2M2 282L2 317M2 282L2 247" stroke-width="4"/>
+      <path in:draw="{{duration: 2000, delay: 2000, easing: quintOut}}" d="M162 499L2 465.75L162 429V499Z" stroke-width="4"/>
+    </svg>
     </div>
     {/if}
 

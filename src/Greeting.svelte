@@ -1,14 +1,14 @@
 <script>
   import BeatingHeart from './BeatingHeart.svelte';
   import { onMount } from 'svelte';
-  import { fly } from 'svelte/transition';
-  import { quintOut } from 'svelte/easing'
+  import { fly, fade } from 'svelte/transition';
+  import { quintOut } from 'svelte/easing';
 
   export let scrollPos;
 
   let height;
 
-  $: if(scrollPos >= (height * .45)) {
+  $: if(scrollPos >= (height * .4)) {
     visible = false;
   }
 
@@ -44,19 +44,18 @@
   };
 
   onMount(() => {
-    visible = true;
+    visible = !visible;
   })
 </script>
 
 <style>
 
   .landing-container {
-    background-color: black;
-    height: 125%;
+    height: 110%;
     width: 100%;
-    padding-top: 4rem;
     z-index: 2;
     display: flex;
+    justify-content: center;
   }
 
   .strong {
@@ -65,17 +64,17 @@
     color: #0E79B2;
   }
 
-  .right {
+  .left {
     width: 70%;
     height: 80%;
+    padding-top: 4rem;
     z-index: 10;
-    padding-left: 1rem;
   }
 	
 	span {
 		color: white;
     font-family: 'Oswald', sans-serif;
-		font-weight: 100;
+    font-weight: 100;
     font-size: calc(7.5vh + 8*(90vw - 400px)/ 400);
   }
 
@@ -83,8 +82,12 @@
     .landing-container {
       height: 110%;
     }
+    .left {
+      width: 80%;
+    }
+
    span {
-      font-size: calc(8.5vh + 8*(90vw - 400px)/ 400);
+      font-size: calc(6.5vh + 8*(90vw - 400px)/ 400);
     }
     .strong {
     text-shadow: .5px .5px #00000022;
@@ -97,12 +100,12 @@
 	
 <div bind:offsetHeight={height} class="landing-container">
   {#if visible}	
-  <div class="right">
-    <span in:typewriter="{{delay: 1200, speed: 50}}" >Hi, my name is</span><br>
-	  <span in:typewriter="{{delay: 2000, speed: 50}}" class="strong">Wade Martin.</span><br>
-	  <span in:typewriter="{{delay: 5000, speed: 50}}" >I build webapps.</span><br>
-	  <span in:typewriter="{{delay: 8000, speed: 50}}" >Welcome to my</span><br>
-	  <span in:typewriter="{{delay: 9000, speed: 50}}" >portfolio!</span><br>
+  <div class="left" out:fade="{{delay: 0, duration: 4000}}" >
+    <span in:typewriter="{{delay: 200, speed: 50}}" >Hello,&nbsp</span>
+    <span in:typewriter="{{delay: 1300, speed: 50}}" >my name is</span><br>
+	  <span in:typewriter="{{delay: 1850, speed: 50}}" class="strong">Wade Martin.</span><br>
+	  <span in:typewriter="{{delay: 3400, speed: 50}}" >I build webapps.</span><br>
+	  <span in:typewriter="{{delay: 5200, speed: 50}}" >Welcome to my portfolio!</span>
   </div>
   <BeatingHeart />
   {/if}

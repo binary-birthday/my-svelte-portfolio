@@ -4,7 +4,7 @@
   import { afterUpdate } from 'svelte';
 
   export let scrollPos;
-  export let loaded = false;
+  export let height;
 
 </script>
 
@@ -12,9 +12,6 @@
   .container {
     width: 100%;
     min-height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 
   .wrapper {
@@ -22,26 +19,25 @@
     height: 100%;
     width: 100%;
     grid-template-columns: 1fr minmax(82.5%, 1fr);
-    background-color: #fff;
   }
 
   .about-container {
     display: flex;
-    align-items: flex-start;
     justify-content: center;
+    align-items: flex-start;
   }
 
   .about {
-    margin-top: 4rem;
     z-index: 2;
-    width: calc(12vmin + 8*(100vw - 400px)/ 400);
+    width: calc(18vmin + 8*(100vw - 400px)/ 400);
+    opacity: .5;
   }
 
   .card-container {
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
   }
 
   .card {
@@ -61,6 +57,7 @@
     margin-right: 1.2rem;
     margin-bottom: 1rem;
     opacity: .7;
+    transform: translateX(-10px)
   }
 
   p {
@@ -68,6 +65,7 @@
     font: 300;
     font-family: 'Cormorant', serif;
     padding-right: 2rem;
+    color: white;
   }
 
   .icons {
@@ -93,33 +91,28 @@
     .card {
       /* padding-left: 1rem; */
       line-height: 2rem;
-      width: 92%;
+      width: 95%;
     }
     .about {
       margin-top: 2rem;
+
     }
 }
 
 </style>
 
 
-<div class="container" loaded={loaded}>
-  
+<div class="container" bind:offsetHeight={height} >
   <div class="wrapper">
     {#if scrollPos > 100} 
     <div class="about-container">
-      <img in:fly="{{delay: 0, duration: 4000, y: -400, opacity: .01, easing: quintOut}}" out:fade="{{delay: 250, duration: 300}}" class="about" src="images/ABOUT.svg" alt="about">
+      <img in:fly="{{delay: 800, duration: 3000, y: -400, opacity: .01, easing: quintOut}}" out:fade="{{delay: 250, duration: 2000}}" class="about" src="images/ABOUT.svg" alt="about">
     </div>
     <div class="card-container">
-      <div transition:fly="{{delay: 100, duration: 3000, y: 200, opacity: .75, easing: quintOut}}" class="card">
+      <div in:fly="{{delay: 800, duration: 3000, y: 150, opacity: 0, easing: quintOut}}" out:fade="{{delay: 250, duration: 2000}}" class="card">
         <div>
           <img class="profile" src="images/profile.jpg" alt="profile image" />
-          <p> 
-            Who is Wade you ask? Well, among other things I'm a wine lover, hiker, sports tragic and fantasy novel enthusiast. In February 2019 I embarked on an exciting journey into the world of web development undertaking a 6-month fast track boot-camp-style diploma program @CoderAcademy in Melbourne and what a fun ride it was! Now out the other side after (successful!) completion of my Coder Academy journey I'm keeping my skills sharp building new things (this portfolio for one) and learning new skills (like SVG and other front-endy type things) and am bursting at the seams to get my new career as a web developer off and running! Having made the move north from Melbourne to Sydney in October 2019 I am actively seeking my first professional web development role here in the Harbour city.
-            
-            <!-- Her are some links to a few of my Coder Academy projects:
-             using Ruby on Rails deployed with Heroku (Check out the Repo <a href="https://github.com/Wade-Martin/rails_marketplace_app" target="_blank">Here</a>). The second a project partnered with an external business stakeholder built using the MERN stack deployed with NOW.SH and Netlify (Check out the Front End Repo <a href="https://github.com/Wade-Martin/MERN-App-Front-End" target="_blank">Here</a>, and the Back End Repo <a href="https://github.com/Wade-Martin/MERN-App-Back-End" target="_blank">Here</a>). During his time with Flex Dapps Wade took on a project to rebuild the Web3 Australia Organisation website using Svelte and deployed on Netlify. (Check out the site <a href="https://web3-build.netlify.com/" target="_blank">here</a>) -->
-          </p>
+          <p> "Who is Wade?" I hear you ask. Well, among other things I'm a wine lover, hiker, sports tragic and fantasy novel enthusiast. In February 2019 I embarked on an exciting journey into the world of web development undertaking the boot-camp-style 6-month fast track diploma program @CoderAcademy, and what a fun ride it was! Now out the other side after (successfully!) completing my Coder Academy journey I'm keeping my skills sharp building new things (this portfolio for one) and learning new skills (like SVG and other front-endy type things) and I could not be more excitemened about my future in web development! Having made the move north from Melbourne to Sydney in October 2019 I am actively seeking my first professional web development role here in the Harbour city.</p>
         </div>
         <div class="icons">
           <a href="https://github.com/Wade-Martin" target="_blank">   <i class="fab fa-github">    </i></a>

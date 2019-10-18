@@ -7,10 +7,10 @@
   import { onMount } from 'svelte';
 
 	let scrollPos;
-	let elementPos
+	let elementPos;
 	let windowHeight;
-
-	let loaded = false;
+	let height;
+	let initHeight;
 	
 	const setVhVar = () => {
 		document.documentElement.style.setProperty('--vh', `${windowHeight}px`);
@@ -18,17 +18,13 @@
 
 	const getPostion = () => {
 		let newPostion = document.getElementById('form').getBoundingClientRect().top;
+		console.log('getPosition fired, element postion is:', newPostion)
 		return newPostion;
 	}
 
-	$: if (scrollPos > 199 ) {
-    loaded = true;
-  }
-	
-	$: if (loaded === true) {
+	$: if (initHeight != height) {
 		elementPos = getPostion();
 	}
-
 
 	const handleResize = () => {
 		setVhVar()
@@ -38,8 +34,7 @@
 	onMount(() => {
 		setVhVar();
 		elementPos = getPostion();
-  })
-
+	})
 </script>
 
 <style>
@@ -52,10 +47,10 @@
 
 <svelte:window bind:scrollY={scrollPos} bind:innerHeight={windowHeight} on:resize={handleResize}/>
 <div>
-	<NavBar scrollPos={scrollPos} />
-	<Greeting scrollPos={scrollPos} />
-	<AboutMe scrollPos={scrollPos} loaded={loaded}/>
-	<Contact scrollPos={scrollPos} elementPos={elementPos} windowHeight={windowHeight}/>
+	<NavBar {scrollPos}/>
+	<Greeting {scrollPos} />
+	<AboutMe {scrollPos} bind:height/>
+	<Contact {scrollPos} {elementPos} {windowHeight}/>
 </div>
 
 

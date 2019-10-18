@@ -13,15 +13,15 @@ html, body {
 
 
 body {
-	color: #333;
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	background-color: black;
 }
 
 a {
 	text-decoration: none;
-	color: #E01E41;
+	color: #0E79B2;
 }
 
 a:hover {
