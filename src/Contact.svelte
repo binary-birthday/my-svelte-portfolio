@@ -107,10 +107,10 @@
    form {
      width: 90%;
    }
-    .background {
-      min-height: 100%;
-      bottom: 0;
-    }
+  .background {
+    min-height: 100%;
+    align-self: flex-end;
+  }
 }
 </style>
    
