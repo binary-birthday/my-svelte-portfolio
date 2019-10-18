@@ -7,16 +7,6 @@
   export let scrollPos;
   export let windowHeight;
 
-  let visible = false;
-
-  $: if((scrollPos + (windowHeight)) > elementPos) {
-    visible = true
-    console.log(visible)
-  } else {
-    visible = false
-  }
-
-
 </script>
 
 <style>
@@ -124,7 +114,7 @@
 </style>
    
 
-<div class="main" windowHeight={windowHeight} scrollPos={scrollPos} elementPos={elementPos}>
+<div class="main" {windowHeight} {scrollPos} {elementPos}>
   <svg class="background" viewBox="0 0 1920 1080" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
 	  <path d="M1920 1078L1920 0.00305176L0.0020752 0.00622559L0.0020752 402.091V721.995L314.88 643.078L1920 1078Z" fill="black"/>
 	  <path d="M1920 1066.7V1079.99L421.496 1079.99L309.761 631.773L1920 1066.7Z" fill="#1D1D1D"/>
@@ -132,7 +122,7 @@
   </svg>
   <div class="wrapper">
     <div id="form" class="form-container">
-    {#if visible }
+    {#if ((scrollPos + (windowHeight)) > elementPos) }
       <form action="https://formspree.io/wsmartin23@gmail.com" method="POST">      
         <p class="dn">
           <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
