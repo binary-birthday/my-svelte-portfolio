@@ -91,9 +91,9 @@
       margin-bottom: .5rem;
     }
     .card {
-      padding-left: 1rem;
+      /* padding-left: 1rem; */
       line-height: 2rem;
-      width: 90%;
+      width: 92%;
     }
     .about {
       margin-top: 2rem;
@@ -115,7 +115,7 @@
         <div>
           <img class="profile" src="images/profile.jpg" alt="profile image" />
           <p> 
-            Who is Wade you ask? Well, among other things I'm a wine lover, hiker, sports tragic and fantasy novel enthusiast. In February 2019 I embarked on an exciting journey into the world of web development undertaking a 6-month fast track boot-camp-style diploma program @CoderAcademy in Melbourne and what a fun ride it was! Now out the other side after (successful!) completion of my Coder Academy journey I'm keeping my skills sharp building new things (this portfolio for one) and learning new skills (like SVG and other front-endy type things) and am bursting at the seems to get my new career as a web developer off and running! Having made the move north from Melbourne to Sydney in October 2019 I am actively seeking my first professional web development role here in the Harbour city.
+            Who is Wade you ask? Well, among other things I'm a wine lover, hiker, sports tragic and fantasy novel enthusiast. In February 2019 I embarked on an exciting journey into the world of web development undertaking a 6-month fast track boot-camp-style diploma program @CoderAcademy in Melbourne and what a fun ride it was! Now out the other side after (successful!) completion of my Coder Academy journey I'm keeping my skills sharp building new things (this portfolio for one) and learning new skills (like SVG and other front-endy type things) and am bursting at the seams to get my new career as a web developer off and running! Having made the move north from Melbourne to Sydney in October 2019 I am actively seeking my first professional web development role here in the Harbour city.
             
             <!-- Her are some links to a few of my Coder Academy projects:
              using Ruby on Rails deployed with Heroku (Check out the Repo <a href="https://github.com/Wade-Martin/rails_marketplace_app" target="_blank">Here</a>). The second a project partnered with an external business stakeholder built using the MERN stack deployed with NOW.SH and Netlify (Check out the Front End Repo <a href="https://github.com/Wade-Martin/MERN-App-Front-End" target="_blank">Here</a>, and the Back End Repo <a href="https://github.com/Wade-Martin/MERN-App-Back-End" target="_blank">Here</a>). During his time with Flex Dapps Wade took on a project to rebuild the Web3 Australia Organisation website using Svelte and deployed on Netlify. (Check out the site <a href="https://web3-build.netlify.com/" target="_blank">here</a>) -->

@@ -5352,23 +5352,23 @@ var app = (function () {
         br4 = element("br");
         t9 = space();
         beatingheart.$$.fragment.c();
-        attr_dev(span0, "class", "svelte-4rhzyw");
-        add_location(span0, file$2, 103, 4, 1815);
-        add_location(br0, file$2, 103, 75, 1886);
-        attr_dev(span1, "class", "strong svelte-4rhzyw");
-        add_location(span1, file$2, 104, 3, 1894);
-        add_location(br1, file$2, 104, 86, 1977);
-        attr_dev(span2, "class", "svelte-4rhzyw");
-        add_location(span2, file$2, 105, 3, 1985);
-        add_location(br2, file$2, 105, 76, 2058);
-        attr_dev(span3, "class", "svelte-4rhzyw");
-        add_location(span3, file$2, 106, 3, 2066);
-        add_location(br3, file$2, 106, 73, 2136);
-        attr_dev(span4, "class", "svelte-4rhzyw");
-        add_location(span4, file$2, 107, 3, 2144);
-        add_location(br4, file$2, 107, 70, 2211);
-        attr_dev(div, "class", "right svelte-4rhzyw");
-        add_location(div, file$2, 102, 2, 1791);
+        attr_dev(span0, "class", "svelte-1f70ys");
+        add_location(span0, file$2, 103, 4, 1817);
+        add_location(br0, file$2, 103, 75, 1888);
+        attr_dev(span1, "class", "strong svelte-1f70ys");
+        add_location(span1, file$2, 104, 3, 1896);
+        add_location(br1, file$2, 104, 86, 1979);
+        attr_dev(span2, "class", "svelte-1f70ys");
+        add_location(span2, file$2, 105, 3, 1987);
+        add_location(br2, file$2, 105, 76, 2060);
+        attr_dev(span3, "class", "svelte-1f70ys");
+        add_location(span3, file$2, 106, 3, 2068);
+        add_location(br3, file$2, 106, 73, 2138);
+        attr_dev(span4, "class", "svelte-1f70ys");
+        add_location(span4, file$2, 107, 3, 2146);
+        add_location(br4, file$2, 107, 70, 2213);
+        attr_dev(div, "class", "right svelte-1f70ys");
+        add_location(div, file$2, 102, 2, 1793);
       },
       m: function mount(target, anchor) {
         insert_dev(target, div, anchor);
@@ -5416,7 +5416,7 @@ var app = (function () {
         if (!span2_intro) {
           add_render_callback(function () {
             span2_intro = create_in_transition(span2, typewriter, {
-              delay: 3000,
+              delay: 5000,
               speed: 50
             });
             span2_intro.start();
@@ -5426,7 +5426,7 @@ var app = (function () {
         if (!span3_intro) {
           add_render_callback(function () {
             span3_intro = create_in_transition(span3, typewriter, {
-              delay: 4200,
+              delay: 8000,
               speed: 50
             });
             span3_intro.start();
@@ -5436,7 +5436,7 @@ var app = (function () {
         if (!span4_intro) {
           add_render_callback(function () {
             span4_intro = create_in_transition(span4, typewriter, {
-              delay: 5000,
+              delay: 9000,
               speed: 50
             });
             span4_intro.start();
@@ -5479,8 +5479,8 @@ var app = (function () {
         add_render_callback(function () {
           return ctx.div_resize_handler.call(div);
         });
-        attr_dev(div, "class", "landing-container svelte-4rhzyw");
-        add_location(div, file$2, 100, 0, 1713);
+        attr_dev(div, "class", "landing-container svelte-1f70ys");
+        add_location(div, file$2, 100, 0, 1715);
       },
       l: function claim(nodes) {
         throw new Error_1("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -5676,7 +5676,7 @@ var app = (function () {
         img1 = element("img");
         t1 = space();
         p = element("p");
-        p.textContent = "Who is Wade you ask? Well, among other things I'm a wine lover, hiker, sports tragic and fantasy novel enthusiast. In February 2019 I embarked on an exciting journey into the world of web development undertaking a 6-month fast track boot-camp-style diploma program @CoderAcademy in Melbourne and what a fun ride it was! Now out the other side after (successful!) completion of my Coder Academy journey I'm keeping my skills sharp building new things (this portfolio for one) and learning new skills (like SVG and other front-endy type things) and am bursting at the seems to get my new career as a web developer off and running! Having made the move north from Melbourne to Sydney in October 2019 I am actively seeking my first professional web development role here in the Harbour city.";
+        p.textContent = "Who is Wade you ask? Well, among other things I'm a wine lover, hiker, sports tragic and fantasy novel enthusiast. In February 2019 I embarked on an exciting journey into the world of web development undertaking a 6-month fast track boot-camp-style diploma program @CoderAcademy in Melbourne and what a fun ride it was! Now out the other side after (successful!) completion of my Coder Academy journey I'm keeping my skills sharp building new things (this portfolio for one) and learning new skills (like SVG and other front-endy type things) and am bursting at the seams to get my new career as a web developer off and running! Having made the move north from Melbourne to Sydney in October 2019 I am actively seeking my first professional web development role here in the Harbour city.";
         t3 = space();
         div2 = element("div");
         a0 = element("a");
@@ -5690,45 +5690,45 @@ var app = (function () {
         t6 = space();
         a3 = element("a");
         i3 = element("i");
-        attr_dev(img0, "class", "about svelte-camasf");
+        attr_dev(img0, "class", "about svelte-1s5xf3j");
         attr_dev(img0, "src", "images/ABOUT.svg");
         attr_dev(img0, "alt", "about");
-        add_location(img0, file$3, 110, 6, 1888);
-        attr_dev(div0, "class", "about-container svelte-camasf");
-        add_location(div0, file$3, 109, 4, 1852);
-        attr_dev(img1, "class", "profile svelte-camasf");
+        add_location(img0, file$3, 110, 6, 1894);
+        attr_dev(div0, "class", "about-container svelte-1s5xf3j");
+        add_location(div0, file$3, 109, 4, 1858);
+        attr_dev(img1, "class", "profile svelte-1s5xf3j");
         attr_dev(img1, "src", "images/profile.jpg");
         attr_dev(img1, "alt", "profile image");
-        add_location(img1, file$3, 115, 10, 2244);
-        attr_dev(p, "class", "svelte-camasf");
-        add_location(p, file$3, 116, 10, 2323);
-        add_location(div1, file$3, 114, 8, 2228);
-        attr_dev(i0, "class", "fab fa-github svelte-camasf");
-        add_location(i0, file$3, 124, 70, 4097);
+        add_location(img1, file$3, 115, 10, 2250);
+        attr_dev(p, "class", "svelte-1s5xf3j");
+        add_location(p, file$3, 116, 10, 2329);
+        add_location(div1, file$3, 114, 8, 2234);
+        attr_dev(i0, "class", "fab fa-github svelte-1s5xf3j");
+        add_location(i0, file$3, 124, 70, 4103);
         attr_dev(a0, "href", "https://github.com/Wade-Martin");
         attr_dev(a0, "target", "_blank");
-        add_location(a0, file$3, 124, 10, 4037);
-        attr_dev(i1, "class", "fab fa-codepen svelte-camasf");
-        add_location(i1, file$3, 125, 67, 4202);
+        add_location(a0, file$3, 124, 10, 4043);
+        attr_dev(i1, "class", "fab fa-codepen svelte-1s5xf3j");
+        add_location(i1, file$3, 125, 67, 4208);
         attr_dev(a1, "href", "https://codepen.io/wade-martin");
         attr_dev(a1, "target", "_blank");
-        add_location(a1, file$3, 125, 10, 4145);
-        attr_dev(i2, "class", "fab fa-linkedin svelte-camasf");
-        add_location(i2, file$3, 126, 79, 4319);
+        add_location(a1, file$3, 125, 10, 4151);
+        attr_dev(i2, "class", "fab fa-linkedin svelte-1s5xf3j");
+        add_location(i2, file$3, 126, 79, 4325);
         attr_dev(a2, "href", "https://www.linkedin.com/in/wade-s-martin/");
         attr_dev(a2, "target", "_blank");
-        add_location(a2, file$3, 126, 10, 4250);
-        attr_dev(i3, "class", "fab fa-twitter-square svelte-camasf");
-        add_location(i3, file$3, 127, 74, 4433);
+        add_location(a2, file$3, 126, 10, 4256);
+        attr_dev(i3, "class", "fab fa-twitter-square svelte-1s5xf3j");
+        add_location(i3, file$3, 127, 74, 4439);
         attr_dev(a3, "href", "https://twitter.com/wine_and_Wade");
         attr_dev(a3, "target", "_blank");
-        add_location(a3, file$3, 127, 10, 4369);
-        attr_dev(div2, "class", "icons svelte-camasf");
-        add_location(div2, file$3, 123, 8, 4007);
-        attr_dev(div3, "class", "card svelte-camasf");
-        add_location(div3, file$3, 113, 6, 2113);
-        attr_dev(div4, "class", "card-container svelte-camasf");
-        add_location(div4, file$3, 112, 4, 2078);
+        add_location(a3, file$3, 127, 10, 4375);
+        attr_dev(div2, "class", "icons svelte-1s5xf3j");
+        add_location(div2, file$3, 123, 8, 4013);
+        attr_dev(div3, "class", "card svelte-1s5xf3j");
+        add_location(div3, file$3, 113, 6, 2119);
+        attr_dev(div4, "class", "card-container svelte-1s5xf3j");
+        add_location(div4, file$3, 112, 4, 2084);
       },
       m: function mount(target, anchor) {
         insert_dev(target, div0, anchor);
@@ -5824,11 +5824,11 @@ var app = (function () {
         div1 = element("div");
         div0 = element("div");
         if (if_block) if_block.c();
-        attr_dev(div0, "class", "wrapper svelte-camasf");
-        add_location(div0, file$3, 107, 2, 1799);
-        attr_dev(div1, "class", "container svelte-camasf");
+        attr_dev(div0, "class", "wrapper svelte-1s5xf3j");
+        add_location(div0, file$3, 107, 2, 1805);
+        attr_dev(div1, "class", "container svelte-1s5xf3j");
         attr_dev(div1, "loaded", ctx.loaded);
-        add_location(div1, file$3, 105, 0, 1754);
+        add_location(div1, file$3, 105, 0, 1760);
       },
       l: function claim(nodes) {
         throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
