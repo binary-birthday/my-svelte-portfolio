@@ -122,7 +122,7 @@
   </svg>
   <div class="wrapper">
     <div id="form" class="form-container">
-    {#if scrollPos > elementPos) }
+    {#if scrollPos > elementPos }
       <form action="https://formspree.io/wsmartin23@gmail.com" method="POST">      
         <p class="dn">
           <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
