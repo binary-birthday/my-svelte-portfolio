@@ -134,7 +134,7 @@
       </form> 
     {/if}
     </div>
-    {#if visible }    
+    {#if scrollPos > elementPos }    
     <div class="svg-container">
     <svg out:fade="{{delay: 0, duration: 300}}" class="contact" viewBox="0 0 164 844" fill="none" stroke="#E01E41" xmlns="http://www.w3.org/2000/svg">
       <path in:draw="{{duration: 2000, delay: 2000, easing: quintOut}}" d="M2 96L162 96L162 166L2 166L76.4304 130.741L2 96Z" stroke-width="4"/>
