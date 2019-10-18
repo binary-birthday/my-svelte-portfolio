@@ -62,22 +62,21 @@
 
   .strong {
     font-weight: 100;
-    font-style: oblique;
     transform: scale(1.02);
     color: #0E79B2;
   }
 
   .right {
-    width: 100%;
-    height: 50%;
+    width: 70%;
+    height: 80%;
     z-index: 10;
-    padding-left: 3rem;
+    padding-left: 1rem;
   }
 	
 	span {
 		color: white;
     font-family: 'Oswald', sans-serif;
-		font-weight: 600;
+		font-weight: 100;
     font-size: calc(7.5vh + 8*(90vw - 400px)/ 400);
   }
 
@@ -89,7 +88,6 @@
       font-size: calc(8.5vh + 8*(90vw - 400px)/ 400);
     }
     .strong {
-    color: #0E79B2;
     text-shadow: .5px .5px #00000022;
   }
 
