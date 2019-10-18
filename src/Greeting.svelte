@@ -57,7 +57,6 @@
     padding-top: 4rem;
     z-index: 2;
     display: flex;
-    justify-content: flex-end;
   }
 
   .strong {

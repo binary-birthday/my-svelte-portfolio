@@ -23,6 +23,7 @@
 	.myName {
     height: 3.75rem;
     padding-right: .25rem;
+    max-width: 33.33%
 	}
 </style>
 
