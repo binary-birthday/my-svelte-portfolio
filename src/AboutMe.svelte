@@ -62,7 +62,7 @@
 
   p {
     font-size: 1.25rem;
-    font: 300;
+    font: 500;
     font-family: 'Cormorant', serif;
     padding-right: 2rem;
     color: white;
