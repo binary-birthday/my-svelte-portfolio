@@ -109,6 +109,7 @@
    }
     .background {
       min-height: 100%;
+      bottom: 0;
     }
 }
 </style>
