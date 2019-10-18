@@ -12,10 +12,9 @@
 <style>
   .main {
     width: 100%;
-    height: 100%;
+    min-height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
   }
 
   .background {
@@ -28,9 +27,8 @@
   .wrapper {
     display: grid;
     height: 100%;
-    width: 100%;
-    grid-template-columns: minmax(82.5%, 1fr) 1fr;
-    color: #444;
+    width: 70%;
+    grid-template-columns: minmax(82.5%, 1fr) 1fr ;
   }
 
   .svg-container {
@@ -42,15 +40,18 @@
   .contact {
     z-index: 2;
     opacity: .5;
-    width: calc(14vmin + 8*(100vw - 400px)/ 400);
+    width: calc(12vmin + 8*(100vw - 400px)/ 400);
   }
 
   .form-container {
     display: flex;
     justify-content: center;
-    align-items: center;
     height: 100%;
   }
+
+  form {
+     width: 90%;
+   }
 
   .dn {
     display: none;
@@ -104,12 +105,12 @@
   }
 
   @media only screen and (max-width: 700px) {
-   form {
-     width: 90%;
-   }
   .background {
     min-height: 100%;
     align-self: flex-end;
+  }
+  .wrapper {
+    width: 100%;
   }
 }
 </style>
@@ -123,19 +124,19 @@
   </svg>
   <div class="wrapper">
     <div id="form" class="form-container">
-    {#if (scrollPos + windowHeight) > elementPos }
+    {#if (scrollPos + (windowHeight * .5)) > elementPos }
       <form action="https://formspree.io/wsmartin23@gmail.com" method="POST">      
         <p class="dn">
           <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
         </p>
-        <input transition:scale="{{duration: 800, delay: 100, opacity: 0, start: .8, easing:elasticOut}}" name="name" type="text" class="form-input" placeholder="Your Name" />   
-        <input transition:scale="{{duration: 800, delay: 150, opacity: 0, start: .8, easing:elasticOut}}" name="email" type="text" class="form-input" placeholder="Your Email" />
-        <textarea transition:scale="{{duration: 800, delay: 200, opacity: 0, start: .8, easing:elasticOut}}" name="text" class="form-input" placeholder="Your Message here..."></textarea>
-        <input transition:scale="{{duration: 800, delay: 250, opacity: 0, start: .8, easing:elasticOut}}" type="submit" value="SUBMIT"/>
+        <input transition:scale="{{duration: 800, delay: 0, opacity: 0, start: .8, easing:elasticOut}}" name="name" type="text" class="form-input" placeholder="Your Name" />   
+        <input transition:scale="{{duration: 800, delay: 50, opacity: 0, start: .8, easing:elasticOut}}" name="email" type="text" class="form-input" placeholder="Your Email" />
+        <textarea transition:scale="{{duration: 800, delay: 100, opacity: 0, start: .8, easing:elasticOut}}" name="text" class="form-input" placeholder="Your Message here..."></textarea>
+        <input transition:scale="{{duration: 800, delay: 150, opacity: 0, start: .8, easing:elasticOut}}" type="submit" value="SUBMIT"/>
       </form> 
     {/if}
     </div>
-    {#if (scrollPos + windowHeight) > elementPos }    
+    {#if (scrollPos + (windowHeight * .5)) > elementPos }    
     <div class="svg-container">
     <svg out:fade="{{delay: 0, duration: 300}}" class="contact" viewBox="0 0 164 844" fill="none" stroke="#E01E41" xmlns="http://www.w3.org/2000/svg">
       <path in:draw="{{duration: 2000, delay: 1000, easing: quintOut}}" d="M2 96L162 96L162 166L2 166L76.4304 130.741L2 96Z" stroke-width="4"/>

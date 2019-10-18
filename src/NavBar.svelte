@@ -18,11 +18,13 @@
 		align-items: center;
     justify-content: flex-end;
     z-index: 100;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 	}
   
 	.myName {
     height: 3.75rem;
-    padding-right: .25rem;
+    padding-right: 1rem;
     max-width: 50%
 	}
 </style>

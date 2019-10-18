@@ -12,12 +12,16 @@
   .container {
     width: 100%;
     min-height: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
   }
 
   .wrapper {
     display: grid;
     height: 100%;
-    width: 100%;
+    width: 70%;
     grid-template-columns: 1fr minmax(82.5%, 1fr);
   }
 
@@ -29,7 +33,7 @@
 
   .about {
     z-index: 2;
-    width: calc(18vmin + 8*(100vw - 400px)/ 400);
+    width: calc(12vmin + 8*(100vw - 400px)/ 400);
     opacity: .5;
   }
 
@@ -37,13 +41,11 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
   }
 
   .card {
-    width: 70%;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    width: 90%;
     line-height: 2.5rem;
   }
 
@@ -57,13 +59,13 @@
     margin-right: 1.2rem;
     margin-bottom: 1rem;
     opacity: .7;
-    transform: translateX(-10px)
+    transform: translateX(1%)
   }
 
   p {
-    font-size: 1.25rem;
-    font: 500;
-    font-family: 'Merriweather', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: 'Cormorant', serif;
     padding-right: 2rem;
     color: white;
   }
@@ -89,13 +91,14 @@
       margin-bottom: .5rem;
     }
     .card {
-      /* padding-left: 1rem; */
       line-height: 2rem;
       width: 95%;
     }
     .about {
       margin-top: 2rem;
-
+    }
+    .wrapper {
+      width: 100%
     }
 }
 

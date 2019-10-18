@@ -4704,7 +4704,7 @@ var app = (function () {
     };
   }
 
-  var file = "src/NavBar.svelte"; // (30:0) {#if scrollPos > 200}
+  var file = "src/NavBar.svelte"; // (32:0) {#if scrollPos > 200}
 
   function create_if_block(ctx) {
     var div, svg, path0, path0_intro, path1, path1_intro, path2, path2_intro, path3, path3_intro, path4, path4_intro, path5, path5_intro, path6, path6_intro, path7, path7_intro, path8, path8_intro, path9, path9_intro, path10, path10_intro, div_intro;
@@ -4726,55 +4726,55 @@ var app = (function () {
         attr_dev(path0, "class", "w");
         attr_dev(path0, "d", "M2 160.001V2.375H72V160.001L36.7407 86.675L2 160.001Z");
         attr_dev(path0, "stroke-width", "4");
-        add_location(path0, file, 32, 4, 700);
+        add_location(path0, file, 34, 4, 747);
         attr_dev(path1, "class", "a1");
         attr_dev(path1, "d", "M92 160.001L125.25 2.375L162 160.001H92Z");
         attr_dev(path1, "stroke-width", "4");
-        add_location(path1, file, 33, 4, 857);
+        add_location(path1, file, 35, 4, 904);
         attr_dev(path2, "class", "d");
         attr_dev(path2, "d", "M182 2.37497V160.001C182 160.001 252 171.474 252 81.6865C252 -8.10056 182 2.37497 182 2.37497Z");
         attr_dev(path2, "stroke-width", "4");
-        add_location(path2, file, 34, 4, 1002);
+        add_location(path2, file, 36, 4, 1049);
         attr_dev(path3, "class", "e");
         attr_dev(path3, "d", "M342 160.001H272V81.188M272 81.188V2.375H342L272 81.188ZM272 81.188H342");
         attr_dev(path3, "stroke-width", "4");
-        add_location(path3, file, 35, 4, 1200);
+        add_location(path3, file, 37, 4, 1247);
         attr_dev(path4, "class", "s");
         attr_dev(path4, "d", "M449.477 2C449.477 2 414 17.2164 414 45.45C414 79.2995 465.466 76.0006 465.466 114.081C465.466 152.162 428.491 160 428.491 160M473.046 160V154.182H479V160H473.046Z");
         attr_dev(path4, "stroke-width", "4");
-        add_location(path4, file, 36, 4, 1375);
+        add_location(path4, file, 38, 4, 1422);
         attr_dev(path5, "class", "m");
         attr_dev(path5, "d", "M621 4.13416V159.02H551V4.13416L586.259 76.1853L621 4.13416Z");
         attr_dev(path5, "stroke-width", "4");
-        add_location(path5, file, 37, 4, 1643);
+        add_location(path5, file, 39, 4, 1690);
         attr_dev(path6, "class", "a2");
         attr_dev(path6, "d", "M641 160L674.25 5.11475L711 160H641Z");
         attr_dev(path6, "stroke-width", "4");
-        add_location(path6, file, 38, 4, 1807);
+        add_location(path6, file, 40, 4, 1854);
         attr_dev(path7, "class", "r");
         attr_dev(path7, "d", "M731 4.13443V159.02H800.947L777.5 75.6953C777.5 75.6953 799 74.715 799 32.5628C799 -9.58949 731 4.13443 731 4.13443Z");
         attr_dev(path7, "stroke-width", "4");
-        add_location(path7, file, 39, 4, 1948);
+        add_location(path7, file, 41, 4, 1995);
         attr_dev(path8, "class", "t");
         attr_dev(path8, "d", "M856 160V3.15381M856 3.15381H821M856 3.15381H891");
         attr_dev(path8, "stroke-width", "4");
-        add_location(path8, file, 40, 4, 2168);
+        add_location(path8, file, 42, 4, 2215);
         attr_dev(path9, "class", "i");
         attr_dev(path9, "d", "M910 2.17383V159.02");
         attr_dev(path9, "stroke-width", "4");
-        add_location(path9, file, 41, 4, 2320);
+        add_location(path9, file, 43, 4, 2367);
         attr_dev(path10, "class", "n");
         attr_dev(path10, "d", "M1015 159.02L945 2.17383V159.02H1015ZM1015 159.02V2.17383");
         attr_dev(path10, "stroke-width", "4");
-        add_location(path10, file, 42, 4, 2443);
-        attr_dev(svg, "class", "myName svelte-ae11pv");
+        add_location(path10, file, 44, 4, 2490);
+        attr_dev(svg, "class", "myName svelte-18xmsk7");
         attr_dev(svg, "viewBox", "0 0 1017 163");
         attr_dev(svg, "stroke", "#0E79B2");
         attr_dev(svg, "fill", "none");
         attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
-        add_location(svg, file, 31, 2, 588);
-        attr_dev(div, "class", "navbar svelte-ae11pv");
-        add_location(div, file, 30, 0, 506);
+        add_location(svg, file, 33, 2, 635);
+        attr_dev(div, "class", "navbar svelte-18xmsk7");
+        add_location(div, file, 32, 0, 553);
       },
       m: function mount(target, anchor) {
         insert_dev(target, div, anchor);
@@ -4935,7 +4935,7 @@ var app = (function () {
       block: block,
       id: create_if_block.name,
       type: "if",
-      source: "(30:0) {#if scrollPos > 200}",
+      source: "(32:0) {#if scrollPos > 200}",
       ctx: ctx
     });
     return block;
@@ -5680,7 +5680,7 @@ var app = (function () {
     return Greeting;
   }(SvelteComponentDev);
 
-  var file$3 = "src/AboutMe.svelte"; // (107:4) {#if scrollPos > 100}
+  var file$3 = "src/AboutMe.svelte"; // (110:4) {#if scrollPos > 100}
 
   function create_if_block$2(ctx) {
     var div0, img0, img0_intro, img0_outro, t0, div4, div3, div1, img1, t1, p, t3, div2, a0, i0, t4, a1, i1, t5, a2, i2, t6, a3, i3, div3_intro, div3_outro, current;
@@ -5695,7 +5695,7 @@ var app = (function () {
         img1 = element("img");
         t1 = space();
         p = element("p");
-        p.textContent = "\"Who is Wade?\" I hear you ask. Well, among other things I'm a wine lover, hiker, sports tragic and fantasy novel enthusiast. In February 2019 I embarked on an exciting journey into the world of web development undertaking the boot-camp-style 6-month fast track diploma program @CoderAcademy, and what a fun ride it was! Now out the other side after (successfully!) completing my Coder Academy journey I'm keeping my skills sharp building new things (this portfolio for one) and learning new skills (like SVG and other front-endy type things) and I could not be more excitemened about my future in web development! Having made the move north from Melbourne to Sydney in October 2019 I am actively seeking my first professional web development role here in the Harbour city.";
+        p.textContent = "\"Who is Wade?\" I hear you ask. Well, among other things I'm a wine lover, hiker, sports tragic and fantasy novel enthusiast. In February 2019 I embarked on an exciting journey into the world of web development undertaking the boot-camp-style 6-month fast track diploma program @CoderAcademy, and what a fun ride it was! Now out the other side after (successfully!) completing my Coder Academy journey I'm keeping my skills sharp building new things (this portfolio for one) and learning new skills (like SVG and other front-endy type things) and I could not be more excited about my future in web development! Having made the move north from Melbourne to Sydney in October 2019 I am actively seeking my first professional web development role here in the Harbour city.";
         t3 = space();
         div2 = element("div");
         a0 = element("a");
@@ -5709,45 +5709,45 @@ var app = (function () {
         t6 = space();
         a3 = element("a");
         i3 = element("i");
-        attr_dev(img0, "class", "about svelte-mo79wo");
+        attr_dev(img0, "class", "about svelte-13bk188");
         attr_dev(img0, "src", "images/ABOUT.svg");
         attr_dev(img0, "alt", "about");
-        add_location(img0, file$3, 108, 6, 1843);
-        attr_dev(div0, "class", "about-container svelte-mo79wo");
-        add_location(div0, file$3, 107, 4, 1807);
-        attr_dev(img1, "class", "profile svelte-mo79wo");
+        add_location(img0, file$3, 111, 6, 1897);
+        attr_dev(div0, "class", "about-container svelte-13bk188");
+        add_location(div0, file$3, 110, 4, 1861);
+        attr_dev(img1, "class", "profile svelte-13bk188");
         attr_dev(img1, "src", "images/profile.jpg");
         attr_dev(img1, "alt", "profile image");
-        add_location(img1, file$3, 113, 10, 2234);
-        attr_dev(p, "class", "svelte-mo79wo");
-        add_location(p, file$3, 114, 10, 2313);
-        add_location(div1, file$3, 112, 8, 2218);
-        attr_dev(i0, "class", "fab fa-github svelte-mo79wo");
-        add_location(i0, file$3, 117, 70, 3207);
+        add_location(img1, file$3, 116, 10, 2288);
+        attr_dev(p, "class", "svelte-13bk188");
+        add_location(p, file$3, 117, 10, 2367);
+        add_location(div1, file$3, 115, 8, 2272);
+        attr_dev(i0, "class", "fab fa-github svelte-13bk188");
+        add_location(i0, file$3, 120, 70, 3257);
         attr_dev(a0, "href", "https://github.com/Wade-Martin");
         attr_dev(a0, "target", "_blank");
-        add_location(a0, file$3, 117, 10, 3147);
-        attr_dev(i1, "class", "fab fa-codepen svelte-mo79wo");
-        add_location(i1, file$3, 118, 67, 3312);
+        add_location(a0, file$3, 120, 10, 3197);
+        attr_dev(i1, "class", "fab fa-codepen svelte-13bk188");
+        add_location(i1, file$3, 121, 67, 3362);
         attr_dev(a1, "href", "https://codepen.io/wade-martin");
         attr_dev(a1, "target", "_blank");
-        add_location(a1, file$3, 118, 10, 3255);
-        attr_dev(i2, "class", "fab fa-linkedin svelte-mo79wo");
-        add_location(i2, file$3, 119, 79, 3429);
+        add_location(a1, file$3, 121, 10, 3305);
+        attr_dev(i2, "class", "fab fa-linkedin svelte-13bk188");
+        add_location(i2, file$3, 122, 79, 3479);
         attr_dev(a2, "href", "https://www.linkedin.com/in/wade-s-martin/");
         attr_dev(a2, "target", "_blank");
-        add_location(a2, file$3, 119, 10, 3360);
-        attr_dev(i3, "class", "fab fa-twitter-square svelte-mo79wo");
-        add_location(i3, file$3, 120, 74, 3543);
+        add_location(a2, file$3, 122, 10, 3410);
+        attr_dev(i3, "class", "fab fa-twitter-square svelte-13bk188");
+        add_location(i3, file$3, 123, 74, 3593);
         attr_dev(a3, "href", "https://twitter.com/wine_and_Wade");
         attr_dev(a3, "target", "_blank");
-        add_location(a3, file$3, 120, 10, 3479);
-        attr_dev(div2, "class", "icons svelte-mo79wo");
-        add_location(div2, file$3, 116, 8, 3117);
-        attr_dev(div3, "class", "card svelte-mo79wo");
-        add_location(div3, file$3, 111, 6, 2071);
-        attr_dev(div4, "class", "card-container svelte-mo79wo");
-        add_location(div4, file$3, 110, 4, 2036);
+        add_location(a3, file$3, 123, 10, 3529);
+        attr_dev(div2, "class", "icons svelte-13bk188");
+        add_location(div2, file$3, 119, 8, 3167);
+        attr_dev(div3, "class", "card svelte-13bk188");
+        add_location(div3, file$3, 114, 6, 2125);
+        attr_dev(div4, "class", "card-container svelte-13bk188");
+        add_location(div4, file$3, 113, 4, 2090);
       },
       m: function mount(target, anchor) {
         insert_dev(target, div0, anchor);
@@ -5827,7 +5827,7 @@ var app = (function () {
       block: block,
       id: create_if_block$2.name,
       type: "if",
-      source: "(107:4) {#if scrollPos > 100}",
+      source: "(110:4) {#if scrollPos > 100}",
       ctx: ctx
     });
     return block;
@@ -5841,13 +5841,13 @@ var app = (function () {
         div1 = element("div");
         div0 = element("div");
         if (if_block) if_block.c();
-        attr_dev(div0, "class", "wrapper svelte-mo79wo");
-        add_location(div0, file$3, 105, 2, 1754);
+        attr_dev(div0, "class", "wrapper svelte-13bk188");
+        add_location(div0, file$3, 108, 2, 1808);
         add_render_callback(function () {
           return ctx.div1_resize_handler.call(div1);
         });
-        attr_dev(div1, "class", "container svelte-mo79wo");
-        add_location(div1, file$3, 104, 0, 1700);
+        attr_dev(div1, "class", "container svelte-13bk188");
+        add_location(div1, file$3, 107, 0, 1754);
       },
       l: function claim(nodes) {
         throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -5993,8 +5993,7 @@ var app = (function () {
     return AboutMe;
   }(SvelteComponentDev);
 
-  var console_1 = globals.console;
-  var file$4 = "src/Contact.svelte"; // (135:4) {#if visible }
+  var file$4 = "src/Contact.svelte"; // (127:4) {#if (scrollPos + (windowHeight * .5)) > elementPos }
 
   function create_if_block_1(ctx) {
     var form, p, label, t0, input0, t1, input1, input1_transition, t2, input2, input2_transition, t3, textarea, textarea_transition, t4, input3, input3_transition, current;
@@ -6014,32 +6013,32 @@ var app = (function () {
         t4 = space();
         input3 = element("input");
         attr_dev(input0, "name", "bot-field");
-        add_location(input0, file$4, 137, 54, 2975);
-        add_location(label, file$4, 137, 10, 2931);
-        attr_dev(p, "class", "dn svelte-ep566l");
-        add_location(p, file$4, 136, 8, 2906);
+        add_location(input0, file$4, 129, 54, 2813);
+        add_location(label, file$4, 129, 10, 2769);
+        attr_dev(p, "class", "dn svelte-n4ol69");
+        add_location(p, file$4, 128, 8, 2744);
         attr_dev(input1, "name", "name");
         attr_dev(input1, "type", "text");
-        attr_dev(input1, "class", "form-input svelte-ep566l");
+        attr_dev(input1, "class", "form-input svelte-n4ol69");
         attr_dev(input1, "placeholder", "Your Name");
-        add_location(input1, file$4, 139, 8, 3031);
+        add_location(input1, file$4, 131, 8, 2869);
         attr_dev(input2, "name", "email");
         attr_dev(input2, "type", "text");
-        attr_dev(input2, "class", "form-input svelte-ep566l");
+        attr_dev(input2, "class", "form-input svelte-n4ol69");
         attr_dev(input2, "placeholder", "Your Email");
-        add_location(input2, file$4, 140, 8, 3211);
+        add_location(input2, file$4, 132, 8, 3046);
         attr_dev(textarea, "name", "text");
-        attr_dev(textarea, "class", "form-input svelte-ep566l");
+        attr_dev(textarea, "class", "form-input svelte-n4ol69");
         attr_dev(textarea, "placeholder", "Your Message here...");
-        add_location(textarea, file$4, 141, 8, 3390);
+        add_location(textarea, file$4, 133, 8, 3223);
         attr_dev(input3, "type", "submit");
         input3.value = "SUBMIT";
-        attr_dev(input3, "class", "svelte-ep566l");
-        add_location(input3, file$4, 142, 8, 3578);
+        attr_dev(input3, "class", "svelte-n4ol69");
+        add_location(input3, file$4, 134, 8, 3410);
         attr_dev(form, "action", "https://formspree.io/wsmartin23@gmail.com");
         attr_dev(form, "method", "POST");
-        attr_dev(form, "class", "svelte-ep566l");
-        add_location(form, file$4, 135, 6, 2820);
+        attr_dev(form, "class", "svelte-n4ol69");
+        add_location(form, file$4, 127, 6, 2658);
       },
       m: function mount(target, anchor) {
         insert_dev(target, form, anchor);
@@ -6062,7 +6061,7 @@ var app = (function () {
         add_render_callback(function () {
           if (!input1_transition) input1_transition = create_bidirectional_transition(input1, scale, {
             duration: 800,
-            delay: 1000,
+            delay: 0,
             opacity: 0,
             start: .8,
             easing: elasticOut
@@ -6072,7 +6071,7 @@ var app = (function () {
         add_render_callback(function () {
           if (!input2_transition) input2_transition = create_bidirectional_transition(input2, scale, {
             duration: 800,
-            delay: 1050,
+            delay: 50,
             opacity: 0,
             start: .8,
             easing: elasticOut
@@ -6082,7 +6081,7 @@ var app = (function () {
         add_render_callback(function () {
           if (!textarea_transition) textarea_transition = create_bidirectional_transition(textarea, scale, {
             duration: 800,
-            delay: 1100,
+            delay: 100,
             opacity: 0,
             start: .8,
             easing: elasticOut
@@ -6092,7 +6091,7 @@ var app = (function () {
         add_render_callback(function () {
           if (!input3_transition) input3_transition = create_bidirectional_transition(input3, scale, {
             duration: 800,
-            delay: 1150,
+            delay: 150,
             opacity: 0,
             start: .8,
             easing: elasticOut
@@ -6104,7 +6103,7 @@ var app = (function () {
       o: function outro(local) {
         if (!input1_transition) input1_transition = create_bidirectional_transition(input1, scale, {
           duration: 800,
-          delay: 1000,
+          delay: 0,
           opacity: 0,
           start: .8,
           easing: elasticOut
@@ -6112,7 +6111,7 @@ var app = (function () {
         input1_transition.run(0);
         if (!input2_transition) input2_transition = create_bidirectional_transition(input2, scale, {
           duration: 800,
-          delay: 1050,
+          delay: 50,
           opacity: 0,
           start: .8,
           easing: elasticOut
@@ -6120,7 +6119,7 @@ var app = (function () {
         input2_transition.run(0);
         if (!textarea_transition) textarea_transition = create_bidirectional_transition(textarea, scale, {
           duration: 800,
-          delay: 1100,
+          delay: 100,
           opacity: 0,
           start: .8,
           easing: elasticOut
@@ -6128,7 +6127,7 @@ var app = (function () {
         textarea_transition.run(0);
         if (!input3_transition) input3_transition = create_bidirectional_transition(input3, scale, {
           duration: 800,
-          delay: 1150,
+          delay: 150,
           opacity: 0,
           start: .8,
           easing: elasticOut
@@ -6150,11 +6149,11 @@ var app = (function () {
       block: block,
       id: create_if_block_1.name,
       type: "if",
-      source: "(135:4) {#if visible }",
+      source: "(127:4) {#if (scrollPos + (windowHeight * .5)) > elementPos }",
       ctx: ctx
     });
     return block;
-  } // (147:4) {#if visible }
+  } // (139:4) {#if (scrollPos + (windowHeight * .5)) > elementPos }
 
 
   function create_if_block$3(ctx) {
@@ -6174,39 +6173,39 @@ var app = (function () {
         path8 = svg_element("path");
         attr_dev(path0, "d", "M2 96L162 96L162 166L2 166L76.4304 130.741L2 96Z");
         attr_dev(path0, "stroke-width", "4");
-        add_location(path0, file$4, 149, 6, 3956);
+        add_location(path0, file$4, 141, 6, 3826);
         attr_dev(path1, "d", "M162 5V75L82 75M82 75H2L2 5L82 75ZM82 75V5");
         attr_dev(path1, "stroke-width", "4");
-        add_location(path1, file$4, 150, 6, 4100);
+        add_location(path1, file$4, 142, 6, 3970);
         attr_dev(path2, "d", "M150.409 744.827C135.412 752.546 37.2521 753.553 16.3474 744.827C-4.55725 736.101 -0.921503 692.807 16.3474 686.43C33.6163 680.053 134.504 678.375 150.409 686.43C166.315 694.485 165.406 737.108 150.409 744.827Z");
         attr_dev(path2, "stroke-width", "4");
-        add_location(path2, file$4, 151, 6, 4238);
+        add_location(path2, file$4, 143, 6, 4108);
         attr_dev(path3, "d", "M150.149 772C166.411 780.701 165.482 826.742 150.149 835.08C134.816 843.418 25.1964 845.155 13.0839 835.08C0.971438 825.005 -4.14142 793.68 13.0839 772");
         attr_dev(path3, "stroke-width", "4");
-        add_location(path3, file$4, 152, 6, 4544);
+        add_location(path3, file$4, 144, 6, 4414);
         attr_dev(path4, "d", "M150.149 338C166.411 346.701 165.482 392.742 150.149 401.08C134.816 409.418 25.1964 411.155 13.0839 401.08C0.971438 391.005 -4.14142 359.68 13.0839 338");
         attr_dev(path4, "stroke-width", "4");
-        add_location(path4, file$4, 153, 6, 4791);
+        add_location(path4, file$4, 145, 6, 4661);
         attr_dev(path5, "d", "M162 590L2 660H162V590ZM162 590H2");
         attr_dev(path5, "stroke-width", "4");
-        add_location(path5, file$4, 154, 6, 5038);
+        add_location(path5, file$4, 146, 6, 4908);
         attr_dev(path6, "d", "M162 534H2M2 534L2 569M2 534L2 499");
         attr_dev(path6, "stroke-width", "4");
-        add_location(path6, file$4, 155, 6, 5167);
+        add_location(path6, file$4, 147, 6, 5037);
         attr_dev(path7, "d", "M162 282H2M2 282L2 317M2 282L2 247");
         attr_dev(path7, "stroke-width", "4");
-        add_location(path7, file$4, 156, 6, 5297);
+        add_location(path7, file$4, 148, 6, 5167);
         attr_dev(path8, "d", "M162 499L2 465.75L162 429V499Z");
         attr_dev(path8, "stroke-width", "4");
-        add_location(path8, file$4, 157, 6, 5427);
-        attr_dev(svg, "class", "contact svelte-ep566l");
+        add_location(path8, file$4, 149, 6, 5297);
+        attr_dev(svg, "class", "contact svelte-n4ol69");
         attr_dev(svg, "viewBox", "0 0 164 844");
         attr_dev(svg, "fill", "none");
         attr_dev(svg, "stroke", "#E01E41");
         attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
-        add_location(svg, file$4, 148, 4, 3803);
-        attr_dev(div, "class", "svg-container svelte-ep566l");
-        add_location(div, file$4, 147, 4, 3771);
+        add_location(svg, file$4, 140, 4, 3673);
+        attr_dev(div, "class", "svg-container svelte-n4ol69");
+        add_location(div, file$4, 139, 4, 3641);
       },
       m: function mount(target, anchor) {
         insert_dev(target, div, anchor);
@@ -6229,7 +6228,7 @@ var app = (function () {
           add_render_callback(function () {
             path0_intro = create_in_transition(path0, draw, {
               duration: 2000,
-              delay: 2000,
+              delay: 1000,
               easing: quintOut
             });
             path0_intro.start();
@@ -6240,7 +6239,7 @@ var app = (function () {
           add_render_callback(function () {
             path1_intro = create_in_transition(path1, draw, {
               duration: 2000,
-              delay: 2000,
+              delay: 1000,
               easing: quintOut
             });
             path1_intro.start();
@@ -6251,7 +6250,7 @@ var app = (function () {
           add_render_callback(function () {
             path2_intro = create_in_transition(path2, draw, {
               duration: 2000,
-              delay: 2000,
+              delay: 1000,
               easing: quintOut
             });
             path2_intro.start();
@@ -6262,7 +6261,7 @@ var app = (function () {
           add_render_callback(function () {
             path3_intro = create_in_transition(path3, draw, {
               duration: 2000,
-              delay: 2000,
+              delay: 1000,
               easing: quintOut
             });
             path3_intro.start();
@@ -6273,7 +6272,7 @@ var app = (function () {
           add_render_callback(function () {
             path4_intro = create_in_transition(path4, draw, {
               duration: 2000,
-              delay: 2000,
+              delay: 1000,
               easing: quintOut
             });
             path4_intro.start();
@@ -6284,7 +6283,7 @@ var app = (function () {
           add_render_callback(function () {
             path5_intro = create_in_transition(path5, draw, {
               duration: 2000,
-              delay: 2000,
+              delay: 1000,
               easing: quintOut
             });
             path5_intro.start();
@@ -6295,7 +6294,7 @@ var app = (function () {
           add_render_callback(function () {
             path6_intro = create_in_transition(path6, draw, {
               duration: 2000,
-              delay: 2000,
+              delay: 1000,
               easing: quintOut
             });
             path6_intro.start();
@@ -6306,7 +6305,7 @@ var app = (function () {
           add_render_callback(function () {
             path7_intro = create_in_transition(path7, draw, {
               duration: 2000,
-              delay: 2000,
+              delay: 1000,
               easing: quintOut
             });
             path7_intro.start();
@@ -6317,7 +6316,7 @@ var app = (function () {
           add_render_callback(function () {
             path8_intro = create_in_transition(path8, draw, {
               duration: 2000,
-              delay: 2000,
+              delay: 1000,
               easing: quintOut
             });
             path8_intro.start();
@@ -6345,7 +6344,7 @@ var app = (function () {
       block: block,
       id: create_if_block$3.name,
       type: "if",
-      source: "(147:4) {#if visible }",
+      source: "(139:4) {#if (scrollPos + (windowHeight * .5)) > elementPos }",
       ctx: ctx
     });
     return block;
@@ -6353,8 +6352,8 @@ var app = (function () {
 
   function create_fragment$4(ctx) {
     var div2, svg, path0, path1, path2, t0, div1, div0, t1, current;
-    var if_block0 = ctx.visible && create_if_block_1(ctx);
-    var if_block1 = ctx.visible && create_if_block$3(ctx);
+    var if_block0 = ctx.scrollPos + ctx.windowHeight * .5 > ctx.elementPos && create_if_block_1(ctx);
+    var if_block1 = ctx.scrollPos + ctx.windowHeight * .5 > ctx.elementPos && create_if_block$3(ctx);
     var block = {
       c: function create() {
         div2 = element("div");
@@ -6370,29 +6369,29 @@ var app = (function () {
         if (if_block1) if_block1.c();
         attr_dev(path0, "d", "M1920 1078L1920 0.00305176L0.0020752 0.00622559L0.0020752 402.091V721.995L314.88 643.078L1920 1078Z");
         attr_dev(path0, "fill", "black");
-        add_location(path0, file$4, 128, 3, 2403);
+        add_location(path0, file$4, 120, 3, 2202);
         attr_dev(path1, "d", "M1920 1066.7V1079.99L421.496 1079.99L309.761 631.773L1920 1066.7Z");
         attr_dev(path1, "fill", "#1D1D1D");
-        add_location(path1, file$4, 129, 3, 2531);
+        add_location(path1, file$4, 121, 3, 2330);
         attr_dev(path2, "d", "M317.44 633.103L709.12 1080H-0.000427246V718.295L317.44 633.103Z");
         attr_dev(path2, "fill", "#313131");
-        add_location(path2, file$4, 130, 3, 2627);
-        attr_dev(svg, "class", "background svelte-ep566l");
+        add_location(path2, file$4, 122, 3, 2426);
+        attr_dev(svg, "class", "background svelte-n4ol69");
         attr_dev(svg, "viewBox", "0 0 1920 1080");
         attr_dev(svg, "preserveAspectRatio", "none");
         attr_dev(svg, "fill", "none");
         attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
-        add_location(svg, file$4, 127, 2, 2277);
+        add_location(svg, file$4, 119, 2, 2076);
         attr_dev(div0, "id", "form");
-        attr_dev(div0, "class", "form-container svelte-ep566l");
-        add_location(div0, file$4, 133, 4, 2756);
-        attr_dev(div1, "class", "wrapper svelte-ep566l");
-        add_location(div1, file$4, 132, 2, 2730);
-        attr_dev(div2, "class", "main svelte-ep566l");
+        attr_dev(div0, "class", "form-container svelte-n4ol69");
+        add_location(div0, file$4, 125, 4, 2555);
+        attr_dev(div1, "class", "wrapper svelte-n4ol69");
+        add_location(div1, file$4, 124, 2, 2529);
+        attr_dev(div2, "class", "main svelte-n4ol69");
         attr_dev(div2, "windowheight", ctx.windowHeight);
         attr_dev(div2, "scrollpos", ctx.scrollPos);
         attr_dev(div2, "elementpos", ctx.elementPos);
-        add_location(div2, file$4, 126, 0, 2182);
+        add_location(div2, file$4, 118, 0, 2015);
       },
       l: function claim(nodes) {
         throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -6412,7 +6411,7 @@ var app = (function () {
         current = true;
       },
       p: function update(changed, ctx) {
-        if (ctx.visible) {
+        if (ctx.scrollPos + ctx.windowHeight * .5 > ctx.elementPos) {
           if (!if_block0) {
             if_block0 = create_if_block_1(ctx);
             if_block0.c();
@@ -6427,7 +6426,7 @@ var app = (function () {
           check_outros();
         }
 
-        if (ctx.visible) {
+        if (ctx.scrollPos + ctx.windowHeight * .5 > ctx.elementPos) {
           if (!if_block1) {
             if_block1 = create_if_block$3(ctx);
             if_block1.c();
@@ -6488,10 +6487,9 @@ var app = (function () {
     var elementPos = $$props.elementPos,
         scrollPos = $$props.scrollPos,
         windowHeight = $$props.windowHeight;
-    var visible = false;
     var writable_props = ['elementPos', 'scrollPos', 'windowHeight'];
     Object.keys($$props).forEach(function (key) {
-      if (!writable_props.includes(key) && !key.startsWith('$$')) console_1.warn("<Contact> was created with unknown prop '".concat(key, "'"));
+      if (!writable_props.includes(key) && !key.startsWith('$$')) console.warn("<Contact> was created with unknown prop '".concat(key, "'"));
     });
 
     $$self.$set = function ($$props) {
@@ -6504,8 +6502,7 @@ var app = (function () {
       return {
         elementPos: elementPos,
         scrollPos: scrollPos,
-        windowHeight: windowHeight,
-        visible: visible
+        windowHeight: windowHeight
       };
     };
 
@@ -6513,32 +6510,12 @@ var app = (function () {
       if ('elementPos' in $$props) $$invalidate('elementPos', elementPos = $$props.elementPos);
       if ('scrollPos' in $$props) $$invalidate('scrollPos', scrollPos = $$props.scrollPos);
       if ('windowHeight' in $$props) $$invalidate('windowHeight', windowHeight = $$props.windowHeight);
-      if ('visible' in $$props) $$invalidate('visible', visible = $$props.visible);
-    };
-
-    $$self.$$.update = function () {
-      var $$dirty = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
-        scrollPos: 1,
-        windowHeight: 1,
-        elementPos: 1,
-        visible: 1
-      };
-
-      if ($$dirty.scrollPos || $$dirty.windowHeight || $$dirty.elementPos || $$dirty.visible) {
-        if (scrollPos + windowHeight > elementPos) {
-          $$invalidate('visible', visible = true);
-          console.log(visible);
-        } else {
-          $$invalidate('visible', visible = false);
-        }
-      }
     };
 
     return {
       elementPos: elementPos,
       scrollPos: scrollPos,
-      windowHeight: windowHeight,
-      visible: visible
+      windowHeight: windowHeight
     };
   }
 
@@ -6564,15 +6541,15 @@ var app = (function () {
       var props = options.props || {};
 
       if (ctx.elementPos === undefined && !('elementPos' in props)) {
-        console_1.warn("<Contact> was created without expected prop 'elementPos'");
+        console.warn("<Contact> was created without expected prop 'elementPos'");
       }
 
       if (ctx.scrollPos === undefined && !('scrollPos' in props)) {
-        console_1.warn("<Contact> was created without expected prop 'scrollPos'");
+        console.warn("<Contact> was created without expected prop 'scrollPos'");
       }
 
       if (ctx.windowHeight === undefined && !('windowHeight' in props)) {
-        console_1.warn("<Contact> was created without expected prop 'windowHeight'");
+        console.warn("<Contact> was created without expected prop 'windowHeight'");
       }
 
       return _this;
