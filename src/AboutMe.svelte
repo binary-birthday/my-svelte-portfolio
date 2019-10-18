@@ -63,7 +63,7 @@
   p {
     font-size: 1.25rem;
     font: 500;
-    font-family: 'Cormorant', serif;
+    font-family: 'Merriweather', serif;
     padding-right: 2rem;
     color: white;
   }
