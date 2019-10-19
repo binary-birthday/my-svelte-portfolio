@@ -40,7 +40,7 @@
   .contact {
     z-index: 2;
     opacity: .5;
-    width: calc(10vmin + 8*(100vw - 400px)/ 400);
+    width: calc(8vmin + 8*(100vw - 400px)/ 400);
   }
 
   .form-container {
