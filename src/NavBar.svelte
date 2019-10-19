@@ -9,7 +9,7 @@
 
 <style>
   .navbar {
-    max-height: 4.5rem;
+    height: 2rem;
     width: 100vw;
     background-color: white;
 		top: 0;
@@ -23,9 +23,9 @@
 	}
   
 	.myName {
-    height: 3.75rem;
     padding-right: 1rem;
-    max-width: 50%
+    max-width: 50%;
+    height: 90%;
 	}
 </style>
 
