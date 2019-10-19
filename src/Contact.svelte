@@ -94,6 +94,7 @@
     transition: all 0.3s;
     margin-top:-4px;
     font-weight:100;
+    --webkit-appearance: none;
   }
 
   [type="submit"]:hover { 
