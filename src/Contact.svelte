@@ -16,6 +16,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border: var(--brandBlue) 1px solid;
   }
 
   .background {
