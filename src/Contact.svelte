@@ -30,13 +30,12 @@
     display: grid;
     height: 100%;
     width: 70%;
-    grid-template-columns: minmax(82.5%, 1fr) 1fr ;
+    grid-template-columns: minmax(85%, 1fr) 1fr ;
   }
 
   .svg-container {
     display: flex;
     align-items: center;
-    justify-content: center;
   }
 
   .contact {
