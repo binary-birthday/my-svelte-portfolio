@@ -11,11 +11,10 @@
 <style>
   .container {
     width: 100%;
-    min-height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-basis: content;
+    flex: auto;
   }
 
   .wrapper {
@@ -29,7 +28,7 @@
 
   .about-container {
     display: flex;
-    flex-basis: content;
+    flex: auto;
     justify-content: center;
     align-items: flex-start;
   }
@@ -42,19 +41,17 @@
 
   .card-container { 
     height: 100%;
-    width: 100%;
+    width: 95%;
     display: flex;
-    flex-basis: content;
-    flex-direction: column;
+    flex: auto;
     justify-content: center;
     align-items: center;
-    border: 2px solid var(--brandBlue);
+    border: 1px solid var(--brandBlue);
     border-radius: 5px;
   }
 
   .card {
-    width: 95%;
-    height: 95%;
+    padding: 1rem; 
     line-height: 2.5rem;
   }
 
@@ -82,8 +79,7 @@
     width: 90%;
     height: 4rem;
     display: flex;
-    align-self: center;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-around;
     opacity: .4;
   }
@@ -93,23 +89,17 @@
   }
 
   @media only screen and (max-width: 700px) {
+    .wrapper {
+      width: 95%;
+    }
     .profile {
       width: 75px;
       height: 75px;
       margin-right: .75rem;
       margin-bottom: .5rem;
     }
-    .card {
-      line-height: 2rem;
-      width: 100%;
-    }
-    .about {
-      margin-top: 2rem;
-    }
-    .wrapper {
-      width: 100%
-    }
     p {
+      line-height: 2rem;
       font-size: 1.2rem;
     }
 }
