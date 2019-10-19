@@ -16,7 +16,7 @@
     display: flex;
     justify-content: center;
     background-image: url('./images/background.svg');
-    background-size: cover;
+    background-size: contain;
   }
 
   .wrapper {
