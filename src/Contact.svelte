@@ -24,6 +24,7 @@
     align-self: stretch;
     position: absolute;
     z-index: -1;
+    left: 0;
   }
 
   .wrapper {
