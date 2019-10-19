@@ -19,7 +19,7 @@
   }
 
   .background {
-    position: absolute;
+    /* position: absolute; */
     z-index: -1;
     align-self: flex-end;
     /* flex: auto; */
