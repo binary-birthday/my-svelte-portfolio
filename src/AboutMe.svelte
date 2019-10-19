@@ -92,7 +92,7 @@
     }
     .card {
       line-height: 2rem;
-      width: 95%;
+      width: 100%;
     }
     .about {
       margin-top: 2rem;
