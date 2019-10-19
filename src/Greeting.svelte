@@ -12,7 +12,7 @@
     visible = false;
   }
 
-  $: if(scrollPos < 100) {
+  $: if(scrollPos < (height * .4)) {
     visible = true;
   }
 
@@ -46,6 +46,7 @@
   onMount(() => {
     visible = !visible;
   })
+
 </script>
 
 <style>
@@ -85,27 +86,25 @@
     .left {
       width: 80%;
     }
-
-   span {
+    span {
       font-size: calc(6.5vh + 8*(90vw - 400px)/ 400);
     }
     .strong {
     text-shadow: .5px .5px #00000022;
-  }
+    }
 
   }
-
-
+  
 </style>
 	
 <div bind:offsetHeight={height} class="landing-container">
   {#if visible}	
   <div class="left" out:fade="{{delay: 0, duration: 4000}}" >
-    <span in:typewriter="{{delay: 200, speed: 50}}" >Hello,&nbsp</span>
-    <span in:typewriter="{{delay: 1300, speed: 50}}" >my name is</span><br>
-	  <span in:typewriter="{{delay: 1850, speed: 50}}" class="strong">Wade Martin.</span><br>
+    <span in:typewriter="{{delay: 1200, speed: 50}}" >Hello,&nbsp</span>
+    <span in:typewriter="{{delay: 2300, speed: 50}}" >my name is</span><br>
+	  <span in:typewriter="{{delay: 2850, speed: 50}}" class="strong">Wade Martin.</span><br>
 	  <span in:typewriter="{{delay: 3400, speed: 50}}" >I build webapps.</span><br>
-	  <span in:typewriter="{{delay: 5200, speed: 50}}" >Welcome to my portfolio!</span>
+	  <span in:typewriter="{{delay: 6100, speed: 50}}" >Welcome to my portfolio!</span>
   </div>
   <BeatingHeart />
   {/if}

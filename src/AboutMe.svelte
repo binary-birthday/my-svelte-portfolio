@@ -90,7 +90,7 @@
 
   @media only screen and (max-width: 700px) {
     .wrapper {
-      width: 95%;
+      width: 100%;
     }
     .profile {
       width: 75px;
