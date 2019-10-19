@@ -17,6 +17,7 @@
     justify-content: center;
     background-image: url('./images/background.svg');
     background-size: contain;
+    background-repeat: no-repeat;
   }
 
   .wrapper {
