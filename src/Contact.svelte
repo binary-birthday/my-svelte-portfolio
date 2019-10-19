@@ -16,6 +16,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border: solid 2px var(--brandBlue)
   }
 
   .background {
@@ -24,7 +25,6 @@
     align-self: stretch;
     position: absolute;
     z-index: -1;
-    left: 0;
   }
 
   .wrapper {
@@ -32,6 +32,7 @@
     height: 100%;
     width: 70%;
     grid-template-columns: minmax(85%, 1fr) 1fr ;
+    border: 1px solid var(--brandBlue)
   }
 
   .svg-container {
@@ -109,6 +110,8 @@
   @media only screen and (max-width: 700px) {
   .background {
     min-height: 100%;
+    position: absolute;
+    border: white 1px solid;
   }
   .wrapper {
     width: 100%;
