@@ -15,23 +15,15 @@
     min-height: 100%;
     display: flex;
     justify-content: center;
-    background-image: url('images/background.svg#svgView(preserveAspectRatio(none))');
-    border: solid 2px var(--brandBlue)
+    background-image: url('./images/background.svg');
+    background-size: cover;
   }
-
-  /* .background {
-    position: absolute;
-    z-index: -1;
-    align-self: flex-end;
-    flex: auto;
-  } */
 
   .wrapper {
     display: grid;
     height: 100%;
     width: 70%;
     grid-template-columns: minmax(85%, 1fr) 1fr ;
-    border: 1px solid var(--brandBlue)
   }
 
   .contactMeContainer {
@@ -107,9 +99,6 @@
   }
 
   @media only screen and (max-width: 700px) {
-  /* .background {
-    border: white 1px solid;
-  } */
   .wrapper {
     width: 100%;
   }
@@ -121,11 +110,6 @@
    
 
 <div class="main" {windowHeight} {scrollPos} {elementPos}>
-  <!-- <svg class="background" viewBox="0 0 1920 1080" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
-	  <path d="M1920 1078L1920 0.00305176L0.0020752 0.00622559L0.0020752 402.091V721.995L314.88 643.078L1920 1078Z" fill="black"/>
-	  <path d="M1920 1066.7V1079.99L421.496 1079.99L309.761 631.773L1920 1066.7Z" fill="#1D1D1D"/>
-	  <path d="M317.44 633.103L709.12 1080H-0.000427246V718.295L317.44 633.103Z" fill="#313131"/>
-  </svg> -->
   <div class="wrapper">
     <div id="form" class="form-container">
     {#if (scrollPos + (windowHeight * .5)) > elementPos }
@@ -155,6 +139,5 @@
     </svg>
     </div>
     {/if}
-
   </div>
 </div>
