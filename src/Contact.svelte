@@ -19,8 +19,6 @@
   }
 
   .background {
-    width: 100%;
-    flex: auto;
     position: absolute;
     z-index: -1;
   }
@@ -107,8 +105,6 @@
 
   @media only screen and (max-width: 700px) {
   .background {
-    height: 100%;
-    position: absolute;
     border: white 1px solid;
   }
   .wrapper {
