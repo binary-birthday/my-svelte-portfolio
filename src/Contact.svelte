@@ -15,11 +15,13 @@
     min-height: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
   }
 
   .background {
     width: 100%;
-    min-height: 100%;  
+    height: 100%;
+    align-self: stretch;
     position: absolute;
     z-index: -1;
   }
