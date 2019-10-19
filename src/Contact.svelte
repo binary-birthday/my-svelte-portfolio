@@ -15,14 +15,12 @@
     min-height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
     border: solid 2px var(--brandBlue)
   }
 
   .background {
     width: 100%;
-    height: 100%;
-    align-self: stretch;
+    flex: auto;
     position: absolute;
     z-index: -1;
   }
@@ -35,7 +33,7 @@
     border: 1px solid var(--brandBlue)
   }
 
-  .svg-container {
+  .contactMeContainer {
     display: flex;
     align-items: center;
   }
@@ -144,7 +142,7 @@
     {/if}
     </div>
     {#if (scrollPos + (windowHeight * .5)) > elementPos }    
-    <div class="svg-container">
+    <div class="contactMeContainer">
     <svg out:fade="{{delay: 0, duration: 300}}" class="contact" viewBox="0 0 164 844" fill="none" stroke="#E01E41" xmlns="http://www.w3.org/2000/svg">
       <path in:draw="{{duration: 2000, delay: 1000, easing: quintOut}}" d="M2 96L162 96L162 166L2 166L76.4304 130.741L2 96Z" stroke-width="4"/>
       <path in:draw="{{duration: 2000, delay: 1000, easing: quintOut}}" d="M162 5V75L82 75M82 75H2L2 5L82 75ZM82 75V5" stroke-width="4"/>
