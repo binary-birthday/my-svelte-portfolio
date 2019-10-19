@@ -109,7 +109,7 @@
 
   @media only screen and (max-width: 700px) {
   .background {
-    min-height: 100%;
+    height: 100%;
     position: absolute;
     border: white 1px solid;
   }
