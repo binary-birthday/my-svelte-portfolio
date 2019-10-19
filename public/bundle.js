@@ -5990,7 +5990,7 @@ var app = (function () {
     return AboutMe;
   }(SvelteComponentDev);
 
-  var file$4 = "src/Contact.svelte"; // (115:4) {#if (scrollPos + (windowHeight * .5)) > elementPos }
+  var file$4 = "src/Contact.svelte"; // (117:4) {#if (scrollPos + (windowHeight * .5)) > elementPos }
 
   function create_if_block_1(ctx) {
     var form, p, label, t0, input0, t1, input1, input1_transition, t2, input2, input2_transition, t3, textarea, textarea_transition, t4, input3, input3_transition, current;
@@ -6010,32 +6010,32 @@ var app = (function () {
         t4 = space();
         input3 = element("input");
         attr_dev(input0, "name", "bot-field");
-        add_location(input0, file$4, 117, 54, 2311);
-        add_location(label, file$4, 117, 10, 2267);
-        attr_dev(p, "class", "dn svelte-ksx244");
-        add_location(p, file$4, 116, 8, 2242);
+        add_location(input0, file$4, 119, 54, 2385);
+        add_location(label, file$4, 119, 10, 2341);
+        attr_dev(p, "class", "dn svelte-b512cm");
+        add_location(p, file$4, 118, 8, 2316);
         attr_dev(input1, "name", "name");
         attr_dev(input1, "type", "text");
-        attr_dev(input1, "class", "form-input svelte-ksx244");
+        attr_dev(input1, "class", "form-input svelte-b512cm");
         attr_dev(input1, "placeholder", "Your Name");
-        add_location(input1, file$4, 119, 8, 2367);
+        add_location(input1, file$4, 121, 8, 2441);
         attr_dev(input2, "name", "email");
         attr_dev(input2, "type", "text");
-        attr_dev(input2, "class", "form-input svelte-ksx244");
+        attr_dev(input2, "class", "form-input svelte-b512cm");
         attr_dev(input2, "placeholder", "Your Email");
-        add_location(input2, file$4, 120, 8, 2544);
+        add_location(input2, file$4, 122, 8, 2618);
         attr_dev(textarea, "name", "text");
-        attr_dev(textarea, "class", "form-input svelte-ksx244");
+        attr_dev(textarea, "class", "form-input svelte-b512cm");
         attr_dev(textarea, "placeholder", "Your Message here...");
-        add_location(textarea, file$4, 121, 8, 2721);
+        add_location(textarea, file$4, 123, 8, 2795);
         attr_dev(input3, "type", "submit");
         input3.value = "SUBMIT";
-        attr_dev(input3, "class", "svelte-ksx244");
-        add_location(input3, file$4, 122, 8, 2908);
+        attr_dev(input3, "class", "svelte-b512cm");
+        add_location(input3, file$4, 124, 8, 2982);
         attr_dev(form, "action", "https://formspree.io/wsmartin23@gmail.com");
         attr_dev(form, "method", "POST");
-        attr_dev(form, "class", "svelte-ksx244");
-        add_location(form, file$4, 115, 6, 2156);
+        attr_dev(form, "class", "svelte-b512cm");
+        add_location(form, file$4, 117, 6, 2230);
       },
       m: function mount(target, anchor) {
         insert_dev(target, form, anchor);
@@ -6146,11 +6146,11 @@ var app = (function () {
       block: block,
       id: create_if_block_1.name,
       type: "if",
-      source: "(115:4) {#if (scrollPos + (windowHeight * .5)) > elementPos }",
+      source: "(117:4) {#if (scrollPos + (windowHeight * .5)) > elementPos }",
       ctx: ctx
     });
     return block;
-  } // (127:4) {#if (scrollPos + (windowHeight * .5)) > elementPos }
+  } // (129:4) {#if (scrollPos + (windowHeight * .5)) > elementPos }
 
 
   function create_if_block$3(ctx) {
@@ -6170,39 +6170,39 @@ var app = (function () {
         path8 = svg_element("path");
         attr_dev(path0, "d", "M2 96L162 96L162 166L2 166L76.4304 130.741L2 96Z");
         attr_dev(path0, "stroke-width", "4");
-        add_location(path0, file$4, 129, 6, 3329);
+        add_location(path0, file$4, 131, 6, 3403);
         attr_dev(path1, "d", "M162 5V75L82 75M82 75H2L2 5L82 75ZM82 75V5");
         attr_dev(path1, "stroke-width", "4");
-        add_location(path1, file$4, 130, 6, 3473);
+        add_location(path1, file$4, 132, 6, 3547);
         attr_dev(path2, "d", "M150.409 744.827C135.412 752.546 37.2521 753.553 16.3474 744.827C-4.55725 736.101 -0.921503 692.807 16.3474 686.43C33.6163 680.053 134.504 678.375 150.409 686.43C166.315 694.485 165.406 737.108 150.409 744.827Z");
         attr_dev(path2, "stroke-width", "4");
-        add_location(path2, file$4, 131, 6, 3611);
+        add_location(path2, file$4, 133, 6, 3685);
         attr_dev(path3, "d", "M150.149 772C166.411 780.701 165.482 826.742 150.149 835.08C134.816 843.418 25.1964 845.155 13.0839 835.08C0.971438 825.005 -4.14142 793.68 13.0839 772");
         attr_dev(path3, "stroke-width", "4");
-        add_location(path3, file$4, 132, 6, 3917);
+        add_location(path3, file$4, 134, 6, 3991);
         attr_dev(path4, "d", "M150.149 338C166.411 346.701 165.482 392.742 150.149 401.08C134.816 409.418 25.1964 411.155 13.0839 401.08C0.971438 391.005 -4.14142 359.68 13.0839 338");
         attr_dev(path4, "stroke-width", "4");
-        add_location(path4, file$4, 133, 6, 4164);
+        add_location(path4, file$4, 135, 6, 4238);
         attr_dev(path5, "d", "M162 590L2 660H162V590ZM162 590H2");
         attr_dev(path5, "stroke-width", "4");
-        add_location(path5, file$4, 134, 6, 4411);
+        add_location(path5, file$4, 136, 6, 4485);
         attr_dev(path6, "d", "M162 534H2M2 534L2 569M2 534L2 499");
         attr_dev(path6, "stroke-width", "4");
-        add_location(path6, file$4, 135, 6, 4540);
+        add_location(path6, file$4, 137, 6, 4614);
         attr_dev(path7, "d", "M162 282H2M2 282L2 317M2 282L2 247");
         attr_dev(path7, "stroke-width", "4");
-        add_location(path7, file$4, 136, 6, 4670);
+        add_location(path7, file$4, 138, 6, 4744);
         attr_dev(path8, "d", "M162 499L2 465.75L162 429V499Z");
         attr_dev(path8, "stroke-width", "4");
-        add_location(path8, file$4, 137, 6, 4800);
-        attr_dev(svg, "class", "contact svelte-ksx244");
+        add_location(path8, file$4, 139, 6, 4874);
+        attr_dev(svg, "class", "contact svelte-b512cm");
         attr_dev(svg, "viewBox", "0 0 164 844");
         attr_dev(svg, "fill", "none");
         attr_dev(svg, "stroke", "#E01E41");
         attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
-        add_location(svg, file$4, 128, 4, 3176);
-        attr_dev(div, "class", "contactMeContainer svelte-ksx244");
-        add_location(div, file$4, 127, 4, 3139);
+        add_location(svg, file$4, 130, 4, 3250);
+        attr_dev(div, "class", "contactMeContainer svelte-b512cm");
+        add_location(div, file$4, 129, 4, 3213);
       },
       m: function mount(target, anchor) {
         insert_dev(target, div, anchor);
@@ -6341,7 +6341,7 @@ var app = (function () {
       block: block,
       id: create_if_block$3.name,
       type: "if",
-      source: "(127:4) {#if (scrollPos + (windowHeight * .5)) > elementPos }",
+      source: "(129:4) {#if (scrollPos + (windowHeight * .5)) > elementPos }",
       ctx: ctx
     });
     return block;
@@ -6360,15 +6360,15 @@ var app = (function () {
         t = space();
         if (if_block1) if_block1.c();
         attr_dev(div0, "id", "form");
-        attr_dev(div0, "class", "form-container svelte-ksx244");
-        add_location(div0, file$4, 113, 4, 2053);
-        attr_dev(div1, "class", "wrapper svelte-ksx244");
-        add_location(div1, file$4, 112, 2, 2027);
-        attr_dev(div2, "class", "main svelte-ksx244");
+        attr_dev(div0, "class", "form-container svelte-b512cm");
+        add_location(div0, file$4, 115, 4, 2127);
+        attr_dev(div1, "class", "wrapper svelte-b512cm");
+        add_location(div1, file$4, 114, 2, 2101);
+        attr_dev(div2, "class", "main svelte-b512cm");
         attr_dev(div2, "windowheight", ctx.windowHeight);
         attr_dev(div2, "scrollpos", ctx.scrollPos);
         attr_dev(div2, "elementpos", ctx.elementPos);
-        add_location(div2, file$4, 111, 0, 1966);
+        add_location(div2, file$4, 113, 0, 2040);
       },
       l: function claim(nodes) {
         throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");

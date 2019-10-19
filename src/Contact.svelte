@@ -18,7 +18,7 @@
     background-image: url('./images/background.svg');
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position: left bottom;
   }
 
   .wrapper {
