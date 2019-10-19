@@ -35,7 +35,7 @@
 
   .about {
     z-index: 2;
-    width: calc(12vmin + 8*(100vw - 400px)/ 400);
+    width: calc(10vmin + 8*(100vw - 400px)/ 400);
     opacity: .5;
   }
 
