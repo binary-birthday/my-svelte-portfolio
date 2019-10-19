@@ -92,6 +92,9 @@
     .wrapper {
       width: 100%;
     }
+    .about {
+    width: calc(12vmin + 8*(100vw - 400px)/ 400);
+    }
     .profile {
       width: 75px;
       height: 75px;

@@ -112,6 +112,9 @@
   .wrapper {
     width: 100%;
   }
+  .contact {
+    width: calc(12vmin + 8*(100vw - 400px)/ 400);
+  }
 }
 </style>
    
