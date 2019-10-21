@@ -103,7 +103,7 @@
     <span in:typewriter="{{delay: 700, speed: 50}}" >Hello,&nbsp</span>
     <span in:typewriter="{{delay: 1800, speed: 50}}" >my name is</span><br>
 	  <span in:typewriter="{{delay: 2350, speed: 50}}" class="strong">Wade Martin.</span><br>
-	  <span in:typewriter="{{delay: 3900, speed: 50}}" >I build webapps.</span><br>
+	  <span in:typewriter="{{delay: 3900, speed: 50}}" >I build Web Apps.</span><br>
 	  <span in:typewriter="{{delay: 5700, speed: 50}}" >Welcome to my portfolio!</span>
   </div>
   <BeatingHeart />
