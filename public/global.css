@@ -1,70 +1,73 @@
-*, html {
-	padding: 0;
-	margin:0;
+*,
+html {
+  padding: 0;
+  margin: 0;
 }
 
 :root {
-	--brandBlue: #0E79B2;
-	--brandRed: #E01E41;
+  --brandBlue: #0e79b2;
 }
 
-html, body {
-	position: relative;
-	width: 100%;
-	height: 100%;
-	font-family: 'Oswald', sans-serif;
+html,
+body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  font-family: "Oswald", sans-serif;
 }
-
 
 body {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	background-color: black;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: black;
 }
 
 a {
-	text-decoration: none;
-	color: var(--brandRed) ;
+  text-decoration: none;
+  color: var(--brandBlue);
 }
 
 a:hover {
-	text-decoration: none;
-	transform: scale(1.1);
+  text-decoration: none;
+  transform: scale(1.1);
 }
 
 label {
-	display: block;
+  display: block;
 }
 
-input, button, select, textarea {
-	font-family: inherit;
-	font-size: inherit;
-	padding: 0.4em;
-	margin: 0 0 0.5em 0;
-	box-sizing: border-box;
-	border: 1px solid #ccc;
-	border-radius: 2px;
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0.4em;
+  margin: 0 0 0.5em 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 2px;
 }
 
 input:disabled {
-	color: #ccc;
+  color: #ccc;
 }
 
 input[type="range"] {
-	height: 0;
+  height: 0;
 }
 
 button {
-	color: #333;
-	background-color: #f4f4f4;
-	outline: none;
+  color: #333;
+  background-color: #f4f4f4;
+  outline: none;
 }
 
 button:active {
-	background-color: #ddd;
+  background-color: #ddd;
 }
 
 button:focus {
-	border-color: #666;
+  border-color: #666;
 }

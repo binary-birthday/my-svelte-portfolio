@@ -1,56 +1,57 @@
 <script>
-	import { fade, fly } from 'svelte/transition';
-	import NavBar from './NavBar.svelte';
-	import Greeting from './Greeting.svelte';
-	import AboutMe from './AboutMe.svelte';
-	import Contact from './Contact.svelte';
-  import { onMount } from 'svelte';
+  import NavBar from "./NavBar.svelte";
+  import Greeting from "./Greeting.svelte";
+  import Contact from "./Contact.svelte";
+  import { onMount } from "svelte";
 
-	let scrollPos;
-	let elementPos;
-	let windowHeight;
-	let height;
-	let initHeight;
-	
-	const setVhVar = () => {
-		document.documentElement.style.setProperty('--vh', `${windowHeight}px`);
-	}
+  let scrollPos;
+  let elementPos;
+  let windowHeight;
+  let height;
+  let initHeight;
 
-	const getPostion = () => {
-		let newPostion = document.getElementById('form').getBoundingClientRect().top;
-		console.log('getPosition fired, element postion is:', newPostion)
-		return newPostion;
-	}
+  const setVhVar = () => {
+    document.documentElement.style.setProperty("--vh", `${windowHeight}px`);
+  };
 
-	$: if (initHeight != height) {
-		elementPos = getPostion();
-	}
+  const getPostion = () => {
+    let newPostion = document
+      .getElementById("form")
+      .getBoundingClientRect().top;
+    console.log("getPosition fired, element postion is:", newPostion);
+    return newPostion;
+  };
 
-	const handleResize = () => {
-		setVhVar()
-		elementPos = getPostion();
-	};
+  $: if (initHeight != height) {
+    elementPos = getPostion();
+  }
 
-	onMount(() => {
-		setVhVar();
-		elementPos = getPostion();
-	})
+  const handleResize = () => {
+    setVhVar();
+    elementPos = getPostion();
+  };
+
+  onMount(() => {
+    setVhVar();
+    elementPos = getPostion();
+  });
 </script>
 
-<style>
-	div {
-		height: var(--vh);
-		height: 100vh;
-		width: 100vw;
-	} 
-</style>
-
-<svelte:window bind:scrollY={scrollPos} bind:innerHeight={windowHeight} on:resize={handleResize}/>
+<svelte:window
+  bind:scrollY={scrollPos}
+  bind:innerHeight={windowHeight}
+  on:resize={handleResize}
+/>
 <div>
-	<NavBar {scrollPos}/>
-	<Greeting {scrollPos} />
-	<AboutMe {scrollPos} bind:height/>
-	<Contact {scrollPos} {elementPos} {windowHeight}/>
+  <NavBar {scrollPos} />
+  <Greeting {scrollPos} />
+  <Contact {scrollPos} {elementPos} {windowHeight} />
 </div>
 
-
+<style>
+  div {
+    height: var(--vh);
+    height: 100vh;
+    width: 100vw;
+  }
+</style>
